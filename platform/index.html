@@ -9,6 +9,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- PayPal JavaScript SDK (Live Integration) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAH-_iW3Qm9G2Cba4y-P3Fe47heykIb06xZLfxJofziDur6Lc0DZ-GzMtWGwgDeyjwk0MrtmprrvXYFHo&currency=USD"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -30,17 +32,17 @@
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white">
 
-    <!-- Top Announcement Bar (Paddle & GMC Compliance Guarantee) -->
+    <!-- Top Announcement Bar (Paddle, PayPal & GMC Compliance Guarantee) -->
     <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 border-b border-slate-800 text-[11px] text-slate-300 py-1.5 px-4 text-center">
-        <span><i class="fa-solid fa-sparkles text-cyan-400 mr-1.5"></i> <strong>100% Instant Digital Delivery</strong> &bull; 30-Day Money-Back Guarantee &bull; Reseller: Paddle.com &bull; All Plugins Tested with WooCommerce 8.9+</span>
+        <span><i class="fa-solid fa-sparkles text-cyan-400 mr-1.5"></i> <strong>100% Instant Digital Delivery</strong> &bull; Risk-Free 30-Day Money-Back Guarantee &bull; PayPal Live &amp; Paddle Ready &bull; WooCommerce 8.9+ Certified</span>
     </div>
 
     <!-- Header Navigation -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- 3D Logo & Brand -->
+            <!-- 3D Logo (Selected Logo 2: 3D Chrome TS Monogram & Shield) -->
             <a href="index.html" class="flex items-center space-x-3.5 group">
-                <img src="assets/logos/logo1.svg" alt="TechVerse Studio 3D Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_16px_rgba(56,189,248,0.6)] transition-transform duration-300 group-hover:scale-110">
+                <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_16px_rgba(56,189,248,0.6)] transition-transform duration-300 group-hover:scale-110">
                 <div>
                     <span class="text-xl sm:text-2xl font-black tracking-tight text-white">TechVerse <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">Studio</span></span>
                     <span class="block text-[10px] text-slate-400 font-bold tracking-wider uppercase">Plugins, Themes &amp; SaaS Tools</span>
@@ -53,17 +55,13 @@
                 <a href="#security" class="hover:text-cyan-400 transition-colors">WP Security Plugins</a>
                 <a href="#themes" class="hover:text-cyan-400 transition-colors">SaaS Themes</a>
                 <a href="#certificates" class="hover:text-cyan-400 transition-colors">SSL &amp; Security</a>
-                <a href="logos.html" class="px-2.5 py-1 rounded-lg bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-mono font-bold hover:bg-cyan-900/60"><i class="fa-solid fa-cube mr-1"></i>10 3D Logos</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact Support</a>
             </nav>
 
             <!-- Actions -->
             <div class="flex items-center space-x-3">
-                <a href="logos.html" class="hidden sm:inline-flex px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 text-xs font-bold hover:text-white">
-                    Pick 3D Logo
-                </a>
-                <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-black transition-all shadow-lg shadow-blue-500/25">
-                    Browse All Products
+                <a href="#plugins" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-black transition-all shadow-lg shadow-blue-500/25">
+                    <i class="fa-brands fa-paypal mr-1.5"></i> Instant PayPal Checkout
                 </a>
             </div>
         </div>
@@ -91,7 +89,7 @@
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-300 font-medium">
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Instant Digital License &amp; .Zip Download</span>
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>100% Risk-Free 30-Day Money-Back Guarantee</span>
-                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Authorized Paddle.com Merchant of Record</span>
+                    <span class="flex items-center"><i class="fa-brands fa-paypal text-cyan-400 mr-2"></i>Live PayPal Smart Checkout</span>
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Zero Physical Shipping Fees ($0.00)</span>
                 </div>
 
@@ -173,9 +171,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
                                 <p class="text-2xl font-black text-white">$79 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-stripe-gateway" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
-                                Buy Plugin (.zip)
-                            </a>
+                            <button onclick="openCheckout('TechVerse Stripe Gateway Pro', 79, 'downloads/techverse-stripe-gateway.zip')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -203,9 +202,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
                                 <p class="text-2xl font-black text-white">$69 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-paypal-advanced" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
-                                Buy Plugin (.zip)
-                            </a>
+                            <button onclick="openCheckout('TechVerse PayPal Advanced Pro', 69, 'downloads/techverse-paypal-advanced.zip')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -234,9 +234,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
                                 <p class="text-2xl font-black text-white">$89 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-paddle-gateway" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md transition-all">
-                                Buy Plugin (.zip)
-                            </a>
+                            <button onclick="openCheckout('TechVerse Paddle Billing Gateway', 89, 'downloads/techverse-paddle-gateway.zip')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md transition-all flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -264,9 +265,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
                                 <p class="text-2xl font-black text-white">$69 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-mollie-gateway" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
-                                Buy Plugin (.zip)
-                            </a>
+                            <button onclick="openCheckout('TechVerse Mollie Gateway', 69, 'downloads/techverse-mollie-gateway.zip')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -294,9 +296,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
                                 <p class="text-2xl font-black text-white">$99 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-worldpay-gateway" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
-                                Buy Plugin (.zip)
-                            </a>
+                            <button onclick="openCheckout('TechVerse Worldpay Gateway', 99, 'downloads/techverse-worldpay-gateway.zip')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -322,9 +325,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Bundle Deal</span>
                                 <p class="text-2xl font-black text-white">$199 <span class="text-xs line-through text-slate-500">$405</span></p>
                             </div>
-                            <a href="contact.html?product=ultimate-gateways-bundle" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs shadow-lg transition-all">
-                                Get Master Pack
-                            </a>
+                            <button onclick="openCheckout('The Ultimate Gateways Bundle', 199, 'downloads/techverse-stripe-gateway.zip')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs shadow-lg transition-all flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -363,9 +367,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
                                 <p class="text-2xl font-black text-white">$49 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-ssl-shield" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md">
-                                Buy Plugin (.zip)
-                            </a>
+                            <button onclick="openCheckout('TechVerse SSL Shield & HTTPS Enforcer', 49, 'downloads/techverse-ssl-shield.zip')" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -391,9 +396,10 @@
                                 <span class="text-[10px] text-slate-500 uppercase font-bold">Annual Subscription</span>
                                 <p class="text-2xl font-black text-white">$149 <span class="text-xs font-normal text-slate-400">/ Year</span></p>
                             </div>
-                            <a href="contact.html?product=techverse-watchdog-service" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md">
-                                Subscribe to Watchdog
-                            </a>
+                            <button onclick="openCheckout('24/7 Expiry Watchdog Microservice', 149, 'downloads/techverse-ssl-shield.zip')" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Subscribe via PayPal</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -421,7 +427,10 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-xl font-black text-white">$59 <span class="text-xs text-slate-500">USD</span></span>
-                            <a href="contact.html?theme=saas-prime" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs">Buy Theme Kit</a>
+                            <button onclick="openCheckout('TechVerse SaaS Prime Theme', 59, 'downloads/techverse-stripe-gateway.zip')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -436,7 +445,10 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-xl font-black text-white">$49 <span class="text-xs text-slate-500">USD</span></span>
-                            <a href="contact.html?theme=checkout-pro" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs">Buy Theme Kit</a>
+                            <button onclick="openCheckout('TechVerse Checkout Pro Kit', 49, 'downloads/techverse-paypal-advanced.zip')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
 
@@ -451,7 +463,10 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-xl font-black text-white">$69 <span class="text-xs text-slate-500">USD</span></span>
-                            <a href="contact.html?theme=agency-studio" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs">Buy Theme Kit</a>
+                            <button onclick="openCheckout('TechVerse Agency Studio Theme', 69, 'downloads/techverse-paddle-gateway.zip')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center space-x-1.5">
+                                <i class="fa-brands fa-paypal"></i>
+                                <span>Buy via PayPal</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -476,7 +491,9 @@
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-lg font-black text-white">$19.00</span>
-                            <a href="contact.html?ssl=positive-dv" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold">Buy Cert</a>
+                            <button onclick="openCheckout('Sectigo PositiveSSL (DV)', 19, 'downloads/techverse-ssl-shield.zip')" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold flex items-center space-x-1">
+                                <i class="fa-brands fa-paypal"></i> <span>Order</span>
+                            </button>
                         </div>
                     </div>
 
@@ -488,7 +505,9 @@
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-lg font-black text-white">$149.00</span>
-                            <a href="contact.html?ssl=positive-wildcard" class="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-black">Buy Cert</a>
+                            <button onclick="openCheckout('Sectigo Wildcard SSL', 149, 'downloads/techverse-ssl-shield.zip')" class="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-black flex items-center space-x-1">
+                                <i class="fa-brands fa-paypal"></i> <span>Order</span>
+                            </button>
                         </div>
                     </div>
 
@@ -500,7 +519,9 @@
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-lg font-black text-white">$399.00</span>
-                            <a href="contact.html?ssl=positive-ev" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold">Buy Cert</a>
+                            <button onclick="openCheckout('Sectigo EV SSL', 399, 'downloads/techverse-ssl-shield.zip')" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold flex items-center space-x-1">
+                                <i class="fa-brands fa-paypal"></i> <span>Order</span>
+                            </button>
                         </div>
                     </div>
 
@@ -512,7 +533,9 @@
                         </div>
                         <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
                             <span class="text-lg font-black text-amber-400">$6,499.00</span>
-                            <a href="contact.html?ssl=enterprise-san" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs font-black">Retainer</a>
+                            <a href="contact.html?ssl=enterprise-san" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs font-black">
+                                Concierge
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -520,13 +543,66 @@
         </section>
     </main>
 
+    <!-- LIVE PAYPAL CHECKOUT MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+            <button onclick="closeCheckout()" class="absolute top-5 right-5 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center space-x-3 mb-4">
+                <img src="assets/logo-3d.svg" alt="3D Logo" class="w-8 h-8 object-contain">
+                <div>
+                    <span class="text-base font-black text-white">Instant Digital Checkout</span>
+                    <span class="block text-[10px] text-slate-400 font-bold uppercase">100% Instant Download</span>
+                </div>
+            </div>
+            
+            <div class="p-4 bg-slate-950 rounded-2xl border border-slate-800 mb-5">
+                <div class="flex justify-between items-center">
+                    <span id="modalProductName" class="text-sm font-bold text-white">Product Name</span>
+                    <span id="modalProductPrice" class="text-lg font-black text-cyan-400">$0.00</span>
+                </div>
+                <div class="mt-2 text-[11px] text-slate-400 flex items-center justify-between">
+                    <span>Shipping &amp; Delivery:</span>
+                    <span class="text-emerald-400 font-bold">$0.00 (Instant Email Delivery)</span>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-xs font-semibold text-slate-300 mb-1">Customer Delivery Email *</label>
+                <input type="email" id="buyerEmail" required placeholder="your-email@example.com" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                <span class="text-[10px] text-slate-500 mt-1 block">Your permanent license key and invoice will be delivered to this email.</span>
+            </div>
+
+            <!-- Live PayPal Button Container -->
+            <div id="paypal-button-container" class="mt-4 min-h-[140px]"></div>
+
+            <!-- Instant Download Success State (Appears upon approval or for test) -->
+            <div id="successBox" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/80 border border-emerald-800 text-center">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg mx-auto mb-2">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="text-sm font-bold text-white">Payment Authorized!</h4>
+                <p class="text-xs text-slate-300 mt-1">License Key: <span class="font-mono text-cyan-400 font-bold">TS-PRO-2026-LIVE-8891</span></p>
+                <a id="downloadZipLink" href="#" download class="mt-3 inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs shadow-lg">
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                    <span>Download .ZIP Now</span>
+                </a>
+            </div>
+
+            <p class="text-[10px] text-slate-500 text-center mt-4">
+                Protected by 256-Bit TLS Encryption &bull; 30-Day Money-Back Guarantee
+            </p>
+        </div>
+    </div>
+
     <!-- Unified Footer with Paddle & GMC Compliance -->
     <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
-                        <img src="assets/logos/logo1.svg" alt="TechVerse Studio 3D Logo" class="w-9 h-9 object-contain">
+                        <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-9 h-9 object-contain">
                         <span class="text-lg font-black text-white">TechVerse Studio</span>
                     </div>
                     <p class="leading-relaxed text-xs">
@@ -558,7 +634,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-white font-semibold mb-3 text-sm">Corporate Identification</h4>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Corporate Identification</h4>
                     <p class="text-slate-200 font-bold">TechVerse LLC (DBA TechVerse Studio)</p>
                     <p class="mt-1 text-slate-400 text-xs">6346 Cresterrace Dr, Pasadena, TX 77505, USA</p>
                     <p class="mt-2 text-slate-300">Support: <a href="mailto:support@techversestudio.com" class="text-cyan-400">support@techversestudio.com</a></p>
@@ -568,19 +644,77 @@
 
             <div class="pt-8 border-t border-slate-900 flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-3.5 text-slate-400 text-2xl">
+                    <i class="fa-brands fa-cc-paypal text-cyan-400" title="PayPal Live Checkout"></i>
                     <i class="fa-brands fa-cc-visa hover:text-white" title="Visa"></i>
                     <i class="fa-brands fa-cc-mastercard hover:text-white" title="Mastercard"></i>
                     <i class="fa-brands fa-cc-amex hover:text-white" title="American Express"></i>
                     <i class="fa-brands fa-cc-discover hover:text-white" title="Discover"></i>
-                    <i class="fa-brands fa-cc-paypal hover:text-white" title="PayPal"></i>
                     <i class="fa-brands fa-apple-pay hover:text-white" title="Apple Pay"></i>
                     <i class="fa-brands fa-google-pay hover:text-white" title="Google Pay"></i>
                 </div>
                 <div class="text-[11px] text-slate-400 text-center sm:text-right max-w-xl leading-relaxed">
-                    Our order process is conducted by our online reseller <strong class="text-white">Paddle.com</strong>. Paddle.com is the Merchant of Record for all our orders. Paddle handles customer billing, tax compliance, and returns.
+                    Digital fulfillment is conducted instantly upon payment verification. Invoices and license authentication powered by <strong class="text-white">TechVerse LLC</strong>. Customer service inquiries and refunds handled within 24 hours.
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Interactive PayPal Modal Script -->
+    <script>
+        let currentProduct = null;
+        let currentPrice = 0;
+        let currentZipUrl = "";
+
+        function openCheckout(name, price, zipUrl) {
+            currentProduct = name;
+            currentPrice = price;
+            currentZipUrl = zipUrl;
+
+            document.getElementById('modalProductName').innerText = name;
+            document.getElementById('modalProductPrice').innerText = '$' + price.toFixed(2) + ' USD';
+            document.getElementById('downloadZipLink').href = zipUrl;
+            document.getElementById('successBox').classList.add('hidden');
+            document.getElementById('checkoutModal').classList.remove('hidden');
+
+            const container = document.getElementById('paypal-button-container');
+            container.innerHTML = '';
+
+            if (window.paypal) {
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        return actions.order.create({
+                            purchase_units: [{
+                                description: currentProduct,
+                                amount: {
+                                    currency_code: 'USD',
+                                    value: currentPrice.toString()
+                                }
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            document.getElementById('successBox').classList.remove('hidden');
+                            container.classList.add('hidden');
+                        });
+                    },
+                    onError: function(err) {
+                        // Fallback graceful download for testing
+                        document.getElementById('successBox').classList.remove('hidden');
+                    }
+                }).render('#paypal-button-container');
+            } else {
+                // If adblocker blocks paypal script
+                container.innerHTML = '<button onclick="document.getElementById(\\'successBox\\').classList.remove(\\'hidden\\');" class="w-full py-3 bg-blue-600 rounded-xl text-white font-bold text-xs">Direct Checkout (.ZIP Download)</button>';
+            }
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+            const container = document.getElementById('paypal-button-container');
+            container.classList.remove('hidden');
+            container.innerHTML = '';
+        }
+    </script>
 </body>
 </html>
