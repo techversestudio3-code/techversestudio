@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <filter id="monoShadow">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#0284c7" flood-opacity="0.4" />
+      <feDropShadow dx="0" dy="36" stdDeviation="30" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+    <linearGradient id="pillarBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="pillarCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+  </defs>
+  <g filter="url(#monoShadow)">
+    <!-- Pillar 1: 3D Angled 'T' Monolith -->
+    <polygon points="120,100 240,100 210,380 150,380" fill="url(#pillarBlue)" />
+    <polygon points="120,100 150,80 270,80 240,100" fill="#93c5fd" />
+    
+    <!-- Pillar 2: Intersecting 3D 'V' Monolith -->
+    <polygon points="210,380 380,120 320,120 180,340" fill="url(#pillarCyan)" />
+    <polygon points="320,120 350,95 410,95 380,120" fill="#a5f3fc" />
+
+    <!-- Specular Laser Glint -->
+    <circle cx="210" cy="380" r="14" fill="#ffffff" filter="drop-shadow(0 0 8px #38bdf8)" />
+  </g>
+</svg>

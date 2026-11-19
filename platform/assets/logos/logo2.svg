@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <filter id="chromeBevel" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#2563eb" flood-opacity="0.4" />
+      <feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#020617" flood-opacity="0.85" />
+    </filter>
+    <linearGradient id="chromeMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="25%" stop-color="#94a3b8" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="75%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+    <linearGradient id="electricBlue" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+  </defs>
+  <g filter="url(#chromeBevel)">
+    <!-- 3D Heavy Outer Shield -->
+    <path d="M250,50 L420,110 C420,280 340,380 250,450 C160,380 80,280 80,110 Z" fill="#090d16" stroke="url(#chromeMetal)" stroke-width="12" />
+    <!-- Inner Rim with Specular Lighting -->
+    <path d="M250,80 L390,130 C390,260 325,350 250,410 C175,350 110,260 110,130 Z" fill="url(#electricBlue)" opacity="0.9" />
+    <!-- 3D Chrome Monogram T & S -->
+    <!-- Letter T -->
+    <path d="M170,160 L330,160 L330,200 L275,200 L275,340 L225,340 L225,200 L170,200 Z" fill="url(#chromeMetal)" stroke="#ffffff" stroke-width="2" />
+    <!-- Interlocking S Curve -->
+    <path d="M280,220 C320,220 340,240 340,265 C340,300 300,310 270,320 C240,330 230,340 230,355 C230,375 250,385 280,385 C310,385 330,375 340,360" fill="none" stroke="url(#chromeMetal)" stroke-width="20" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <filter id="falconGlow">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#06b6d4" flood-opacity="0.4" />
+      <feDropShadow dx="0" dy="35" stdDeviation="30" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+    <linearGradient id="wingL" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0369a1"/></linearGradient>
+    <linearGradient id="wingR" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#1e3a8a"/></linearGradient>
+    <linearGradient id="bodyG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
+  </defs>
+  <g filter="url(#falconGlow)">
+    <!-- Left Wing Facet 1 -->
+    <polygon points="250,140 70,180 180,260" fill="url(#wingL)" />
+    <!-- Left Wing Facet 2 -->
+    <polygon points="180,260 70,180 110,340 250,420" fill="#075985" />
+    
+    <!-- Right Wing Facet 1 -->
+    <polygon points="250,140 430,180 320,260" fill="url(#wingR)" />
+    <!-- Right Wing Facet 2 -->
+    <polygon points="320,260 430,180 390,340 250,420" fill="#1e40af" />
+    
+    <!-- Central Head/Shield Bevel -->
+    <polygon points="250,90 285,160 250,220 215,160" fill="url(#bodyG)" />
+  </g>
+</svg>

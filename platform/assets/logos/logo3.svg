@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <filter id="loopGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#06b6d4" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="32" stdDeviation="36" flood-color="#030712" flood-opacity="0.8" />
+    </filter>
+    <linearGradient id="mobius1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="mobius2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="60%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+  </defs>
+  <g filter="url(#loopGlow)">
+    <!-- Back Loop Band -->
+    <path d="M160,250 C100,160 50,220 80,300 C110,380 200,360 250,250 C300,140 390,120 420,200 C450,280 400,340 340,250" 
+          fill="none" stroke="url(#mobius2)" stroke-width="48" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Front Overlapping Twist with Specular Sheen -->
+    <path d="M150,230 C200,140 290,140 340,230 C390,320 450,280 420,200 C390,120 300,140 250,250 C200,360 110,380 80,300" 
+          fill="none" stroke="url(#mobius1)" stroke-width="42" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Specular Ridge Line -->
+    <path d="M150,230 C200,140 290,140 340,230" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.85" />
+    <!-- Core Brand Node -->
+    <circle cx="250" cy="250" r="18" fill="#ffffff" filter="drop-shadow(0 0 12px #38bdf8)" />
+  </g>
+</svg>

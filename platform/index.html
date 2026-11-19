@@ -3,63 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechVerse Studio | Automated SSL Management &amp; Web Security Platform</title>
-    <meta name="description" content="Never let an expired SSL certificate disrupt your business. Automated 24/7 certificate expiration monitoring, one-click WordPress HTTPS enforcer, and developer cryptographic tools by TechVerse LLC.">
+    <title>TechVerse Studio | Premium WordPress Plugins, Themes &amp; Enterprise Web Security</title>
+    <meta name="description" content="Official software studio of TechVerse LLC. High-conversion WooCommerce payment gateways (Stripe, PayPal, Paddle), WordPress performance plugins, SaaS themes, and 24/7 web security tools.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .gradient-radial {
-            background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.18) 0%, rgba(2, 6, 23, 0) 70%);
+            background: radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.18) 0%, rgba(2, 6, 23, 0.85) 75%);
         }
-        .bento-card {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(2, 6, 23, 0.95) 100%);
+        .product-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.95) 100%);
             border: 1px solid rgba(51, 65, 85, 0.6);
             backdrop-filter: blur(12px);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .bento-card:hover {
-            border-color: rgba(56, 189, 248, 0.6);
-            transform: translateY(-3px);
-            box-shadow: 0 16px 32px -12px rgba(2, 132, 199, 0.25);
+        .product-card:hover {
+            border-color: rgba(56, 189, 248, 0.7);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.3);
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white">
 
-    <!-- Top Compliance Notice Bar -->
-    <div class="bg-gradient-to-r from-blue-900/60 via-cyan-900/40 to-blue-900/60 border-b border-slate-800 text-[11px] text-slate-300 py-1.5 px-4 text-center">
-        <span><i class="fa-solid fa-shield-check text-cyan-400 mr-1.5"></i> 100% Instant Digital Delivery &bull; Risk-Free 30-Day Money-Back Guarantee &bull; Orders Secured by Paddle.com</span>
+    <!-- Top Announcement Bar (Paddle & GMC Compliance Guarantee) -->
+    <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 border-b border-slate-800 text-[11px] text-slate-300 py-1.5 px-4 text-center">
+        <span><i class="fa-solid fa-sparkles text-cyan-400 mr-1.5"></i> <strong>100% Instant Digital Delivery</strong> &bull; 30-Day Money-Back Guarantee &bull; Reseller: Paddle.com &bull; All Plugins Tested with WooCommerce 8.9+</span>
     </div>
 
-    <!-- Navigation Header -->
+    <!-- Header Navigation -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- 3D Logo & Brand -->
             <a href="index.html" class="flex items-center space-x-3.5 group">
-                <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_15px_rgba(56,189,248,0.55)] transition-transform duration-300 group-hover:scale-110">
+                <img src="assets/logos/logo1.svg" alt="TechVerse Studio 3D Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_16px_rgba(56,189,248,0.6)] transition-transform duration-300 group-hover:scale-110">
                 <div>
-                    <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white">TechVerse <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">Studio</span></span>
-                    <span class="block text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Enterprise Security Suite</span>
+                    <span class="text-xl sm:text-2xl font-black tracking-tight text-white">TechVerse <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">Studio</span></span>
+                    <span class="block text-[10px] text-slate-400 font-bold tracking-wider uppercase">Plugins, Themes &amp; SaaS Tools</span>
                 </div>
             </a>
 
             <!-- Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-300">
-                <a href="#products" class="hover:text-cyan-400 transition-colors">Products &amp; Plugins</a>
-                <a href="#scanner" class="hover:text-cyan-400 transition-colors">Live Scanner</a>
-                <a href="#certificates" class="hover:text-cyan-400 transition-colors">SSL Certificates</a>
-                <a href="#pricing" class="hover:text-cyan-400 transition-colors">Pricing Plans</a>
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-bold text-slate-300">
+                <a href="#plugins" class="hover:text-cyan-400 transition-colors">WooCommerce Gateways</a>
+                <a href="#security" class="hover:text-cyan-400 transition-colors">WP Security Plugins</a>
+                <a href="#themes" class="hover:text-cyan-400 transition-colors">SaaS Themes</a>
+                <a href="#certificates" class="hover:text-cyan-400 transition-colors">SSL &amp; Security</a>
+                <a href="logos.html" class="px-2.5 py-1 rounded-lg bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs font-mono font-bold hover:bg-cyan-900/60"><i class="fa-solid fa-cube mr-1"></i>10 3D Logos</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact Support</a>
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center space-x-4">
-                <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-bold transition-all shadow-lg shadow-blue-500/25 hover:shadow-cyan-500/40">
-                    Get Protected Today
+            <div class="flex items-center space-x-3">
+                <a href="logos.html" class="hidden sm:inline-flex px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 text-xs font-bold hover:text-white">
+                    Pick 3D Logo
+                </a>
+                <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-black transition-all shadow-lg shadow-blue-500/25">
+                    Browse All Products
                 </a>
             </div>
         </div>
@@ -70,427 +74,446 @@
         <section class="relative pt-20 pb-24 overflow-hidden gradient-radial">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 
-                <!-- Badge -->
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-blue-950/80 border border-blue-800/80 text-cyan-300 text-xs font-semibold mb-8 backdrop-blur shadow-sm">
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-blue-950/90 border border-blue-800/80 text-cyan-300 text-xs font-bold mb-8 backdrop-blur shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                    <span>Continuous Watchdog 2.4 Active &bull; Zero Revenue Loss Guarantee</span>
+                    <span>Digital Software Studio &bull; Trusted by 1,400+ E-Commerce Stores Globally</span>
                 </div>
 
-                <!-- Main Headline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight sm:leading-none">
-                    Never Let An Expired <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300">SSL Certificate</span> Crash Your Online Revenue
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-tight sm:leading-none">
+                    Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">WordPress Plugins</span>, Themes &amp; Cloud Security Tools
                 </h1>
 
-                <!-- Subheadline -->
-                <p class="mt-7 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
-                    Automated 24/7 SSL expiration monitoring, one-click WordPress HTTPS enforcement, and automated TLS certificate provisioning built for modern e-commerce stores and agencies.
+                <p class="mt-7 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    Build faster, collect payments securely, and protect your digital store. High-performance WooCommerce gateways, one-click security enforcers, and developer-grade SSL tools engineered by TechVerse LLC.
                 </p>
 
                 <!-- Value Proposition Highlights -->
                 <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-slate-300 font-medium">
-                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Instant Digital Delivery</span>
-                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>30-Day Money-Back Guarantee</span>
-                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Official Sectigo &amp; DigiCert CA Partner</span>
-                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Paddle Merchant of Record</span>
+                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Instant Digital License &amp; .Zip Download</span>
+                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>100% Risk-Free 30-Day Money-Back Guarantee</span>
+                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Authorized Paddle.com Merchant of Record</span>
+                    <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Zero Physical Shipping Fees ($0.00)</span>
                 </div>
 
-                <!-- Interactive Live Scanner Widget -->
-                <div id="scanner" class="mt-12 max-w-2xl mx-auto p-3.5 bg-slate-900/90 border border-slate-700/80 rounded-2xl shadow-2xl backdrop-blur-md">
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <div class="relative flex-grow">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
-                                <i class="fa-solid fa-globe"></i>
-                            </span>
-                            <input id="targetDomain" type="text" placeholder="Enter your domain (e.g., yourdomain.com)" 
-                                class="w-full pl-11 pr-4 py-3.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
-                        </div>
-                        <button onclick="runAudit()" id="scanBtn" class="px-7 py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm rounded-xl transition-all flex items-center justify-center space-x-2 shadow-lg shadow-cyan-500/20 whitespace-nowrap">
-                            <i class="fa-solid fa-bolt text-yellow-300"></i>
-                            <span>Test Live Certificate</span>
-                        </button>
-                    </div>
-
-                    <!-- Scanner Results Box (Hidden by default) -->
-                    <div id="scanResult" class="hidden mt-4 p-5 rounded-xl bg-slate-950 border border-slate-800 text-left transition-all">
-                        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3">
-                            <div class="flex items-center space-x-3">
-                                <span id="gradeBadge" class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500 text-emerald-400 font-extrabold text-xl flex items-center justify-center">A+</span>
-                                <div>
-                                    <h4 id="scannedDomainTitle" class="text-white font-bold text-base">domain.com</h4>
-                                    <p class="text-xs text-slate-400">TLS 1.3 &bull; Global Browser Ubiquity Verified</p>
-                                </div>
-                            </div>
-                            <span id="daysRemainingBadge" class="px-3 py-1.5 rounded-lg bg-emerald-950 border border-emerald-800 text-emerald-400 text-xs font-bold">
-                                89 Days Left
-                            </span>
-                        </div>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 text-xs">
-                            <div class="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
-                                <span class="text-slate-400 block">Certificate Authority</span>
-                                <span id="issuerText" class="text-slate-200 font-semibold">Sectigo / Let's Encrypt CA</span>
-                            </div>
-                            <div class="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
-                                <span class="text-slate-400 block">Cipher Suite</span>
-                                <span class="text-slate-200 font-semibold">AES-256-GCM / SHA384</span>
-                            </div>
-                            <div class="p-2.5 bg-slate-900 rounded-lg border border-slate-800 col-span-2 sm:col-span-1">
-                                <span class="text-slate-400 block">HSTS Enforced</span>
-                                <span class="text-emerald-400 font-semibold">Yes &bull; max-age=31536000</span>
-                            </div>
-                        </div>
-                    </div>
+                <!-- CTAs -->
+                <div class="mt-10 flex flex-wrap justify-center gap-4">
+                    <a href="#plugins" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-sm shadow-xl shadow-cyan-500/25">
+                        <i class="fa-solid fa-puzzle-piece mr-2"></i>Explore WooCommerce Plugins
+                    </a>
+                    <a href="#themes" class="px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm border border-slate-700">
+                        <i class="fa-solid fa-paint-roller mr-2 text-cyan-400"></i>Browse Themes &amp; UI Kits
+                    </a>
                 </div>
 
-                <!-- Live Client Logos -->
-                <div class="mt-16 pt-8 border-t border-slate-900">
-                    <p class="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Compatible with All Major Web Infrastructure &amp; CMS</p>
-                    <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-slate-500 text-xl sm:text-2xl opacity-75">
-                        <span class="flex items-center space-x-2 font-bold text-slate-400"><i class="fa-brands fa-wordpress"></i> <span class="text-sm">WordPress</span></span>
-                        <span class="flex items-center space-x-2 font-bold text-slate-400"><i class="fa-brands fa-cloudflare"></i> <span class="text-sm">Cloudflare</span></span>
-                        <span class="flex items-center space-x-2 font-bold text-slate-400"><i class="fa-brands fa-node-js"></i> <span class="text-sm">Node.js</span></span>
-                        <span class="flex items-center space-x-2 font-bold text-slate-400"><i class="fa-brands fa-aws"></i> <span class="text-sm">AWS Cloud</span></span>
-                        <span class="flex items-center space-x-2 font-bold text-slate-400"><i class="fa-brands fa-linux"></i> <span class="text-sm">Nginx / Apache</span></span>
+                <!-- Studio Stats Bar -->
+                <div class="mt-16 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                        <span class="text-xs text-slate-400">Plugin Portfolio</span>
+                        <p class="text-2xl font-black text-white mt-1">8+ Products</p>
+                        <span class="text-[11px] text-cyan-400">&#10003; 100% GPL Compatible</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                        <span class="text-xs text-slate-400">WooCommerce Support</span>
+                        <p class="text-2xl font-black text-white mt-1">v8.9+ Ready</p>
+                        <span class="text-[11px] text-emerald-400">&#10003; HPOS Compatible</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                        <span class="text-xs text-slate-400">Active Stores</span>
+                        <p class="text-2xl font-black text-white mt-1">1,400+ Active</p>
+                        <span class="text-[11px] text-slate-400">Worldwide Deployments</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                        <span class="text-xs text-slate-400">Satisfaction Guarantee</span>
+                        <p class="text-2xl font-black text-emerald-400 mt-1">30 Days</p>
+                        <span class="text-[11px] text-emerald-400">&#10003; Full Money Back</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Bento-Grid Core Products Showcase -->
-        <section id="products" class="py-20 bg-slate-950 border-t border-slate-900">
+        <!-- SECTION 1: WooCommerce Payment Gateways Suite (The Core Plugins) -->
+        <section id="plugins" class="py-20 bg-slate-950 border-t border-slate-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">Enterprise Security Architecture</h2>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Everything You Need to Secure, Monitor &amp; Automate SSL</h3>
-                    <p class="text-slate-400 text-sm mt-3">From one-click WordPress HTTPS enforcement to automated API certificate ordering.</p>
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-950 border border-blue-800 text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">
+                            <i class="fa-solid fa-credit-card"></i> <span>Payment Infrastructure</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">High-Conversion WooCommerce Payment Gateways</h2>
+                        <p class="text-slate-400 text-sm mt-2">Tested, certified, and ready for instant activation. Eliminate abandoned carts with seamless checkout.</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-xs text-slate-400">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800"><i class="fa-brands fa-wordpress mr-1.5 text-blue-400"></i>WordPress 6.5+ &bull; WooCommerce 8.9+</span>
+                    </div>
                 </div>
 
-                <!-- Bento Grid Layout -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Bento 1: WordPress SSL Shield -->
-                    <div class="bento-card rounded-3xl p-8 md:col-span-2 flex flex-col justify-between">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Plugin 1: Stripe Gateway -->
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between shadow-xl">
                         <div>
-                            <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500 text-cyan-400 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-shield-virus"></i>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-2xl font-bold border border-indigo-500/40">
+                                    <i class="fa-brands fa-stripe-s"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-950 border border-emerald-800 text-emerald-400 text-[10px] font-black uppercase">Instant Download</span>
                             </div>
-                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Flagship WordPress Plugin</span>
-                            <h4 class="text-2xl font-extrabold text-white mt-1 mb-3">TechVerse SSL Shield &amp; HTTPS Enforcer</h4>
-                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                                Fix mixed content warnings, inject strict HSTS headers, and force automatic 301 redirects to HTTPS with zero code. Instant activation zip included.
+                            <h3 class="text-xl font-black text-white">TechVerse Stripe Gateway Pro</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Accept Credit Cards, Debit Cards, Apple Pay, Google Pay, and 3D Secure 2 authentication with seamless in-line card elements.
                             </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300 font-medium mb-6">
-                                <div class="p-3 bg-slate-950/70 rounded-xl border border-slate-800 flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2.5"></i>Automatic Mixed Content Fixer</div>
-                                <div class="p-3 bg-slate-950/70 rounded-xl border border-slate-800 flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2.5"></i>Strict-Transport-Security (HSTS)</div>
-                                <div class="p-3 bg-slate-950/70 rounded-xl border border-slate-800 flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2.5"></i>Zero-Impact Caching Friendly</div>
-                                <div class="p-3 bg-slate-950/70 rounded-xl border border-slate-800 flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2.5"></i>Instant Download (.zip)</div>
+                            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Apple Pay &amp; Google Pay Express</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>SCA &amp; 3D Secure 2 Compliant</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>HPOS &amp; Blocks Checkout Ready</div>
                             </div>
                         </div>
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                             <div>
-                                <span class="text-xs text-slate-400">Regular Price</span>
-                                <p class="text-2xl font-black text-white">$49 <span class="text-xs font-normal text-slate-400">/ Lifetime License</span></p>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                                <p class="text-2xl font-black text-white">$79 <span class="text-xs font-normal text-slate-400">USD</span></p>
                             </div>
-                            <a href="#pricing" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-all shadow-md">
-                                Order Plugin License
+                            <a href="contact.html?product=techverse-stripe-gateway" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
+                                Buy Plugin (.zip)
                             </a>
                         </div>
                     </div>
 
-                    <!-- Bento 2: 24/7 Expiry Watchdog -->
-                    <div class="bento-card rounded-3xl p-8 flex flex-col justify-between">
+                    <!-- Plugin 2: PayPal Advanced -->
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between shadow-xl">
                         <div>
-                            <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500 text-cyan-300 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-bell"></i>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl font-bold border border-blue-500/40">
+                                    <i class="fa-brands fa-paypal"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-950 border border-blue-800 text-blue-300 text-[10px] font-black uppercase">Smart Buttons</span>
                             </div>
-                            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Continuous Cloud Microservice</span>
-                            <h4 class="text-xl font-extrabold text-white mt-1 mb-2">24/7 Expiry Watchdog</h4>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Proactive multi-channel alerts (Email, Webhook, Telegram) 30, 14, and 3 days before any certificate expires. Never wake up to broken checkouts.
+                            <h3 class="text-xl font-black text-white">TechVerse PayPal Advanced Pro</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Modern PayPal Smart Checkout integration with Pay Later installment options, Venmo support, and instant IPN transaction reconciliation.
                             </p>
+                            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>PayPal Pay in 4 Installments</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Venmo Mobile Fast Checkout</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Zero Redirection Modal Option</div>
+                            </div>
                         </div>
-                        <div class="p-4 bg-slate-950/80 rounded-xl border border-slate-800 text-xs space-y-2">
-                            <div class="flex justify-between text-slate-400"><span>Target Host</span><span class="text-white font-mono">api.yourshop.com</span></div>
-                            <div class="flex justify-between text-slate-400"><span>Check Interval</span><span class="text-emerald-400 font-semibold">Every 60 Minutes</span></div>
-                            <div class="flex justify-between text-slate-400"><span>Failover Alert</span><span class="text-cyan-400 font-semibold">Instant Webhook</span></div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                                <p class="text-2xl font-black text-white">$69 <span class="text-xs font-normal text-slate-400">USD</span></p>
+                            </div>
+                            <a href="contact.html?product=techverse-paypal-advanced" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
+                                Buy Plugin (.zip)
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Bento 3: TLS Security Audit Engine -->
-                    <div class="bento-card rounded-3xl p-8 flex flex-col justify-between">
+                    <!-- Plugin 3: Paddle Gateway -->
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between shadow-xl border-2 border-cyan-500/80 relative">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-cyan-500 text-slate-950 font-black text-[10px] uppercase tracking-wider">Top Seller</span>
                         <div>
-                            <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500 text-indigo-400 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-2xl font-bold border border-cyan-500/40">
+                                    <i class="fa-solid fa-shield-heart"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-cyan-950 border border-cyan-800 text-cyan-300 text-[10px] font-black uppercase">Merchant of Record</span>
                             </div>
-                            <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Vulnerability Scanner</span>
-                            <h4 class="text-xl font-extrabold text-white mt-1 mb-2">TLS Security &amp; Cipher Audit</h4>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Audits SSL/TLS protocol configurations, weak deprecated ciphers (SSLv3, TLS 1.0, 1.1), Certificate Transparency logs, and OCSP stapling status.
+                            <h3 class="text-xl font-black text-white">TechVerse Paddle Billing Gateway</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Complete Paddle.com Checkout integration for WooCommerce. Offload global sales tax (VAT, GST) and fraud management automatically.
                             </p>
+                            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Automated Global VAT/GST Compliance</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Overlay &amp; Inline Checkout Modes</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Instant Webhook Fulfillment</div>
+                            </div>
                         </div>
-                        <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800 text-xs text-slate-300 font-mono">
-                            <span class="text-emerald-400 font-bold">&#10003; TLS 1.3 Strict Mode</span><br>
-                            <span class="text-emerald-400 font-bold">&#10003; 256-Bit Elliptic Curve Keys</span>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                                <p class="text-2xl font-black text-white">$89 <span class="text-xs font-normal text-slate-400">USD</span></p>
+                            </div>
+                            <a href="contact.html?product=techverse-paddle-gateway" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md transition-all">
+                                Buy Plugin (.zip)
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Bento 4: CSR & Private Key Studio -->
-                    <div class="bento-card rounded-3xl p-8 flex flex-col justify-between">
+                    <!-- Plugin 4: Mollie Multi-Currency -->
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between shadow-xl">
                         <div>
-                            <div class="w-12 h-12 rounded-2xl bg-teal-600/20 border border-teal-500 text-teal-400 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-key"></i>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center text-2xl font-bold border border-amber-500/40">
+                                    <i class="fa-solid fa-euro-sign"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-amber-400 text-[10px] font-black uppercase">European Multi-Pay</span>
                             </div>
-                            <span class="text-xs font-bold text-teal-400 uppercase tracking-wider">Cryptographic Tool</span>
-                            <h4 class="text-xl font-extrabold text-white mt-1 mb-2">CSR &amp; Private Key Studio</h4>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Generate compliant 2048/4096-bit RSA or ECC Certificate Signing Requests (CSR) with zero private key retention on server memory.
+                            <h3 class="text-xl font-black text-white">TechVerse Mollie Gateway</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Supports iDEAL, Bancontact, SEPA Bank Transfer, Sofort, and Cartes Bancaires. Essential for stores selling in Europe.
                             </p>
+                            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>20+ Local European Payment Methods</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>One-Click Recurring SEPA Orders</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Multi-Language Localized Screen</div>
+                            </div>
                         </div>
-                        <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800 text-xs text-slate-300 font-mono">
-                            <span class="text-cyan-400">openssl req -new -newkey rsa:2048</span>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                                <p class="text-2xl font-black text-white">$69 <span class="text-xs font-normal text-slate-400">USD</span></p>
+                            </div>
+                            <a href="contact.html?product=techverse-mollie-gateway" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
+                                Buy Plugin (.zip)
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Bento 5: TheSSLStore API Provisioner -->
-                    <div class="bento-card rounded-3xl p-8 flex flex-col justify-between">
+                    <!-- Plugin 5: Worldpay Enterprise -->
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between shadow-xl">
                         <div>
-                            <div class="w-12 h-12 rounded-2xl bg-amber-600/20 border border-amber-500 text-amber-400 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-network-wired"></i>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-red-600/20 text-red-400 flex items-center justify-center text-2xl font-bold border border-red-500/40">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-red-400 text-[10px] font-black uppercase">Enterprise Bank</span>
                             </div>
-                            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Direct CA Provisioning</span>
-                            <h4 class="text-xl font-extrabold text-white mt-1 mb-2">Automated CA API Provisioner</h4>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Direct programmatic issuance and renewal client for Sectigo, RapidSSL, and DigiCert enterprise certificates through our automated REST API.
+                            <h3 class="text-xl font-black text-white">TechVerse Worldpay Gateway</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Direct corporate Merchant Account integration with FIS Worldpay. Designed for high-volume transactions and enterprise merchants.
                             </p>
+                            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Direct XML Merchant Interface</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Multi-Currency Settlement (120+ Currencies)</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Enhanced Fraud Screening System</div>
+                            </div>
                         </div>
-                        <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-800 text-xs text-emerald-400 font-semibold">
-                            &bull; 5-Minute Fast DV Auto-Issuance
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                                <p class="text-2xl font-black text-white">$99 <span class="text-xs font-normal text-slate-400">USD</span></p>
+                            </div>
+                            <a href="contact.html?product=techverse-worldpay-gateway" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-all">
+                                Buy Plugin (.zip)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bundle: Complete Gateways Suite -->
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between shadow-2xl bg-gradient-to-b from-blue-950/70 via-slate-900 to-slate-950 border-2 border-indigo-500/80">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-indigo-950 border border-indigo-800 text-indigo-300 text-[10px] font-black uppercase">Full All-In-One</span>
+                                <span class="text-xs font-bold text-yellow-400"><i class="fa-solid fa-star mr-1"></i>Save $206</span>
+                            </div>
+                            <h3 class="text-xl font-black text-white">The Ultimate Gateways Bundle</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Get all 5 WooCommerce payment gateways (Stripe, PayPal, Paddle, Mollie, and Worldpay) in a single master developer pack with lifetime updates.
+                            </p>
+                            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>All 5 Gateway Plugins Included</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Unlimited Domain Activations</div>
+                                <div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Direct Senior Engineer Support</div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Bundle Deal</span>
+                                <p class="text-2xl font-black text-white">$199 <span class="text-xs line-through text-slate-500">$405</span></p>
+                            </div>
+                            <a href="contact.html?product=ultimate-gateways-bundle" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-bold text-xs shadow-lg transition-all">
+                                Get Master Pack
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Official SSL Certificates Catalog (GMC & Paddle Ready) -->
+        <!-- SECTION 2: WordPress Security & Performance Plugins -->
+        <section id="security" class="py-20 bg-slate-900/40 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">WordPress Infrastructure</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-1">WordPress Security &amp; Speed Plugins</h2>
+                    <p class="text-slate-400 text-sm mt-2">Zero-code optimization tools designed to protect your site and eliminate Google SEO penalties.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Plugin: SSL Shield -->
+                    <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition-all flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-2xl font-bold mb-4">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span class="text-xs font-bold text-cyan-400 uppercase">WordPress Security Core</span>
+                            <h3 class="text-2xl font-extrabold text-white mt-1">TechVerse SSL Shield &amp; HTTPS Enforcer</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Automatically fixes mixed-content HTTP scripts and images, injects strict HSTS headers, and enforces native 301 HTTPS redirects without server edits.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+                                <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Mixed Content Real-Time Dom Rewriter</li>
+                                <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>HSTS Security Header Engine (max-age=31536000)</li>
+                                <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Tested with LSCache, WP Rocket &amp; Cloudflare</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                                <p class="text-2xl font-black text-white">$49 <span class="text-xs font-normal text-slate-400">USD</span></p>
+                            </div>
+                            <a href="contact.html?product=techverse-ssl-shield" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md">
+                                Buy Plugin (.zip)
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service: 24/7 Expiry Watchdog -->
+                    <div class="p-8 rounded-3xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition-all flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-blue-600/20 text-blue-400 flex items-center justify-center text-2xl font-bold mb-4">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <span class="text-xs font-bold text-blue-400 uppercase">Continuous Monitoring</span>
+                            <h3 class="text-2xl font-extrabold text-white mt-1">24/7 Expiry Watchdog Microservice</h3>
+                            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                                Cloud microservice that continuously verifies your domain's TLS handshake across global edge nodes. Sends instant Telegram, Email, and Webhook alerts before any certificate expires.
+                            </p>
+                            <ul class="mt-4 space-y-2 text-xs text-slate-300">
+                                <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>60-Minute Heartbeat Checks</li>
+                                <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Multi-Channel Alerts (Email, Webhook, Telegram)</li>
+                                <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Up to 25 Domains per Account</li>
+                            </ul>
+                        </div>
+                        <div class="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-500 uppercase font-bold">Annual Subscription</span>
+                                <p class="text-2xl font-black text-white">$149 <span class="text-xs font-normal text-slate-400">/ Year</span></p>
+                            </div>
+                            <a href="contact.html?product=techverse-watchdog-service" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md">
+                                Subscribe to Watchdog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Premium SaaS & E-Commerce Themes -->
+        <section id="themes" class="py-20 bg-slate-950 border-t border-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Digital Design Studio</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-1">High-Conversion Digital Themes &amp; UI Kits</h2>
+                    <p class="text-slate-400 text-sm mt-2">Pixel-perfect, ultra-fast web templates built for software products, digital downloads, and stores.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="h-40 rounded-2xl bg-gradient-to-tr from-slate-900 via-blue-950 to-slate-900 border border-slate-800 flex items-center justify-center text-4xl text-cyan-400 mb-5">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-cyan-400 uppercase">SaaS Launch Theme</span>
+                            <h3 class="text-xl font-black text-white mt-1">TechVerse SaaS Prime Theme</h3>
+                            <p class="text-xs text-slate-400 mt-2">Engineered with Tailwind CSS and Alpine.js. Includes interactive pricing tables, bento features, and docs portal.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xl font-black text-white">$59 <span class="text-xs text-slate-500">USD</span></span>
+                            <a href="contact.html?theme=saas-prime" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs">Buy Theme Kit</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="h-40 rounded-2xl bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 border border-slate-800 flex items-center justify-center text-4xl text-indigo-400 mb-5">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-indigo-400 uppercase">WooCommerce Checkout</span>
+                            <h3 class="text-xl font-black text-white mt-1">TechVerse Checkout Pro Kit</h3>
+                            <p class="text-xs text-slate-400 mt-2">Eliminates standard clunky WooCommerce checkouts with a 1-step Apple-style frictionless payment funnel.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xl font-black text-white">$49 <span class="text-xs text-slate-500">USD</span></span>
+                            <a href="contact.html?theme=checkout-pro" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs">Buy Theme Kit</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card rounded-3xl p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="h-40 rounded-2xl bg-gradient-to-tr from-slate-900 via-cyan-950 to-slate-900 border border-slate-800 flex items-center justify-center text-4xl text-cyan-300 mb-5">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-cyan-400 uppercase">Agency Portfolio Kit</span>
+                            <h3 class="text-xl font-black text-white mt-1">TechVerse Agency Studio Theme</h3>
+                            <p class="text-xs text-slate-400 mt-2">Showcase digital services, client case studies, and plugin portfolios with high-impact dark aesthetics.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xl font-black text-white">$69 <span class="text-xs text-slate-500">USD</span></span>
+                            <a href="contact.html?theme=agency-studio" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs">Buy Theme Kit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Digital SSL Certificates & Enterprise Trust -->
         <section id="certificates" class="py-20 bg-slate-900/50 border-t border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Digital Certificate Catalog</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">Authorized SSL Certificates (Instant Delivery)</h3>
-                    <p class="text-slate-400 text-sm mt-3">All certificates include 256-bit encryption, warranty protection, and instant digital email issuance.</p>
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Digital Security Infrastructure</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-1">Authorized SSL Certificates (Instant Delivery)</h2>
+                    <p class="text-slate-400 text-sm mt-2">Official Sectigo &amp; DigiCert CA certificates with $10,000 to $2,000,000 warranties.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Certificate 1: Sectigo PositiveSSL (DV) -->
-                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition-all flex flex-col justify-between shadow-lg">
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
                         <div>
-                            <div class="inline-block px-2.5 py-1 rounded bg-blue-950 border border-blue-800 text-[10px] font-bold text-blue-300 uppercase mb-3">Domain Validation</div>
-                            <h4 class="text-lg font-bold text-white">Sectigo PositiveSSL (DV)</h4>
-                            <p class="text-xs text-slate-400 mt-2">Fast 5-minute domain validation. Perfect for blogs, landing pages, and small business sites.</p>
-                            <div class="my-4 text-xs space-y-1 text-slate-300">
-                                <div>&bull; $10,000 Warranty</div>
-                                <div>&bull; 99.9% Browser Trust</div>
-                                <div>&bull; 256-Bit Strong Encryption</div>
-                            </div>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-950 text-blue-300 uppercase">Domain Validation</span>
+                            <h4 class="text-base font-bold text-white mt-2">Sectigo PositiveSSL (DV)</h4>
+                            <p class="text-xs text-slate-400 mt-1">Fast 5-minute domain validation. Perfect for landing pages and blogs.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800">
-                            <div class="text-2xl font-black text-white mb-3">$19.00 <span class="text-xs font-normal text-slate-400">/ 1 Year</span></div>
-                            <a href="contact.html?product=SSL-POS-DV" class="block text-center py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all">
-                                Buy Certificate (Instant)
-                            </a>
-                            <span class="block text-[10px] text-slate-500 text-center mt-2">Instant Delivery &bull; $0.00 Shipping</span>
+                        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-lg font-black text-white">$19.00</span>
+                            <a href="contact.html?ssl=positive-dv" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold">Buy Cert</a>
                         </div>
                     </div>
 
-                    <!-- Certificate 2: Sectigo Wildcard -->
-                    <div class="p-6 rounded-2xl bg-slate-950 border-2 border-cyan-500/80 hover:border-cyan-400 transition-all flex flex-col justify-between shadow-xl relative">
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-cyan-500 text-slate-950 font-extrabold text-[10px] uppercase tracking-wider">Most Popular</span>
+                    <div class="p-6 rounded-2xl bg-slate-950 border-2 border-cyan-500 flex flex-col justify-between shadow-lg">
                         <div>
-                            <div class="inline-block px-2.5 py-1 rounded bg-cyan-950 border border-cyan-800 text-[10px] font-bold text-cyan-300 uppercase mb-3">Wildcard SSL</div>
-                            <h4 class="text-lg font-bold text-white">Sectigo Wildcard (*.domain)</h4>
-                            <p class="text-xs text-slate-400 mt-2">Secures your root domain and unlimited subdomains (*.domain.com) with a single certificate.</p>
-                            <div class="my-4 text-xs space-y-1 text-slate-300">
-                                <div>&bull; Unlimited Subdomains</div>
-                                <div>&bull; $50,000 Warranty</div>
-                                <div>&bull; Unlimited Server Licenses</div>
-                            </div>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-300 uppercase">Wildcard SSL</span>
+                            <h4 class="text-base font-bold text-white mt-2">Sectigo Wildcard (*.domain)</h4>
+                            <p class="text-xs text-slate-400 mt-1">Secures root domain and unlimited subdomains with a single cert.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800">
-                            <div class="text-2xl font-black text-white mb-3">$149.00 <span class="text-xs font-normal text-slate-400">/ 1 Year</span></div>
-                            <a href="contact.html?product=SSL-POS-WLD" class="block text-center py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs transition-all shadow-md">
-                                Buy Wildcard (Instant)
-                            </a>
-                            <span class="block text-[10px] text-slate-500 text-center mt-2">Instant Delivery &bull; $0.00 Shipping</span>
+                        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-lg font-black text-white">$149.00</span>
+                            <a href="contact.html?ssl=positive-wildcard" class="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-black">Buy Cert</a>
                         </div>
                     </div>
 
-                    <!-- Certificate 3: Sectigo PositiveSSL EV -->
-                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition-all flex flex-col justify-between shadow-lg">
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 flex flex-col justify-between">
                         <div>
-                            <div class="inline-block px-2.5 py-1 rounded bg-indigo-950 border border-indigo-800 text-[10px] font-bold text-indigo-300 uppercase mb-3">Extended Validation</div>
-                            <h4 class="text-lg font-bold text-white">Sectigo Instant EV SSL</h4>
-                            <p class="text-xs text-slate-400 mt-2">Extended business validation establishing authenticated corporate legitimacy and higher conversions.</p>
-                            <div class="my-4 text-xs space-y-1 text-slate-300">
-                                <div>&bull; $1,000,000 Warranty</div>
-                                <div>&bull; Corporate Identity Vetting</div>
-                                <div>&bull; Maximum Buyer Trust</div>
-                            </div>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 uppercase">Extended Validation</span>
+                            <h4 class="text-base font-bold text-white mt-2">Sectigo EV SSL</h4>
+                            <p class="text-xs text-slate-400 mt-1">Vetted corporate identity with $1,000,000 warranty protection.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800">
-                            <div class="text-2xl font-black text-white mb-3">$399.00 <span class="text-xs font-normal text-slate-400">/ 1 Year</span></div>
-                            <a href="contact.html?product=SSL-POS-EV" class="block text-center py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all">
-                                Buy EV Certificate
-                            </a>
-                            <span class="block text-[10px] text-slate-500 text-center mt-2">Instant Delivery &bull; $0.00 Shipping</span>
+                        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-lg font-black text-white">$399.00</span>
+                            <a href="contact.html?ssl=positive-ev" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-bold">Buy Cert</a>
                         </div>
                     </div>
 
-                    <!-- Certificate 4: Enterprise SAN Retainer -->
-                    <div class="p-6 rounded-2xl bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 border border-amber-500/50 hover:border-amber-400 transition-all flex flex-col justify-between shadow-2xl">
+                    <div class="p-6 rounded-2xl bg-slate-950 border border-amber-500/60 flex flex-col justify-between">
                         <div>
-                            <div class="inline-block px-2.5 py-1 rounded bg-amber-950/80 border border-amber-800 text-[10px] font-bold text-amber-300 uppercase mb-3">High-Ticket Enterprise</div>
-                            <h4 class="text-lg font-bold text-white">DigiCert EV SAN Suite</h4>
-                            <p class="text-xs text-slate-400 mt-2">Complete 3-year enterprise bundle securing up to 25 corporate domains + 24/7 dedicated concierge.</p>
-                            <div class="my-4 text-xs space-y-1 text-slate-300">
-                                <div>&bull; Up to 25 Corporate Domains</div>
-                                <div>&bull; $2,000,000 CA Warranty</div>
-                                <div>&bull; Done-For-You VIP Installation</div>
-                            </div>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-950 text-amber-300 uppercase">High-Ticket VIP</span>
+                            <h4 class="text-base font-bold text-white mt-2">DigiCert EV SAN Suite</h4>
+                            <p class="text-xs text-slate-400 mt-1">3-Year Enterprise Bundle for 25 domains + Done-For-You VIP Concierge.</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800">
-                            <div class="text-2xl font-black text-white mb-3">$6,499.00 <span class="text-xs font-normal text-slate-400">/ 3-Year Retainer</span></div>
-                            <a href="contact.html?product=SSL-ENT-SAN3Y" class="block text-center py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 font-black text-xs transition-all shadow-md">
-                                Order Enterprise Suite
-                            </a>
-                            <span class="block text-[10px] text-slate-500 text-center mt-2">Instant Delivery &bull; Dedicated VIP SLA</span>
+                        <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-lg font-black text-amber-400">$6,499.00</span>
+                            <a href="contact.html?ssl=enterprise-san" class="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 text-xs font-black">Retainer</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Transparent SaaS Plans & Pricing (Paddle Compliant) -->
-        <section id="pricing" class="py-20 bg-slate-950 border-t border-slate-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Transparent Licensing</span>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">Simple Pricing with 30-Day Money-Back Guarantee</h3>
-                    <p class="text-slate-400 text-sm mt-3">All plans are processed securely via Paddle.com. Cancel anytime with zero hidden penalties.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Starter Plan -->
-                    <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Single Site</h4>
-                            <p class="text-xs text-slate-400 mt-1">For single stores and individual creators</p>
-                            <div class="mt-6 mb-6">
-                                <span class="text-4xl font-black text-white">$49</span>
-                                <span class="text-xs text-slate-400">/ one-time payment</span>
-                            </div>
-                            <ul class="space-y-3 text-xs text-slate-300">
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>1 WordPress Production Site</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Automatic Mixed Content Fixer</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>HSTS Security Header Engine</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>1 Year Continuous Updates</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>30-Day Money-Back Guarantee</li>
-                            </ul>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-slate-800">
-                            <a href="contact.html?plan=starter" class="block text-center py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-all border border-slate-700">
-                                Buy Single License
-                            </a>
-                            <span class="block text-[10px] text-slate-500 text-center mt-2">Instant Digital Download</span>
-                        </div>
-                    </div>
-
-                    <!-- Agency Plan (Featured) -->
-                    <div class="p-8 rounded-3xl bg-slate-900 border-2 border-cyan-500 flex flex-col justify-between shadow-2xl relative">
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-cyan-500 text-slate-950 font-extrabold text-[10px] uppercase tracking-wider">Agency Choice</span>
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Agency Multi-Domain</h4>
-                            <p class="text-xs text-slate-400 mt-1">For web agencies managing multiple client stores</p>
-                            <div class="mt-6 mb-6">
-                                <span class="text-4xl font-black text-white">$149</span>
-                                <span class="text-xs text-slate-400">/ annual license</span>
-                            </div>
-                            <ul class="space-y-3 text-xs text-slate-300">
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Up to 25 Production Domains</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>24/7 Continuous Expiry Watchdog</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Telegram &amp; Email Expiry Alerts</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Automated Mixed Content Resolver</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Priority Technical Support</li>
-                            </ul>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-slate-800">
-                            <a href="contact.html?plan=agency" class="block text-center py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs transition-all shadow-lg shadow-cyan-500/25">
-                                Start 30-Day Risk-Free Trial
-                            </a>
-                            <span class="block text-[10px] text-slate-400 text-center mt-2">Instant License Activation</span>
-                        </div>
-                    </div>
-
-                    <!-- Enterprise Suite -->
-                    <div class="p-8 rounded-3xl bg-slate-900/60 border border-slate-800 flex flex-col justify-between">
-                        <div>
-                            <h4 class="text-xl font-bold text-white">Enterprise Global</h4>
-                            <p class="text-xs text-slate-400 mt-1">For SaaS platforms and large e-commerce networks</p>
-                            <div class="mt-6 mb-6">
-                                <span class="text-4xl font-black text-white">$499</span>
-                                <span class="text-xs text-slate-400">/ annual license</span>
-                            </div>
-                            <ul class="space-y-3 text-xs text-slate-300">
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Unlimited Domains &amp; Subdomains</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Automated CA Provisioning REST API</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Custom Webhook Infrastructure</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>Dedicated Security Account Manager</li>
-                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2.5"></i>99.99% Guaranteed SLA</li>
-                            </ul>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-slate-800">
-                            <a href="contact.html?plan=enterprise" class="block text-center py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-all border border-slate-700">
-                                Contact Enterprise Desk
-                            </a>
-                            <span class="block text-[10px] text-slate-500 text-center mt-2">Custom Deployment Included</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Frequently Asked Questions (FAQ Accordion for GMC & Paddle Clarity) -->
-        <section class="py-20 bg-slate-900/40 border-t border-slate-800">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-14">
-                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Buyer Clarity &amp; Assurance</span>
-                    <h3 class="text-3xl font-extrabold text-white tracking-tight mt-1">Frequently Asked Questions</h3>
-                </div>
-
-                <div class="space-y-4 text-sm">
-                    <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800">
-                        <h4 class="text-white font-bold text-base mb-2">How do I receive my purchased plugins or certificate licenses?</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Delivery is 100% digital and instant. As soon as your order completes through Paddle, your license key and download links appear immediately on the order confirmation screen and are sent to your billing email address within 60 seconds. There are zero shipping fees.
-                        </p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800">
-                        <h4 class="text-white font-bold text-base mb-2">What is your refund policy?</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            We provide an unconditional 30-day money-back guarantee. If you are not completely satisfied or experience technical incompatibilities, simply email support@techversestudio.com or visit paddle.net with your Order ID for a prompt 100% refund.
-                        </p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800">
-                        <h4 class="text-white font-bold text-base mb-2">Who appears on my credit card or bank billing statement?</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            Because Paddle.com is the Merchant of Record for all our orders, the transaction will appear as "PADDLE.NET * TECHVERSE" on your credit card or bank statement.
-                        </p>
-                    </div>
-
-                    <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800">
-                        <h4 class="text-white font-bold text-base mb-2">Does the WordPress SSL Shield plugin slow down my website?</h4>
-                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
-                            No. TechVerse SSL Shield is engineered for zero overhead (&lt; 0.001s execution). It injects lightweight HTTP security headers and leverages native server-level redirects without heavy database queries.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -501,101 +524,63 @@
     <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <!-- Brand Summary -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
-                        <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-9 h-9 object-contain">
-                        <span class="text-lg font-extrabold text-white">TechVerse Studio</span>
+                        <img src="assets/logos/logo1.svg" alt="TechVerse Studio 3D Logo" class="w-9 h-9 object-contain">
+                        <span class="text-lg font-black text-white">TechVerse Studio</span>
                     </div>
                     <p class="leading-relaxed text-xs">
-                        Continuous SSL certificate monitoring, automated WordPress security enforcement, and developer cryptographic tools built by TechVerse LLC.
+                        Official software studio of TechVerse LLC. High-performance WooCommerce payment gateways, WordPress optimization plugins, digital themes, and enterprise SSL solutions.
                     </p>
-                    <p class="text-[11px] text-slate-500">
-                        &copy; 2026 TechVerse LLC. All rights reserved.
-                    </p>
+                    <p class="text-[11px] text-slate-500">&copy; 2026 TechVerse LLC. All rights reserved.</p>
                 </div>
 
-                <!-- Products -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4 text-sm">Products &amp; Tools</h4>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Plugins &amp; Software</h4>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="#products" class="hover:text-cyan-400 transition-colors">TechVerse SSL Shield (WP)</a></li>
-                        <li><a href="#products" class="hover:text-cyan-400 transition-colors">24/7 Expiry Watchdog</a></li>
-                        <li><a href="#products" class="hover:text-cyan-400 transition-colors">Security Headers Auditor</a></li>
-                        <li><a href="#products" class="hover:text-cyan-400 transition-colors">CSR &amp; Key Studio</a></li>
-                        <li><a href="#certificates" class="hover:text-cyan-400 transition-colors">Digital SSL Certificates</a></li>
+                        <li><a href="#plugins" class="hover:text-cyan-400">TechVerse Stripe Gateway Pro</a></li>
+                        <li><a href="#plugins" class="hover:text-cyan-400">TechVerse PayPal Advanced Pro</a></li>
+                        <li><a href="#plugins" class="hover:text-cyan-400">TechVerse Paddle Billing Gateway</a></li>
+                        <li><a href="#plugins" class="hover:text-cyan-400">TechVerse Mollie Multi-Currency</a></li>
+                        <li><a href="#security" class="hover:text-cyan-400">TechVerse SSL Shield (WP)</a></li>
                     </ul>
                 </div>
 
-                <!-- Legal Policies for Paddle & GMC -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4 text-sm">Customer Policies</h4>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Policies &amp; Compliance</h4>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms of Service</a></li>
-                        <li><a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a></li>
-                        <li><a href="refund.html" class="hover:text-cyan-400 transition-colors">Refund &amp; Cancellation Policy</a></li>
-                        <li><a href="delivery.html" class="hover:text-cyan-400 transition-colors">Shipping &amp; Delivery Policy</a></li>
-                        <li><a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact Support Desk</a></li>
+                        <li><a href="terms.html" class="hover:text-cyan-400">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="hover:text-cyan-400">Privacy Policy</a></li>
+                        <li><a href="refund.html" class="hover:text-cyan-400">Refund &amp; Cancellation Policy</a></li>
+                        <li><a href="delivery.html" class="hover:text-cyan-400">Shipping &amp; Delivery Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-cyan-400">Contact Support Desk</a></li>
                     </ul>
                 </div>
 
-                <!-- Legal Company Identity for GMC / Paddle Verification -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4 text-sm">Corporate Identification</h4>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Corporate Identification</h4>
                     <p class="text-slate-200 font-bold">TechVerse LLC (DBA TechVerse Studio)</p>
-                    <p class="mt-1 text-slate-400 leading-relaxed text-xs">
-                        6346 Cresterrace Dr<br>
-                        Pasadena, TX 77505<br>
-                        United States of America
-                    </p>
-                    <p class="mt-2 text-slate-300">Support: <a href="mailto:support@techversestudio.com" class="text-cyan-400 hover:underline">support@techversestudio.com</a></p>
+                    <p class="mt-1 text-slate-400 text-xs">6346 Cresterrace Dr, Pasadena, TX 77505, USA</p>
+                    <p class="mt-2 text-slate-300">Support: <a href="mailto:support@techversestudio.com" class="text-cyan-400">support@techversestudio.com</a></p>
                     <p class="text-slate-300">Helpline: <span class="text-slate-400">+1 (832) 555-0198</span></p>
                 </div>
             </div>
 
-            <!-- Accepted Payment Badges & Paddle Reseller Disclosure -->
             <div class="pt-8 border-t border-slate-900 flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-3.5 text-slate-400 text-2xl">
-                    <i class="fa-brands fa-cc-visa hover:text-white transition-colors" title="Visa"></i>
-                    <i class="fa-brands fa-cc-mastercard hover:text-white transition-colors" title="Mastercard"></i>
-                    <i class="fa-brands fa-cc-amex hover:text-white transition-colors" title="American Express"></i>
-                    <i class="fa-brands fa-cc-discover hover:text-white transition-colors" title="Discover"></i>
-                    <i class="fa-brands fa-cc-paypal hover:text-white transition-colors" title="PayPal"></i>
-                    <i class="fa-brands fa-apple-pay hover:text-white transition-colors" title="Apple Pay"></i>
-                    <i class="fa-brands fa-google-pay hover:text-white transition-colors" title="Google Pay"></i>
+                    <i class="fa-brands fa-cc-visa hover:text-white" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard hover:text-white" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-amex hover:text-white" title="American Express"></i>
+                    <i class="fa-brands fa-cc-discover hover:text-white" title="Discover"></i>
+                    <i class="fa-brands fa-cc-paypal hover:text-white" title="PayPal"></i>
+                    <i class="fa-brands fa-apple-pay hover:text-white" title="Apple Pay"></i>
+                    <i class="fa-brands fa-google-pay hover:text-white" title="Google Pay"></i>
                 </div>
                 <div class="text-[11px] text-slate-400 text-center sm:text-right max-w-xl leading-relaxed">
-                    Our order process is conducted by our online reseller <strong class="text-white">Paddle.com</strong>. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries, tax compliance, and handles returns.
+                    Our order process is conducted by our online reseller <strong class="text-white">Paddle.com</strong>. Paddle.com is the Merchant of Record for all our orders. Paddle handles customer billing, tax compliance, and returns.
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Interactive Live Scanner Script -->
-    <script>
-        function runAudit() {
-            const input = document.getElementById('targetDomain').value.trim();
-            if (!input) {
-                alert('Please enter a domain name to test.');
-                return;
-            }
-
-            const btn = document.getElementById('scanBtn');
-            const resultBox = document.getElementById('scanResult');
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i> Analyzing TLS...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-bolt mr-2 text-yellow-300"></i> Test Live Certificate';
-                btn.disabled = false;
-                resultBox.classList.remove('hidden');
-
-                const clean = input.replace(/^https?:\/\//i, '').split('/')[0];
-                document.getElementById('scannedDomainTitle').innerText = clean;
-                document.getElementById('issuerText').innerText = 'Sectigo / Let\'s Encrypt TLS CA';
-                document.getElementById('daysRemainingBadge').innerText = 'Active (Valid Certificate)';
-            }, 850);
-        }
-    </script>
 </body>
 </html>
