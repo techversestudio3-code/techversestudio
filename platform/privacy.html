@@ -4,78 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | TechVerse Studio</title>
+    <meta name="description" content="Privacy Policy and GDPR/CCPA data handling disclosures for TechVerse Studio.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-200 antialiased min-h-screen flex flex-col font-sans">
-    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3">
-                <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">
-                    <i class="fa-solid fa-shield-halved"></i>
+<body class="bg-slate-950 text-slate-200 antialiased min-h-screen flex flex-col font-sans selection:bg-blue-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(56,189,248,0.5)] transition-transform group-hover:scale-105">
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">TechVerse <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Studio</span></span>
+                    <span class="block text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Enterprise Security Suite</span>
                 </div>
-                <span class="text-xl font-bold text-white">TechVerse <span class="text-blue-400">Studio</span></span>
             </a>
-            <a href="index.html" class="text-sm font-semibold text-blue-400 hover:text-blue-300">&larr; Back to Platform</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="index.html#products" class="hover:text-blue-400 transition-colors">Products &amp; Plugins</a>
+                <a href="index.html#scanner" class="hover:text-blue-400 transition-colors">Live Scanner</a>
+                <a href="index.html#pricing" class="hover:text-blue-400 transition-colors">Pricing Plans</a>
+                <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact Support</a>
+            </nav>
+            <a href="index.html" class="inline-flex items-center space-x-2 text-sm font-semibold text-blue-400 hover:text-blue-300">
+                <span>&larr; Back to Platform</span>
+            </a>
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto px-4 py-16">
-        <h1 class="text-3xl font-extrabold text-white mb-2">Privacy Policy</h1>
-        <p class="text-slate-400 text-sm mb-10">Last updated: November 2026 &bull; TechVerse LLC</p>
+    <!-- Main Content -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="border-b border-slate-800 pb-8 mb-10">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Privacy Policy</h1>
+            <p class="text-sm text-slate-400 mt-2">Last Updated: November 19, 2026 &bull; Compliant with GDPR, CCPA, and Global Consumer Privacy Frameworks</p>
+        </div>
 
-        <div class="space-y-8 text-sm text-slate-300 leading-relaxed">
-            <section>
-                <h2 class="text-lg font-bold text-white mb-3">1. Information We Collect</h2>
+        <div class="space-y-8 text-slate-300 text-sm leading-relaxed">
+            <div>
+                <h2 class="text-lg font-bold text-white mb-2">1. Who We Are</h2>
                 <p>
-                    TechVerse LLC ("Company", "we") operates techversestudio.com. When you register, monitor domains, or subscribe to our tools, we collect:
+                    TechVerse Studio is a web security and certificate automation software platform operated by <strong class="text-white">TechVerse LLC</strong> (6346 Cresterrace Dr, Pasadena, TX 77505, USA). We respect your privacy and are committed to protecting personal data collected via our website, API endpoints, and WordPress plugins.
                 </p>
-                <ul class="list-disc pl-5 mt-2 space-y-1">
-                    <li>Contact details: Name and email address.</li>
-                    <li>Technical data: Monitored domain hostnames, SSL certificate public metadata, and IP addresses for rate-limiting.</li>
-                    <li>Billing information: Handled directly and securely by our Merchant of Record, Paddle.com. We do not store sensitive payment card details on our servers.</li>
+            </div>
+
+            <div class="p-5 rounded-xl bg-slate-900 border border-slate-800">
+                <h2 class="text-lg font-bold text-white mb-2">2. Payment Processing (Paddle)</h2>
+                <p>
+                    All payment transactions on our website are managed and processed securely by our Merchant of Record, <strong class="text-white">Paddle.com</strong>. We never store, process, or transmit your credit card numbers, CVVs, or full payment details on our local servers. When you purchase our software, your payment credentials are transmitted directly via 256-bit encrypted channels to Paddle, adhering to PCI-DSS Level 1 compliance.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-bold text-white mb-2">3. Information We Collect</h2>
+                <ul class="list-disc pl-5 space-y-1 text-slate-400">
+                    <li><strong class="text-slate-200">Account &amp; Contact Data:</strong> Name, email address, company name, and phone number when submitting support requests or licensing software.</li>
+                    <li><strong class="text-slate-200">Technical Diagnostic Data:</strong> Target domain names submitted for SSL scanning, public cryptographic certificate expiration dates, and server cipher suite responses. We never inspect private encryption keys or backend server databases.</li>
+                    <li><strong class="text-slate-200">Cookie &amp; Analytics Data:</strong> Minimal session cookies necessary for website security, authentication, and load balancing.</li>
                 </ul>
-            </section>
+            </div>
 
-            <section>
-                <h2 class="text-lg font-bold text-white mb-3">2. How We Use Your Data</h2>
-                <p>
-                    We use collected information solely to:
-                </p>
-                <ul class="list-disc pl-5 mt-2 space-y-1">
-                    <li>Deliver real-time SSL validity scans and automated expiration alert notifications.</li>
-                    <li>Provide license keys and updates for the TechVerse SSL Shield WordPress plugin.</li>
-                    <li>Improve infrastructure reliability and prevent malicious API exploitation.</li>
+            <div>
+                <h2 class="text-lg font-bold text-white mb-2">4. How We Use Your Data</h2>
+                <p>We use your information exclusively to:</p>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-400">
+                    <li>Issue and validate digital software licenses and API keys.</li>
+                    <li>Deliver real-time SSL expiration alerts and automated security reports.</li>
+                    <li>Provide responsive 24/7 technical customer support.</li>
+                    <li>Maintain platform security and prevent fraudulent transactions.</li>
                 </ul>
-            </section>
+            </div>
 
-            <section>
-                <h2 class="text-lg font-bold text-white mb-3">3. Third-Party Reseller (Paddle.com)</h2>
+            <div>
+                <h2 class="text-lg font-bold text-white mb-2">5. GDPR &amp; CCPA Consumer Rights</h2>
                 <p>
-                    All checkout and subscription transactions are fulfilled by Paddle.com Market Limited. Paddle operates as an independent Data Controller for customer payment information under GDPR and PCI-DSS Level 1 compliance.
+                    Regardless of your geographic location, you retain the right to:
                 </p>
-            </section>
+                <ul class="list-disc pl-5 mt-2 space-y-1 text-slate-400">
+                    <li>Request a copy of the personal data we hold about you.</li>
+                    <li>Request correction or complete deletion of your account and personal records ("Right to be Forgotten").</li>
+                    <li>Opt out of marketing communications at any time.</li>
+                </ul>
+                <p class="mt-2 text-slate-400">
+                    To exercise any of these rights, simply email our dedicated privacy officer at <a href="mailto:support@techversestudio.com" class="text-blue-400 underline">support@techversestudio.com</a>. Requests are resolved within 48 business hours.
+                </p>
+            </div>
 
-            <section>
-                <h2 class="text-lg font-bold text-white mb-3">4. Data Security</h2>
-                <p>
-                    We implement modern TLS 1.3 encryption, firewalls, and strict access controls. Private keys generated via our client-side CSR utility are created locally in your browser and are never transmitted to our backend.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-lg font-bold text-white mb-3">5. Contact Us</h2>
-                <p>
-                    TechVerse LLC<br>
-                    6346 Cresterrace Dr, Pasadena, TX 77505, USA<br>
-                    Data Protection Contact: privacy@techversestudio.com
-                </p>
-            </section>
+            <div>
+                <h2 class="text-lg font-bold text-white mb-2">6. Privacy Inquiries &amp; Data Controller</h2>
+                <div class="mt-2 p-4 rounded-lg bg-slate-900 border border-slate-800 text-xs">
+                    <p class="text-white font-semibold">TechVerse LLC (Data Protection Officer)</p>
+                    <p class="text-slate-400">6346 Cresterrace Dr, Pasadena, TX 77505, USA</p>
+                    <p class="text-slate-400 mt-1">Direct Privacy Contact: <a href="mailto:support@techversestudio.com" class="text-blue-400">support@techversestudio.com</a></p>
+                </div>
+            </div>
         </div>
     </main>
 
-    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
-        &copy; 2026 TechVerse LLC. All rights reserved.
+    <!-- Unified Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-8 h-8 object-contain">
+                        <span class="text-lg font-extrabold text-white">TechVerse Studio</span>
+                    </div>
+                    <p class="leading-relaxed">
+                        Automated SSL expiration monitoring, one-click WordPress HTTPS enforcement, and developer cryptographic tools.
+                    </p>
+                    <p class="text-[11px] text-slate-500">
+                        &copy; 2026 TechVerse LLC. All rights reserved.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Products &amp; Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#products" class="hover:text-blue-400 transition-colors">TechVerse SSL Shield (WP)</a></li>
+                        <li><a href="index.html#products" class="hover:text-blue-400 transition-colors">24/7 Expiry Watchdog</a></li>
+                        <li><a href="index.html#products" class="hover:text-blue-400 transition-colors">Security Headers Auditor</a></li>
+                        <li><a href="index.html#products" class="hover:text-blue-400 transition-colors">CSR &amp; Key Studio</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Customer Policies</h4>
+                    <ul class="space-y-2">
+                        <li><a href="terms.html" class="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy.html" class="text-blue-400 font-semibold transition-colors">Privacy Policy</a></li>
+                        <li><a href="refund.html" class="hover:text-blue-400 transition-colors">Refund &amp; Cancellation Policy</a></li>
+                        <li><a href="delivery.html" class="hover:text-blue-400 transition-colors">Shipping &amp; Delivery Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-400 transition-colors">Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4 text-sm">Business Identification</h4>
+                    <p class="text-slate-300 font-medium">TechVerse LLC</p>
+                    <p class="mt-1">6346 Cresterrace Dr, Pasadena, TX 77505, USA</p>
+                    <p class="mt-2 text-slate-300">Support: <a href="mailto:support@techversestudio.com" class="text-blue-400 hover:underline">support@techversestudio.com</a></p>
+                    <p class="text-slate-300">Phone: <span class="text-slate-400">+1 (832) 555-0198</span></p>
+                </div>
+            </div>
+
+            <!-- Accepted Payment Badges -->
+            <div class="pt-6 border-t border-slate-900 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center space-x-3 text-slate-500 text-lg">
+                    <i class="fa-brands fa-cc-visa hover:text-slate-300 transition-colors" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard hover:text-slate-300 transition-colors" title="Mastercard"></i>
+                    <i class="fa-brands fa-cc-amex hover:text-slate-300 transition-colors" title="American Express"></i>
+                    <i class="fa-brands fa-cc-discover hover:text-slate-300 transition-colors" title="Discover"></i>
+                    <i class="fa-brands fa-cc-paypal hover:text-slate-300 transition-colors" title="PayPal"></i>
+                    <i class="fa-brands fa-apple-pay hover:text-slate-300 transition-colors" title="Apple Pay"></i>
+                    <i class="fa-brands fa-google-pay hover:text-slate-300 transition-colors" title="Google Pay"></i>
+                </div>
+                <div class="text-[11px] text-slate-500 text-center sm:text-right max-w-xl">
+                    Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns.
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
