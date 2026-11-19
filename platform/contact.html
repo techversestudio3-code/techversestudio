@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support | TechVerse Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-slate-200 antialiased min-h-screen flex flex-col font-sans">
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <span class="text-xl font-bold text-white">TechVerse <span class="text-blue-400">Studio</span></span>
+            </a>
+            <a href="index.html" class="text-sm font-semibold text-blue-400 hover:text-blue-300">&larr; Back to Platform</a>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-4xl mx-auto px-4 py-16">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h1 class="text-3xl font-extrabold text-white">Get in Touch with Our Team</h1>
+            <p class="text-slate-400 text-sm mt-3">We provide 24/7 technical assistance for the TechVerse SSL Shield plugin, API subscriptions, and enterprise monitoring deployments.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Contact Info Card -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 space-y-6">
+                <div>
+                    <h3 class="text-white font-bold text-base mb-1">Company Headquarters</h3>
+                    <p class="text-sm text-slate-300">TechVerse LLC</p>
+                    <p class="text-xs text-slate-400 mt-1">6346 Cresterrace Dr<br>Pasadena, TX 77505<br>United States of America</p>
+                </div>
+
+                <div class="pt-6 border-t border-slate-800">
+                    <h3 class="text-white font-bold text-base mb-1">Customer Support Inquiries</h3>
+                    <p class="text-xs text-slate-400">For billing, license keys, and technical assistance:</p>
+                    <a href="mailto:support@techversestudio.com" class="text-blue-400 font-semibold text-sm hover:underline mt-1 block">support@techversestudio.com</a>
+                </div>
+
+                <div class="pt-6 border-t border-slate-800">
+                    <h3 class="text-white font-bold text-base mb-1">Support Response SLA</h3>
+                    <p class="text-xs text-slate-400">Typical response time: Within 24 business hours.</p>
+                </div>
+            </div>
+
+            <!-- Interactive Message Form -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+                <form onsubmit="event.preventDefault(); document.getElementById('successMsg').classList.remove('hidden');" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name</label>
+                        <input type="text" required placeholder="Your name" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Work Email</label>
+                        <input type="email" required placeholder="you@company.com" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Subject</label>
+                        <input type="text" required placeholder="Plugin Support / Enterprise Licensing" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Message</label>
+                        <textarea rows="4" required placeholder="How can we help your team?" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-lg transition-all shadow-lg shadow-blue-600/30">
+                        Send Message
+                    </button>
+                    <div id="successMsg" class="hidden p-3 bg-emerald-950/80 border border-emerald-800 text-emerald-400 rounded-lg text-xs text-center">
+                        Message sent successfully! Our technical team will reach out shortly.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        &copy; 2026 TechVerse LLC. All rights reserved.
+    </footer>
+</body>
+</html>

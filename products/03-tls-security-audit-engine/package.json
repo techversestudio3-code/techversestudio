@@ -1,0 +1,11 @@
+{
+  "name": "techverse-tls-security-audit-engine",
+  "version": "1.0.0",
+  "description": "Enterprise HTTPS & Security Headers Compliance Auditor by TechVerse LLC",
+  "main": "audit.js",
+  "bin": {
+    "techverse-audit": "./cli.js"
+  },
+  "author": "TechVerse LLC (https://techversestudio.com)",
+  "license": "MIT"
+}

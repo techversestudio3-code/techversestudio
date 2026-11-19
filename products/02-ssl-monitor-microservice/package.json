@@ -1,0 +1,16 @@
+{
+  "name": "techverse-ssl-monitor-api",
+  "version": "1.0.0",
+  "description": "Enterprise Automated SSL Monitoring & Alerting Microservice by TechVerse LLC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["ssl", "tls", "monitoring", "techverse", "security", "saas"],
+  "author": "TechVerse LLC (https://techversestudio.com)",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
