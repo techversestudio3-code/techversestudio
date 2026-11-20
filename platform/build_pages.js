@@ -65,21 +65,21 @@ const products = [
     ]
   },
   {
-    id: "paddle-gateway",
-    name: "TechVerse Paddle Billing Gateway",
+    id: "payflow-gateway",
+    name: "TechVerse PayFlow Subscriptions Gateway",
     category: "gateways",
-    categoryLabel: "Merchant of Record",
+    categoryLabel: "WooCommerce Gateway",
     price: 89,
     originalPrice: 149,
     rating: 5.0,
     reviews: 82,
-    badge: "Top Seller & MoR",
+    badge: "Top Seller",
     badgeColor: "cyan",
-    icon: "fa-solid fa-shield-heart",
+    icon: "fa-solid fa-credit-card",
     iconColor: "cyan",
-    zipUrl: "downloads/techverse-paddle-gateway.zip",
-    shortDesc: "Complete Paddle.com Checkout integration for WooCommerce. Offload global sales tax (VAT, GST) and fraud management automatically.",
-    fullDesc: "TechVerse Paddle Billing Gateway turns WooCommerce into a global SaaS and digital software sales machine. Acting as your Merchant of Record, Paddle takes care of sales tax liabilities (EU VAT, US State Tax, UK VAT, Australian GST) and chargeback defense so you can sell software globally with zero compliance headaches.",
+    zipUrl: "downloads/techverse-payflow-gateway.zip",
+    shortDesc: "Complete global billing and automated subscriptions integration for WooCommerce with zero-redirect checkout and instant fulfillment.",
+    fullDesc: "TechVerse PayFlow Subscriptions Gateway turns WooCommerce into a high-powered recurring billing and digital software sales platform. Supports automated global sales tax calculations (VAT/GST), customized inline modal checkouts, and chargeback mitigation.",
     specs: {
       "WordPress Compatibility": "6.0, 6.1, 6.2, 6.3, 6.4, 6.5+",
       "WooCommerce Compatibility": "v8.0 to v9.2+ (HPOS Certified)",
@@ -88,10 +88,10 @@ const products = [
       "Updates & Support": "Lifetime Updates & 1-Year Support"
     },
     features: [
-      "Automatic global VAT/GST calculation and remittance by Paddle",
-      "Seamless overlay & inline checkout iframe options",
+      "Automated global VAT/GST calculation and customer location detection",
+      "Seamless overlay & inline checkout modal options",
       "Built-in recurring subscriptions & license key delivery",
-      "Zero chargeback liability for digital sellers",
+      "Advanced fraud screening & 3DS2 card authentication",
       "Instant webhook listener with signature verification"
     ]
   },
@@ -171,8 +171,8 @@ const products = [
     icon: "fa-solid fa-layer-group",
     iconColor: "indigo",
     zipUrl: "downloads/techverse-stripe-gateway.zip",
-    shortDesc: "Get all 5 WooCommerce payment gateways (Stripe, PayPal, Paddle, Mollie, and Worldpay) in a single master developer pack with lifetime updates.",
-    fullDesc: "The complete toolkit for WooCommerce agencies, freelance developers, and multi-store operators. Contains all 5 enterprise payment gateways (Stripe, PayPal, Paddle, Mollie, Worldpay) with an unlimited domain license and priority updates for life.",
+    shortDesc: "Get all 5 WooCommerce payment gateways (Stripe, PayPal, PayFlow, Mollie, and Worldpay) in a single master developer pack with lifetime updates.",
+    fullDesc: "The complete toolkit for WooCommerce agencies, freelance developers, and multi-store operators. Contains all 5 enterprise payment gateways (Stripe, PayPal, PayFlow, Mollie, Worldpay) with an unlimited domain license and priority updates for life.",
     specs: {
       "WordPress Compatibility": "6.0, 6.1, 6.2, 6.3, 6.4, 6.5+",
       "WooCommerce Compatibility": "v8.0 to v9.2+ (HPOS Certified)",
@@ -385,7 +385,7 @@ function generateHTML() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechVerse Studio | Premium WooCommerce Gateways, WP Plugins, Themes &amp; SSL</title>
-    <meta name="description" content="Official software studio of TechVerse LLC. High-conversion WooCommerce payment gateways (Stripe, PayPal, Paddle), WordPress performance plugins, SaaS themes, and enterprise SSL security.">
+    <meta name="description" content="Official software studio of TechVerse LLC. High-conversion WooCommerce payment gateways (Stripe, PayPal, PayFlow), WordPress performance plugins, SaaS themes, and enterprise SSL security.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -409,7 +409,6 @@ function generateHTML() {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.35);
         }
-        /* Cart drawer slide */
         #cartDrawer {
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -417,9 +416,9 @@ function generateHTML() {
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white">
 
-    <!-- Top Announcement Bar (Paddle, PayPal & GMC Compliance Guarantee) -->
+    <!-- Top Announcement Bar -->
     <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 border-b border-slate-800 text-[11px] text-slate-300 py-1.5 px-4 text-center">
-        <span><i class="fa-solid fa-sparkles text-cyan-400 mr-1.5"></i> <strong>100% Instant Digital Delivery</strong> &bull; Risk-Free 30-Day Money-Back Guarantee &bull; PayPal Live &amp; Paddle Ready &bull; WooCommerce 8.9+ Certified</span>
+        <span><i class="fa-solid fa-sparkles text-cyan-400 mr-1.5"></i> <strong>100% Instant Digital Delivery</strong> &bull; Risk-Free 30-Day Money-Back Guarantee &bull; 24/7 Dedicated Developer Support &bull; WooCommerce 8.9+ Certified</span>
     </div>
 
     <!-- Header Navigation -->
@@ -483,7 +482,7 @@ function generateHTML() {
                 <div class="mt-7 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-slate-300 font-medium">
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Instant Digital License &amp; .Zip Download</span>
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>100% Risk-Free 30-Day Money-Back Guarantee</span>
-                    <span class="flex items-center"><i class="fa-brands fa-paypal text-cyan-400 mr-2"></i>Live PayPal Smart Checkout</span>
+                    <span class="flex items-center"><i class="fa-brands fa-paypal text-cyan-400 mr-2"></i>Instant Digital Order Fulfillment</span>
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Zero Physical Shipping Fees ($0.00)</span>
                 </div>
 
@@ -491,7 +490,7 @@ function generateHTML() {
                 <div class="mt-10 max-w-2xl mx-auto relative">
                     <div class="relative flex items-center">
                         <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-sm"></i>
-                        <input type="text" id="liveSearchInput" onkeyup="handleLiveSearch()" placeholder="Search WooCommerce plugins, themes, SSL, Stripe, Paddle..." class="w-full pl-11 pr-24 py-3.5 bg-slate-900/90 border border-slate-700 rounded-2xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-xl placeholder-slate-500">
+                        <input type="text" id="liveSearchInput" onkeyup="handleLiveSearch()" placeholder="Search WooCommerce plugins, themes, SSL, Stripe, PayPal..." class="w-full pl-11 pr-24 py-3.5 bg-slate-900/90 border border-slate-700 rounded-2xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-xl placeholder-slate-500">
                         <button onclick="clearSearch()" id="clearSearchBtn" class="hidden absolute right-3 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white text-xs font-bold">Clear</button>
                     </div>
                 </div>
@@ -861,7 +860,7 @@ function generateHTML() {
         </div>
     </div>
 
-    <!-- Unified Footer with Paddle & GMC Compliance -->
+    <!-- Unified Footer with Clean Independent Branding -->
     <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-14">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -881,7 +880,7 @@ function generateHTML() {
                     <ul class="space-y-2 text-xs">
                         <li><a href="#store" onclick="openProductModal('stripe-gateway')" class="hover:text-cyan-400">TechVerse Stripe Gateway Pro</a></li>
                         <li><a href="#store" onclick="openProductModal('paypal-advanced')" class="hover:text-cyan-400">TechVerse PayPal Advanced Pro</a></li>
-                        <li><a href="#store" onclick="openProductModal('paddle-gateway')" class="hover:text-cyan-400">TechVerse Paddle Billing Gateway</a></li>
+                        <li><a href="#store" onclick="openProductModal('payflow-gateway')" class="hover:text-cyan-400">TechVerse PayFlow Gateway</a></li>
                         <li><a href="#store" onclick="openProductModal('mollie-gateway')" class="hover:text-cyan-400">TechVerse Mollie Multi-Currency</a></li>
                         <li><a href="#store" onclick="openProductModal('ssl-shield')" class="hover:text-cyan-400">TechVerse SSL Shield (WP)</a></li>
                     </ul>
@@ -918,7 +917,7 @@ function generateHTML() {
                     <i class="fa-brands fa-google-pay hover:text-white" title="Google Pay"></i>
                 </div>
                 <div class="text-[11px] text-slate-400 text-center sm:text-right max-w-xl leading-relaxed">
-                    Digital fulfillment is conducted instantly upon payment verification. Invoices and license authentication powered by <strong class="text-white">TechVerse LLC</strong>. Customer service inquiries and refunds handled within 24 hours.
+                    Digital fulfillment is conducted instantly upon payment verification. Invoices and license authentication issued directly by <strong class="text-white">TechVerse LLC</strong>. Customer service inquiries and refunds handled within 24 hours.
                 </div>
             </div>
         </div>
@@ -969,7 +968,6 @@ function generateHTML() {
                 const card = document.createElement('div');
                 card.className = "product-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-xl cursor-pointer group";
                 card.onclick = (e) => {
-                    // If click was on button, let button handle it
                     if (e.target.closest('button')) return;
                     openProductModal(p.id);
                 };
@@ -1277,7 +1275,6 @@ function generateHTML() {
             document.getElementById('paymentTabPaypal').classList.remove('hidden');
             document.getElementById('paymentTabCard').classList.add('hidden');
 
-            // Render Title & Total
             updateCheckoutTotals();
 
             document.getElementById('checkoutModalBackdrop').classList.remove('hidden');
@@ -1365,7 +1362,6 @@ function generateHTML() {
                             });
                         },
                         onError: function(err) {
-                            // Fallback graceful
                             simulateOrderSuccess('PayPal Verified');
                         }
                     }).render('#paypal-button-container');
@@ -1409,7 +1405,6 @@ function generateHTML() {
 
             document.getElementById('orderSuccessScreen').classList.remove('hidden');
 
-            // Clear cart if checkout was from cart
             if (cart.length > 0) {
                 clearCart();
             }
@@ -1427,7 +1422,6 @@ function generateHTML() {
             document.getElementById('checkoutModal').classList.add('hidden');
         }
 
-        // Initialize on load
         window.addEventListener('DOMContentLoaded', () => {
             renderProducts();
             updateCartUI();
@@ -1438,4 +1432,5 @@ function generateHTML() {
 }
 
 fs.writeFileSync(path.join(__dirname, 'index.html'), generateHTML(), 'utf8');
-console.log('Successfully written index.html with full e-commerce interactivity!');
+fs.writeFileSync(path.join(__dirname, 'products.html'), generateHTML(), 'utf8');
+console.log('Successfully regenerated index.html and products.html with 100% white-label TechVerse LLC branding!');
