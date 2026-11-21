@@ -944,6 +944,10 @@ function generateHTML() {
                     openProductModal(p.id);
                 };
 
+                const featHtml = p.features.slice(0, 3).map(function(f) {
+                    return '<div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2 shrink-0"></i><span class="truncate">' + f + '</span></div>';
+                }).join('');
+
                 card.innerHTML = \`
                     <div>
                         <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-cyan-500/60 transition-all shadow-inner">
@@ -964,9 +968,9 @@ function generateHTML() {
                         <p class="text-xs text-slate-400 mt-2 leading-relaxed line-clamp-2">\${p.shortDesc}</p>
                         
                         <div class="mt-4 space-y-1.5 text-xs text-slate-300">
-                            \${p.features.slice(0, 3).map(f => \`<div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2 shrink-0"></i><span class="truncate">\${f}</span></div>\`).join('')}
+                            \${featHtml}
                         </div>
-                    </div>\`
+                    </div>
 
                     <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                         <div>
