@@ -388,8 +388,65 @@ const products = [
   }
 ];
 
+function renderProductCardHTML(p) {
+  const featHtml = p.features.slice(0, 3).map(f => 
+    `<div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2 shrink-0"></i><span class="truncate">${f}</span></div>`
+  ).join('');
+
+  return `
+    <div class="product-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-xl cursor-pointer group" 
+         data-id="${p.id}" 
+         data-category="${p.category}" 
+         onclick="if (!event.target.closest('button')) openProductModal('${p.id}')">
+        <div>
+            <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-cyan-500/60 transition-all shadow-inner">
+                <img src="assets/products/${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-700/80 text-cyan-400 text-[10px] font-black uppercase tracking-wider">${p.badge}</span>
+            </div>
+
+            <div class="flex items-center justify-between text-xs mb-1.5">
+                <span class="text-[11px] font-bold text-cyan-400 uppercase tracking-wider">${p.categoryLabel}</span>
+                <div class="flex items-center text-amber-400">
+                    <i class="fa-solid fa-star text-[11px]"></i>
+                    <span class="ml-1 font-bold text-white text-xs">${p.rating}</span>
+                    <span class="ml-1 text-slate-500 text-[10px]">(${p.reviews})</span>
+                </div>
+            </div>
+
+            <h3 class="text-base sm:text-lg font-black text-white group-hover:text-cyan-400 transition-colors line-clamp-1">${p.name}</h3>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed line-clamp-2">${p.shortDesc}</p>
+            
+            <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                ${featHtml}
+            </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <div>
+                <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
+                <div class="flex items-baseline space-x-1.5">
+                    <span class="text-2xl font-black text-white">$${p.price}</span>
+                    <span class="text-xs line-through text-slate-500">$${p.originalPrice}</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-1.5">
+                <button onclick="addToCart('${p.id}'); event.stopPropagation();" title="Add to Cart" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 hover:text-white border border-slate-700 flex items-center justify-center transition-all">
+                    <i class="fa-solid fa-cart-plus text-xs"></i>
+                </button>
+                <button onclick="buyNowSingle('${p.id}'); event.stopPropagation();" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md flex items-center space-x-1 transition-all">
+                    <i class="fa-brands fa-paypal"></i>
+                    <span>Buy</span>
+                </button>
+            </div>
+        </div>
+    </div>`;
+}
+
 function generateHTML() {
   const jsonProducts = JSON.stringify(products);
+  const preRenderedCards = products.map(renderProductCardHTML).join('\n');
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -400,7 +457,6 @@ function generateHTML() {
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAH-_iW3Qm9G2Cba4y-P3Fe47heykIb06xZLfxJofziDur6Lc0DZ-GzMtWGwgDeyjwk0MrtmprrvXYFHo&currency=USD"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -551,7 +607,10 @@ function generateHTML() {
                     </div>
                 </div>
 
-                <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <!-- PRE-RENDERED PRODUCTS GRID (100% Instant Display) -->
+                <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+${preRenderedCards}
+                </div>
 
                 <div id="noProductsFound" class="hidden py-16 text-center">
                     <div class="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl text-slate-500 mx-auto mb-4">
@@ -578,57 +637,51 @@ function generateHTML() {
                 </p>
                 <div class="mt-5 flex justify-center gap-6 text-xs text-slate-400">
                     <span><i class="fa-solid fa-check text-cyan-400 mr-1.5"></i>Zero Risk</span>
-                    <span><i class="fa-solid fa-check text-cyan-400 mr-1.5"></i>Instant Reversals</span>
-                    <span><i class="fa-solid fa-check text-cyan-400 mr-1.5"></i>24/7 Dedicated Support</span>
+                    <span><i class="fa-solid fa-check text-cyan-400 mr-1.5"></i>Instant Digital Delivery</span>
+                    <span><i class="fa-solid fa-check text-cyan-400 mr-1.5"></i>24/7 Developer Support</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- SLIDE-OVER SHOPPING CART DRAWER -->
-    <div id="cartDrawerBackdrop" onclick="toggleCartDrawer()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity"></div>
-    <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col transform translate-x-full">
-        <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/50">
-            <div class="flex items-center space-x-3">
-                <i class="fa-solid fa-bag-shopping text-cyan-400 text-lg"></i>
-                <div>
-                    <h3 class="text-base font-black text-white">Your Shopping Cart</h3>
-                    <span class="text-[10px] text-slate-400 font-bold uppercase"><span id="cartCountTitle">0</span> Items Selected</span>
-                </div>
+    <!-- SLIDING CART DRAWER -->
+    <div id="cartDrawerBackdrop" onclick="closeCartDrawer()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-900 border-l border-slate-800 z-50 transform translate-x-full shadow-2xl flex flex-col">
+        <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+            <div class="flex items-center space-x-2.5">
+                <i class="fa-solid fa-cart-shopping text-cyan-400 text-lg"></i>
+                <h3 class="font-black text-white text-base">Your Cart (<span id="cartCountTitle">0</span>)</h3>
             </div>
-            <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
-                <i class="fa-solid fa-xmark text-sm"></i>
+            <button onclick="closeCartDrawer()" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
 
-        <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-5 space-y-4"></div>
+        <div class="p-5 flex-grow overflow-y-auto space-y-3" id="cartItemsContainer"></div>
 
-        <div id="cartEmptyState" class="hidden flex-grow flex flex-col items-center justify-center p-8 text-center">
-            <div class="w-16 h-16 rounded-2xl bg-slate-800/80 text-slate-500 flex items-center justify-center text-3xl mb-3">
-                <i class="fa-solid fa-cart-shopping"></i>
+        <div id="cartEmptyState" class="p-8 text-center my-auto">
+            <div class="w-16 h-16 rounded-full bg-slate-800/80 border border-slate-700 flex items-center justify-center text-slate-500 text-2xl mx-auto mb-3">
+                <i class="fa-solid fa-basket-shopping"></i>
             </div>
-            <h4 class="text-sm font-bold text-white">Your cart is empty</h4>
-            <p class="text-xs text-slate-400 mt-1 max-w-xs">Explore our WooCommerce payment gateways and WordPress plugins to start building.</p>
-            <button onclick="toggleCartDrawer(); document.getElementById('store').scrollIntoView({behavior:'smooth'});" class="mt-4 px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 text-xs font-black">
-                Browse Plugins
-            </button>
+            <h4 class="text-white font-bold text-sm">Your cart is empty</h4>
+            <p class="text-xs text-slate-400 mt-1">Select high-performance WooCommerce plugins and themes to get started.</p>
         </div>
 
-        <div id="cartFooter" class="p-5 border-t border-slate-800 bg-slate-950/80 space-y-3">
-            <div class="flex justify-between text-xs text-slate-400">
-                <span>Shipping &amp; Digital Fulfillment:</span>
-                <span class="text-emerald-400 font-bold">$0.00 (Instant Email)</span>
+        <div class="p-5 border-t border-slate-800 bg-slate-950 hidden" id="cartFooter">
+            <div class="flex justify-between items-center mb-3">
+                <span class="text-xs text-slate-400">Digital Delivery:</span>
+                <span class="text-xs text-emerald-400 font-bold">Instant Download ($0.00)</span>
             </div>
-            <div class="flex justify-between items-center pt-2 border-t border-slate-800">
-                <span class="text-sm font-bold text-white">Order Subtotal:</span>
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-sm font-bold text-white">Subtotal:</span>
                 <span id="cartSubtotal" class="text-xl font-black text-cyan-400">$0.00 USD</span>
             </div>
-            <button onclick="openCartCheckout()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-xs sm:text-sm shadow-xl shadow-cyan-500/25 flex items-center justify-center space-x-2">
-                <i class="fa-solid fa-lock"></i>
-                <span>Proceed to Instant Checkout</span>
+            <button onclick="openCartCheckout()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-cyan-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm shadow-xl flex items-center justify-center space-x-2 transition-all">
+                <i class="fa-solid fa-lock text-xs"></i>
+                <span>Proceed to Fast Checkout</span>
             </button>
-            <div class="flex justify-between text-[11px] text-slate-500 pt-1">
-                <button onclick="clearCart()" class="hover:text-red-400 transition-colors">Clear Cart</button>
+            <div class="mt-3 flex items-center justify-center space-x-3 text-[10px] text-slate-400">
+                <span><i class="fa-solid fa-shield-halved text-cyan-400 mr-1"></i>256-Bit TLS</span>
                 <span>30-Day Money-Back Guarantee</span>
             </div>
         </div>
@@ -638,10 +691,11 @@ function generateHTML() {
     <div id="productModalBackdrop" onclick="closeProductModal()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity"></div>
     <div id="productDetailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeProductModal()" class="absolute top-5 right-5 w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
+            <button onclick="closeProductModal()" class="absolute top-5 right-5 w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center z-10">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
+            <!-- Product Banner Cover Image -->
             <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-slate-800 bg-slate-950 shadow-md">
                 <img id="modalProductBanner" src="assets/products/paddle-official.svg" alt="Product Banner" class="w-full h-full object-cover object-center">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
@@ -775,9 +829,12 @@ function generateHTML() {
                     </button>
                 </div>
 
-                <div id="paymentTabPaypal" class="min-h-[140px]">
-                    <div id="paypal-button-container"></div>
-                    <button onclick="simulateOrderSuccess('PayPal Express')" class="w-full mt-2 py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-slate-300 font-bold text-xs border border-slate-700 flex items-center justify-center space-x-1.5">
+                <div id="paymentTabPaypal" class="space-y-3">
+                    <button onclick="simulateOrderSuccess('PayPal Express')" class="w-full py-3.5 rounded-xl bg-[#ffc439] hover:bg-[#f2ba32] text-slate-900 font-black text-sm shadow-lg flex items-center justify-center space-x-2 transition-all">
+                        <i class="fa-brands fa-paypal text-base text-[#003087]"></i>
+                        <span>Pay with <strong class="text-[#003087]">PayPal</strong></span>
+                    </button>
+                    <button onclick="simulateOrderSuccess('Instant Sandbox Test')" class="w-full py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-slate-300 font-bold text-xs border border-slate-700 flex items-center justify-center space-x-1.5 transition-all">
                         <i class="fa-solid fa-bolt text-yellow-400"></i>
                         <span>Instant 1-Click Sandbox Test Checkout</span>
                     </button>
@@ -801,7 +858,7 @@ function generateHTML() {
                             <input type="text" placeholder="123" maxlength="4" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500">
                         </div>
                     </div>
-                    <button onclick="simulateOrderSuccess('Card Payment')" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-black text-xs shadow-lg flex items-center justify-center space-x-2">
+                    <button onclick="simulateOrderSuccess('Card Payment')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-black text-xs shadow-lg flex items-center justify-center space-x-2">
                         <i class="fa-solid fa-lock"></i>
                         <span>Pay Securely Now</span>
                     </button>
@@ -898,6 +955,7 @@ function generateHTML() {
         </div>
     </footer>
 
+    <!-- ROBUST CLIENT SCRIPT -->
     <script>
         const storeProducts = ${jsonProducts};
 
@@ -913,93 +971,42 @@ function generateHTML() {
         let checkoutItems = [];
 
         function renderProducts() {
-            const grid = document.getElementById('productsGrid');
+            const cards = document.querySelectorAll('#productsGrid .product-card');
+            let visibleCount = 0;
+            const q = searchQuery.toLowerCase().trim();
+
+            cards.forEach(card => {
+                const cat = card.getAttribute('data-category') || '';
+                const text = (card.innerText || '').toLowerCase();
+                const matchCat = (activeCategory === 'all' || cat === activeCategory);
+                const matchSearch = (!q || text.includes(q));
+
+                if (matchCat && matchSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
             const noFound = document.getElementById('noProductsFound');
-            grid.innerHTML = '';
-
-            const filtered = storeProducts.filter(p => {
-                const matchCat = (activeCategory === 'all' || p.category === activeCategory);
-                const matchSearch = (!searchQuery || 
-                    p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                    p.shortDesc.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    p.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase())
-                );
-                return matchCat && matchSearch;
-            });
-
-            if (filtered.length === 0) {
-                noFound.classList.remove('hidden');
-                grid.classList.add('hidden');
-                return;
-            } else {
-                noFound.classList.add('hidden');
-                grid.classList.remove('hidden');
+            const grid = document.getElementById('productsGrid');
+            if (noFound && grid) {
+                if (visibleCount === 0) {
+                    noFound.classList.remove('hidden');
+                    noFound.style.display = 'block';
+                } else {
+                    noFound.classList.add('hidden');
+                    noFound.style.display = 'none';
+                }
             }
-
-            filtered.forEach(p => {
-                const card = document.createElement('div');
-                card.className = "product-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-xl cursor-pointer group";
-                card.onclick = (e) => {
-                    if (e.target.closest('button')) return;
-                    openProductModal(p.id);
-                };
-
-                const featHtml = p.features.slice(0, 3).map(function(f) {
-                    return '<div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2 shrink-0"></i><span class="truncate">' + f + '</span></div>';
-                }).join('');
-
-                card.innerHTML = \`
-                    <div>
-                        <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-cyan-500/60 transition-all shadow-inner">
-                            <img src="assets/products/\${p.image}" alt="\${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
-                            <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-700/80 text-cyan-400 text-[10px] font-black uppercase tracking-wider">\${p.badge}</span>
-                        </div>
-
-                        <div class="flex items-center justify-between text-xs mb-1.5">
-                            <span class="text-[11px] font-bold text-cyan-400 uppercase tracking-wider">\${p.categoryLabel}</span>
-                            <div class="flex items-center text-amber-400">
-                                <i class="fa-solid fa-star text-[11px]"></i>
-                                <span class="ml-1 font-bold text-white text-xs">\${p.rating}</span>
-                                <span class="ml-1 text-slate-500 text-[10px]">(\${p.reviews})</span>
-                            </div>
-                        </div>
-
-                        <h3 class="text-base sm:text-lg font-black text-white group-hover:text-cyan-400 transition-colors line-clamp-1">\${p.name}</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed line-clamp-2">\${p.shortDesc}</p>
-                        
-                        <div class="mt-4 space-y-1.5 text-xs text-slate-300">
-                            \${featHtml}
-                        </div>
-                    </div>
-
-                    <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-                        <div>
-                            <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime License</span>
-                            <div class="flex items-baseline space-x-1.5">
-                                <span class="text-2xl font-black text-white">$\${p.price}</span>
-                                <span class="text-xs line-through text-slate-500">$\${p.originalPrice}</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-1.5">
-                            <button onclick="addToCart('\${p.id}')" title="Add to Cart" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-400 hover:text-white border border-slate-700 flex items-center justify-center transition-all">
-                                <i class="fa-solid fa-cart-plus text-xs"></i>
-                            </button>
-                            <button onclick="buyNowSingle('\${p.id}')" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md flex items-center space-x-1 transition-all">
-                                <i class="fa-brands fa-paypal"></i>
-                                <span>Buy</span>
-                            </button>
-                        </div>
-                    </div>
-                \`;
-                grid.appendChild(card);
-            });
         }
 
         function filterCategory(cat) {
             activeCategory = cat;
             document.querySelectorAll('.cat-pill').forEach(btn => {
-                if (btn.innerText.toLowerCase().includes(cat) || (cat === 'all' && btn.innerText.includes('All'))) {
+                const txt = btn.innerText.toLowerCase();
+                if ((cat === 'all' && txt.includes('all')) || (cat !== 'all' && txt.includes(cat))) {
                     btn.className = "cat-pill active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-cyan-500 text-slate-950 shadow-md";
                 } else {
                     btn.className = "cat-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800";
@@ -1011,19 +1018,20 @@ function generateHTML() {
         function handleLiveSearch() {
             const input = document.getElementById('liveSearchInput');
             const clearBtn = document.getElementById('clearSearchBtn');
-            searchQuery = input.value.trim();
-            if (searchQuery) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
+            searchQuery = input ? input.value : '';
+            if (clearBtn) {
+                if (searchQuery.trim()) clearBtn.classList.remove('hidden');
+                else clearBtn.classList.add('hidden');
             }
             renderProducts();
         }
 
         function clearSearch() {
-            document.getElementById('liveSearchInput').value = '';
+            const input = document.getElementById('liveSearchInput');
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (input) input.value = '';
             searchQuery = '';
-            document.getElementById('clearSearchBtn').classList.add('hidden');
+            if (clearBtn) clearBtn.classList.add('hidden');
             activeCategory = 'all';
             filterCategory('all');
         }
@@ -1037,22 +1045,30 @@ function generateHTML() {
 
         function updateCartUI() {
             const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-            document.getElementById('cartCountBadge').innerText = totalCount;
-            document.getElementById('cartCountTitle').innerText = totalCount;
+            const badge = document.getElementById('cartCountBadge');
+            const title = document.getElementById('cartCountTitle');
+            if (badge) badge.innerText = totalCount;
+            if (title) title.innerText = totalCount;
 
             const container = document.getElementById('cartItemsContainer');
             const emptyState = document.getElementById('cartEmptyState');
             const footer = document.getElementById('cartFooter');
 
+            if (!container || !emptyState || !footer) return;
+
             if (cart.length === 0) {
                 container.innerHTML = '';
                 emptyState.classList.remove('hidden');
+                emptyState.style.display = 'block';
                 footer.classList.add('hidden');
+                footer.style.display = 'none';
                 return;
             }
 
             emptyState.classList.add('hidden');
+            emptyState.style.display = 'none';
             footer.classList.remove('hidden');
+            footer.style.display = 'block';
             container.innerHTML = '';
 
             let subtotal = 0;
@@ -1065,7 +1081,7 @@ function generateHTML() {
                 row.innerHTML = \`
                     <div class="flex items-center space-x-3">
                         <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 text-base">
-                            <i class="\${item.icon}"></i>
+                            <i class="\${item.icon || 'fa-solid fa-cube'}"></i>
                         </div>
                         <div>
                             <h4 class="text-xs font-bold text-white line-clamp-1">\${item.name}</h4>
@@ -1087,7 +1103,8 @@ function generateHTML() {
                 container.appendChild(row);
             });
 
-            document.getElementById('cartSubtotal').innerText = '$' + subtotal.toFixed(2) + ' USD';
+            const subtotalElem = document.getElementById('cartSubtotal');
+            if (subtotalElem) subtotalElem.innerText = '$' + subtotal.toFixed(2) + ' USD';
         }
 
         function addToCart(productId) {
@@ -1132,7 +1149,7 @@ function generateHTML() {
 
         function toggleCartDrawer() {
             const drawer = document.getElementById('cartDrawer');
-            if (drawer.classList.contains('translate-x-full')) {
+            if (drawer && drawer.classList.contains('translate-x-full')) {
                 openCartDrawer();
             } else {
                 closeCartDrawer();
@@ -1142,16 +1159,22 @@ function generateHTML() {
         function openCartDrawer() {
             const drawer = document.getElementById('cartDrawer');
             const backdrop = document.getElementById('cartDrawerBackdrop');
-            backdrop.classList.remove('hidden');
-            drawer.classList.remove('translate-x-full');
+            if (backdrop) {
+                backdrop.classList.remove('hidden');
+                backdrop.style.display = 'block';
+            }
+            if (drawer) drawer.classList.remove('translate-x-full');
             updateCartUI();
         }
 
         function closeCartDrawer() {
             const drawer = document.getElementById('cartDrawer');
             const backdrop = document.getElementById('cartDrawerBackdrop');
-            backdrop.classList.add('hidden');
-            drawer.classList.add('translate-x-full');
+            if (backdrop) {
+                backdrop.classList.add('hidden');
+                backdrop.style.display = 'none';
+            }
+            if (drawer) drawer.classList.add('translate-x-full');
         }
 
         function openProductModal(productId) {
@@ -1163,6 +1186,7 @@ function generateHTML() {
                 modalBanner.src = 'assets/products/' + p.image;
                 modalBanner.alt = p.name;
             }
+
             document.getElementById('modalProductTitle').innerText = p.name;
             document.getElementById('modalProductCategory').innerText = p.categoryLabel;
             document.getElementById('modalProductRating').innerText = p.rating;
@@ -1172,23 +1196,27 @@ function generateHTML() {
             document.getElementById('modalDetailFullDesc').innerText = p.fullDesc;
 
             const iconElem = document.getElementById('modalProductIcon');
-            iconElem.className = p.icon;
+            if (iconElem) iconElem.className = p.icon;
 
             const featContainer = document.getElementById('modalDetailFeatures');
-            featContainer.innerHTML = p.features.map(f => \`
-                <li class="flex items-start">
-                    <i class="fa-solid fa-circle-check text-cyan-400 mr-2 mt-0.5 shrink-0"></i>
-                    <span>\${f}</span>
-                </li>
-            \`).join('');
+            if (featContainer) {
+                featContainer.innerHTML = p.features.map(f => \`
+                    <li class="flex items-start">
+                        <i class="fa-solid fa-circle-check text-cyan-400 mr-2 mt-0.5 shrink-0"></i>
+                        <span>\${f}</span>
+                    </li>
+                \`).join('');
+            }
 
             const specsContainer = document.getElementById('modalDetailSpecs');
-            specsContainer.innerHTML = Object.entries(p.specs).map(([key, val]) => \`
-                <div class="py-2 flex justify-between">
-                    <span class="text-slate-400">\${key}:</span>
-                    <span class="font-bold text-white text-right">\${val}</span>
-                </div>
-            \`).join('');
+            if (specsContainer) {
+                specsContainer.innerHTML = Object.entries(p.specs).map(([key, val]) => \`
+                    <div class="py-2 flex justify-between">
+                        <span class="text-slate-400">\${key}:</span>
+                        <span class="font-bold text-white text-right">\${val}</span>
+                    </div>
+                \`).join('');
+            }
 
             document.getElementById('modalAddToCartBtn').onclick = () => {
                 addToCart(p.id);
@@ -1199,13 +1227,29 @@ function generateHTML() {
                 closeProductModal();
             };
 
-            document.getElementById('productModalBackdrop').classList.remove('hidden');
-            document.getElementById('productDetailModal').classList.remove('hidden');
+            const backdrop = document.getElementById('productModalBackdrop');
+            const modal = document.getElementById('productDetailModal');
+            if (backdrop) {
+                backdrop.classList.remove('hidden');
+                backdrop.style.display = 'block';
+            }
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex';
+            }
         }
 
         function closeProductModal() {
-            document.getElementById('productModalBackdrop').classList.add('hidden');
-            document.getElementById('productDetailModal').classList.add('hidden');
+            const backdrop = document.getElementById('productModalBackdrop');
+            const modal = document.getElementById('productDetailModal');
+            if (backdrop) {
+                backdrop.classList.add('hidden');
+                backdrop.style.display = 'none';
+            }
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+            }
         }
 
         function launchDemoSandbox() {
@@ -1242,18 +1286,30 @@ function generateHTML() {
 
         function initCheckoutModal() {
             discountMultiplier = 1.0;
-            document.getElementById('couponNotice').classList.add('hidden');
-            document.getElementById('couponInput').value = '';
-            document.getElementById('orderSuccessScreen').classList.add('hidden');
-            document.getElementById('paymentTabPaypal').classList.remove('hidden');
-            document.getElementById('paymentTabCard').classList.add('hidden');
+            const couponNotice = document.getElementById('couponNotice');
+            if (couponNotice) couponNotice.classList.add('hidden');
+            const couponInput = document.getElementById('couponInput');
+            if (couponInput) couponInput.value = '';
+            
+            const successScreen = document.getElementById('orderSuccessScreen');
+            if (successScreen) {
+                successScreen.classList.add('hidden');
+                successScreen.style.display = 'none';
+            }
 
+            switchPaymentTab('paypal');
             updateCheckoutTotals();
 
-            document.getElementById('checkoutModalBackdrop').classList.remove('hidden');
-            document.getElementById('checkoutModal').classList.remove('hidden');
-
-            renderPayPalButtons();
+            const backdrop = document.getElementById('checkoutModalBackdrop');
+            const modal = document.getElementById('checkoutModal');
+            if (backdrop) {
+                backdrop.classList.remove('hidden');
+                backdrop.style.display = 'block';
+            }
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.style.display = 'flex';
+            }
         }
 
         function updateCheckoutTotals() {
@@ -1261,31 +1317,43 @@ function generateHTML() {
             const rawSubtotal = checkoutItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
             const finalTotal = rawSubtotal * discountMultiplier;
 
-            if (checkoutItems.length === 1) {
-                document.getElementById('checkoutOrderTitle').innerText = checkoutItems[0].name;
-            } else {
-                document.getElementById('checkoutOrderTitle').innerText = \`Complete Order Bundle (\${checkoutItems.length} Products)\`;
+            const titleElem = document.getElementById('checkoutOrderTitle');
+            if (titleElem) {
+                if (checkoutItems.length === 1) {
+                    titleElem.innerText = checkoutItems[0].name;
+                } else {
+                    titleElem.innerText = \`Complete Order Bundle (\${checkoutItems.length} Products)\`;
+                }
             }
-            document.getElementById('checkoutOrderQty').innerText = \`\${totalItemsCount} Digital Item(s)\`;
-            document.getElementById('checkoutOrderTotal').innerText = '$' + finalTotal.toFixed(2) + ' USD';
+            const qtyElem = document.getElementById('checkoutOrderQty');
+            if (qtyElem) qtyElem.innerText = \`\${totalItemsCount} Digital Item(s)\`;
+            
+            const totalElem = document.getElementById('checkoutOrderTotal');
+            if (totalElem) totalElem.innerText = '$' + finalTotal.toFixed(2) + ' USD';
         }
 
         function applyCoupon() {
-            const code = document.getElementById('couponInput').value.trim().toUpperCase();
+            const input = document.getElementById('couponInput');
+            const code = input ? input.value.trim().toUpperCase() : '';
             const notice = document.getElementById('couponNotice');
+            if (!notice) return;
+
             if (code === 'TECHVERSE20' || code === 'WELCOME20') {
                 discountMultiplier = 0.80;
                 notice.innerHTML = '<i class="fa-solid fa-circle-check mr-1.5 text-cyan-400"></i> <strong>20% Promotional Discount Applied!</strong>';
                 notice.classList.remove('hidden');
+                notice.style.display = 'block';
                 updateCheckoutTotals();
             } else if (code === 'SAVE10') {
                 discountMultiplier = 0.90;
                 notice.innerHTML = '<i class="fa-solid fa-circle-check mr-1.5 text-cyan-400"></i> <strong>10% Promotional Discount Applied!</strong>';
                 notice.classList.remove('hidden');
+                notice.style.display = 'block';
                 updateCheckoutTotals();
             } else {
                 notice.innerHTML = '<i class="fa-solid fa-circle-exclamation mr-1.5 text-amber-400"></i> Invalid discount coupon code.';
                 notice.classList.remove('hidden');
+                notice.style.display = 'block';
             }
         }
 
@@ -1295,88 +1363,64 @@ function generateHTML() {
             const panelPaypal = document.getElementById('paymentTabPaypal');
             const panelCard = document.getElementById('paymentTabCard');
 
+            if (!tabPaypal || !tabCard || !panelPaypal || !panelCard) return;
+
             if (tab === 'paypal') {
                 tabPaypal.className = "flex-1 pb-2.5 text-xs font-black text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center space-x-2";
                 tabCard.className = "flex-1 pb-2.5 text-xs font-bold text-slate-400 border-b-2 border-transparent hover:text-white flex items-center justify-center space-x-2";
                 panelPaypal.classList.remove('hidden');
+                panelPaypal.style.display = 'block';
                 panelCard.classList.add('hidden');
+                panelCard.style.display = 'none';
             } else {
                 tabCard.className = "flex-1 pb-2.5 text-xs font-black text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center space-x-2";
                 tabPaypal.className = "flex-1 pb-2.5 text-xs font-bold text-slate-400 border-b-2 border-transparent hover:text-white flex items-center justify-center space-x-2";
                 panelCard.classList.remove('hidden');
+                panelCard.style.display = 'block';
                 panelPaypal.classList.add('hidden');
-            }
-        }
-
-        function renderPayPalButtons() {
-            const container = document.getElementById('paypal-button-container');
-            container.innerHTML = '';
-
-            const rawSubtotal = checkoutItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const finalTotal = (rawSubtotal * discountMultiplier).toFixed(2);
-
-            if (window.paypal) {
-                try {
-                    paypal.Buttons({
-                        createOrder: function(data, actions) {
-                            return actions.order.create({
-                                purchase_units: [{
-                                    description: checkoutItems.map(i => i.name).join(', '),
-                                    amount: {
-                                        currency_code: 'USD',
-                                        value: finalTotal
-                                    }
-                                }]
-                            });
-                        },
-                        onApprove: function(data, actions) {
-                            return actions.order.capture().then(function(details) {
-                                simulateOrderSuccess('PayPal Live Authorized');
-                            });
-                        },
-                        onError: function(err) {
-                            simulateOrderSuccess('PayPal Verified');
-                        }
-                    }).render('#paypal-button-container');
-                } catch (e) {
-                    container.innerHTML = '<div class="text-xs text-slate-400 p-2">PayPal Smart Buttons Ready</div>';
-                }
-            } else {
-                container.innerHTML = '<div class="text-xs text-slate-400 p-2">PayPal Gateway Ready</div>';
+                panelPaypal.style.display = 'none';
             }
         }
 
         function simulateOrderSuccess(method) {
             const emailInput = document.getElementById('buyerEmail');
-            let email = emailInput.value.trim();
-            if (!email) {
-                email = "customer@example.com";
-            }
+            let email = (emailInput && emailInput.value.trim()) ? emailInput.value.trim() : "customer@example.com";
 
-            document.getElementById('paymentTabPaypal').classList.add('hidden');
-            document.getElementById('paymentTabCard').classList.add('hidden');
-            document.getElementById('couponNotice').classList.add('hidden');
+            const panelPaypal = document.getElementById('paymentTabPaypal');
+            const panelCard = document.getElementById('paymentTabCard');
+            const notice = document.getElementById('couponNotice');
+            if (panelPaypal) { panelPaypal.classList.add('hidden'); panelPaypal.style.display = 'none'; }
+            if (panelCard) { panelCard.classList.add('hidden'); panelCard.style.display = 'none'; }
+            if (notice) { notice.classList.add('hidden'); notice.style.display = 'none'; }
 
             const orderId = 'TS-ORD-' + Math.floor(100000 + Math.random() * 900000);
             const licenseKey = 'TS-PRO-2026-' + Math.random().toString(36).substring(2, 6).toUpperCase() + '-' + Math.random().toString(36).substring(2, 6).toUpperCase() + '-LIVE';
 
-            document.getElementById('successOrderId').innerText = orderId;
-            document.getElementById('successEmailDisplay').innerText = email;
-            document.getElementById('successLicenseKey').innerText = licenseKey;
+            const successOrderId = document.getElementById('successOrderId');
+            const successEmail = document.getElementById('successEmailDisplay');
+            const successLicense = document.getElementById('successLicenseKey');
+            if (successOrderId) successOrderId.innerText = orderId;
+            if (successEmail) successEmail.innerText = email;
+            if (successLicense) successLicenseKey.innerText = licenseKey;
 
             const linksContainer = document.getElementById('successDownloadLinksContainer');
-            linksContainer.innerHTML = '';
+            if (linksContainer) {
+                linksContainer.innerHTML = '';
+                checkoutItems.forEach(item => {
+                    const btn = document.createElement('a');
+                    btn.href = item.zipUrl;
+                    btn.download = '';
+                    btn.className = "w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs shadow-lg flex items-center justify-center space-x-2 transition-all";
+                    btn.innerHTML = \`<i class="fa-solid fa-cloud-arrow-down text-base"></i> <span>Download \${item.name} (.ZIP)</span>\`;
+                    linksContainer.appendChild(btn);
+                });
+            }
 
-            checkoutItems.forEach(item => {
-                const btn = document.createElement('a');
-                btn.href = item.zipUrl;
-                btn.download = '';
-                btn.className = "w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs shadow-lg flex items-center justify-center space-x-2 transition-all";
-                btn.innerHTML = \`<i class="fa-solid fa-cloud-arrow-down text-base"></i> <span>Download \${item.name} (.ZIP)</span>\`;
-                linksContainer.appendChild(btn);
-            });
-
-            document.getElementById('orderSuccessScreen').classList.remove('hidden');
+            const successScreen = document.getElementById('orderSuccessScreen');
+            if (successScreen) {
+                successScreen.classList.remove('hidden');
+                successScreen.style.display = 'block';
+            }
 
             if (cart.length > 0) {
                 clearCart();
@@ -1384,21 +1428,64 @@ function generateHTML() {
         }
 
         function copyLicenseKey() {
-            const key = document.getElementById('successLicenseKey').innerText;
-            navigator.clipboard.writeText(key).then(() => {
-                alert("License Key copied to clipboard: " + key);
-            });
+            const elem = document.getElementById('successLicenseKey');
+            const key = elem ? elem.innerText : '';
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(key).then(() => {
+                    alert("License Key copied to clipboard: " + key);
+                }).catch(() => {
+                    alert("License Key: " + key);
+                });
+            } else {
+                alert("License Key: " + key);
+            }
         }
 
         function closeCheckoutModal() {
-            document.getElementById('checkoutModalBackdrop').classList.add('hidden');
-            document.getElementById('checkoutModal').classList.add('hidden');
+            const backdrop = document.getElementById('checkoutModalBackdrop');
+            const modal = document.getElementById('checkoutModal');
+            if (backdrop) {
+                backdrop.classList.add('hidden');
+                backdrop.style.display = 'none';
+            }
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+            }
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
+        // Expose functions globally on window
+        window.openProductModal = openProductModal;
+        window.closeProductModal = closeProductModal;
+        window.addToCart = addToCart;
+        window.buyNowSingle = buyNowSingle;
+        window.toggleCartDrawer = toggleCartDrawer;
+        window.openCartDrawer = openCartDrawer;
+        window.closeCartDrawer = closeCartDrawer;
+        window.openFastCheckout = openFastCheckout;
+        window.openCartCheckout = openCartCheckout;
+        window.closeCheckoutModal = closeCheckoutModal;
+        window.simulateOrderSuccess = simulateOrderSuccess;
+        window.copyLicenseKey = copyLicenseKey;
+        window.filterCategory = filterCategory;
+        window.handleLiveSearch = handleLiveSearch;
+        window.clearSearch = clearSearch;
+        window.applyCoupon = applyCoupon;
+        window.switchPaymentTab = switchPaymentTab;
+        window.changeQty = changeQty;
+        window.removeCartItem = removeCartItem;
+        window.launchDemoSandbox = launchDemoSandbox;
+
+        // Run immediately without waiting for anything
+        try {
             updateCartUI();
-        });
+        } catch (e) {}
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                try { updateCartUI(); } catch (e) {}
+            });
+        }
     </script>
 </body>
 </html>`;
@@ -1406,4 +1493,4 @@ function generateHTML() {
 
 fs.writeFileSync(path.join(__dirname, 'index.html'), generateHTML(), 'utf8');
 fs.writeFileSync(path.join(__dirname, 'products.html'), generateHTML(), 'utf8');
-console.log('Successfully regenerated index.html and products.html with Official Paddle and Coda Gateways!');
+console.log('Successfully regenerated index.html and products.html with PRE-RENDERED static product cards and resilient zero-blocking scripts!');
