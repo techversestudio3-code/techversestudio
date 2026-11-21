@@ -3,6 +3,68 @@ const path = require('path');
 
 const products = [
   {
+    id: "paddle-official",
+    name: "TechVerse Official Paddle Billing Gateway",
+    category: "gateways",
+    categoryLabel: "WooCommerce Gateway",
+    price: 89,
+    originalPrice: 149,
+    rating: 5.0,
+    reviews: 94,
+    badge: "Paddle v2 Certified",
+    badgeColor: "cyan",
+    icon: "fa-solid fa-shield-heart",
+    iconColor: "cyan",
+    zipUrl: "downloads/techverse-paddle-gateway.zip",
+    shortDesc: "Production-ready Paddle Billing v2 gateway for WooCommerce. Supports overlay checkout, inline checkout, automatic sales tax (VAT/GST), and automated webhook fulfillment.",
+    fullDesc: "TechVerse Official Paddle Billing Gateway connects WooCommerce stores with Paddle's modern Billing v2 platform. Designed for software houses, digital creators, and SaaS businesses. Features native paddle.js v2 SDK integration, automated global tax (VAT/GST) handling, overlay and inline checkout modes, HMAC signature webhook verification, and HPOS compatibility.",
+    specs: {
+      "WordPress Compatibility": "6.0, 6.1, 6.2, 6.3, 6.4, 6.5+",
+      "WooCommerce Compatibility": "v8.0 to v9.2+ (HPOS Certified)",
+      "PHP Version": "7.4, 8.0, 8.1, 8.2, 8.3",
+      "Software License": "GPLv2 / Full Developer License",
+      "Updates & Support": "Lifetime Updates & 1-Year Support"
+    },
+    features: [
+      "Paddle Billing v2 SDK Integration (Overlay & Inline Checkout)",
+      "Automated Global Sales Tax (VAT/GST) Handling",
+      "Cryptographic HMAC-SHA256 Webhook Order Fulfillment",
+      "WooCommerce HPOS & Blocks Checkout Certified",
+      "Direct Refund Processing from WordPress Admin"
+    ]
+  },
+  {
+    id: "coda-official",
+    name: "TechVerse Official Coda Payments Gateway",
+    category: "gateways",
+    categoryLabel: "WooCommerce Gateway",
+    price: 79,
+    originalPrice: 139,
+    rating: 4.9,
+    reviews: 73,
+    badge: "300+ Local Pay",
+    badgeColor: "emerald",
+    icon: "fa-solid fa-wallet",
+    iconColor: "emerald",
+    zipUrl: "downloads/techverse-coda-gateway.zip",
+    shortDesc: "Official Coda Payments (Codapay) gateway for WooCommerce. Accept 300+ local payment methods, direct telco carrier billing, and e-wallets worldwide.",
+    fullDesc: "TechVerse Official Coda Payments Gateway empowers WooCommerce merchants to tap into emerging markets across Southeast Asia, Latin America, the Middle East, and beyond. Seamlessly accept e-wallets (GoPay, OVO, DANA, ShopeePay, Touch 'n Go, GCash, PromptPay), telco direct carrier billing, ATM bank transfers, and local QR payments with automated server-to-server callbacks and SHA-256 Checksum validation.",
+    specs: {
+      "WordPress Compatibility": "6.0, 6.1, 6.2, 6.3, 6.4, 6.5+",
+      "WooCommerce Compatibility": "v8.0 to v9.2+ (HPOS Certified)",
+      "PHP Version": "7.4, 8.0, 8.1, 8.2, 8.3",
+      "Software License": "GPLv2 / Full Developer License",
+      "Updates & Support": "Lifetime Updates & 1-Year Support"
+    },
+    features: [
+      "300+ Alternative Local Payment Methods & E-Wallets",
+      "Direct Mobile Telco Airtime & Carrier Billing",
+      "Codapay v2 REST API with Instant Redirect & Return Handling",
+      "Server-to-Server Callback Notification with SHA-256 Checksum",
+      "WooCommerce HPOS Certified with Test Sandbox Toggle"
+    ]
+  },
+  {
     id: "stripe-gateway",
     name: "TechVerse Stripe Gateway Pro",
     category: "gateways",
@@ -62,37 +124,6 @@ const products = [
       "Zero-redirection in-context payment modal",
       "Automated IPN & Webhook instant order completion",
       "Multi-currency auto conversion with real-time rates"
-    ]
-  },
-  {
-    id: "payflow-gateway",
-    name: "TechVerse PayFlow Subscriptions Gateway",
-    category: "gateways",
-    categoryLabel: "WooCommerce Gateway",
-    price: 89,
-    originalPrice: 149,
-    rating: 5.0,
-    reviews: 82,
-    badge: "Top Seller",
-    badgeColor: "cyan",
-    icon: "fa-solid fa-credit-card",
-    iconColor: "cyan",
-    zipUrl: "downloads/techverse-payflow-gateway.zip",
-    shortDesc: "Complete global billing and automated subscriptions integration for WooCommerce with zero-redirect checkout and instant fulfillment.",
-    fullDesc: "TechVerse PayFlow Subscriptions Gateway turns WooCommerce into a high-powered recurring billing and digital software sales platform. Supports automated global sales tax calculations (VAT/GST), customized inline modal checkouts, and chargeback mitigation.",
-    specs: {
-      "WordPress Compatibility": "6.0, 6.1, 6.2, 6.3, 6.4, 6.5+",
-      "WooCommerce Compatibility": "v8.0 to v9.2+ (HPOS Certified)",
-      "PHP Version": "7.4, 8.0, 8.1, 8.2, 8.3",
-      "Software License": "GPLv2 / Full Developer License",
-      "Updates & Support": "Lifetime Updates & 1-Year Support"
-    },
-    features: [
-      "Automated global VAT/GST calculation and customer location detection",
-      "Seamless overlay & inline checkout modal options",
-      "Built-in recurring subscriptions & license key delivery",
-      "Advanced fraud screening & 3DS2 card authentication",
-      "Instant webhook listener with signature verification"
     ]
   },
   {
@@ -166,13 +197,13 @@ const products = [
     originalPrice: 405,
     rating: 5.0,
     reviews: 110,
-    badge: "All-in-One 5-in-1",
+    badge: "All-in-One Pack",
     badgeColor: "indigo",
     icon: "fa-solid fa-layer-group",
     iconColor: "indigo",
-    zipUrl: "downloads/techverse-stripe-gateway.zip",
-    shortDesc: "Get all 5 WooCommerce payment gateways (Stripe, PayPal, PayFlow, Mollie, and Worldpay) in a single master developer pack with lifetime updates.",
-    fullDesc: "The complete toolkit for WooCommerce agencies, freelance developers, and multi-store operators. Contains all 5 enterprise payment gateways (Stripe, PayPal, PayFlow, Mollie, Worldpay) with an unlimited domain license and priority updates for life.",
+    zipUrl: "downloads/techverse-paddle-gateway.zip",
+    shortDesc: "Get all flagship WooCommerce payment gateways (Paddle, Coda Payments, Stripe, PayPal, and Worldpay) in a single master developer pack with lifetime updates.",
+    fullDesc: "The complete toolkit for WooCommerce agencies, freelance developers, and multi-store operators. Contains all enterprise payment gateways with an unlimited domain license and priority updates for life.",
     specs: {
       "WordPress Compatibility": "6.0, 6.1, 6.2, 6.3, 6.4, 6.5+",
       "WooCommerce Compatibility": "v8.0 to v9.2+ (HPOS Certified)",
@@ -181,11 +212,11 @@ const products = [
       "Updates & Support": "Lifetime Updates & Priority Support"
     },
     features: [
-      "Includes all 5 standalone gateway plugins",
+      "Includes Paddle Billing, Coda Payments, Stripe & PayPal",
       "Install on unlimited client and personal WooCommerce stores",
       "Lifetime automated plugin updates",
       "VIP senior engineer ticket priority",
-      "Save $206 compared to buying individual licenses"
+      "Save $226 compared to buying individual licenses"
     ]
   },
   {
@@ -342,41 +373,9 @@ const products = [
       "Free 1-Year TechVerse SSL Shield WordPress license included",
       "Instant activation file & automated CSR generator"
     ]
-  },
-  {
-    id: "sectigo-ev-ssl",
-    name: "Sectigo Extended Validation (EV) SSL",
-    category: "ssl",
-    categoryLabel: "Extended Validation",
-    price: 399,
-    originalPrice: 599,
-    rating: 5.0,
-    reviews: 34,
-    badge: "Highest Corporate Trust",
-    badgeColor: "emerald",
-    icon: "fa-solid fa-certificate",
-    iconColor: "emerald",
-    zipUrl: "downloads/techverse-ssl-shield.zip",
-    shortDesc: "Vetted corporate identity with $1,000,000 warranty protection. The gold standard for financial, fintech, and e-commerce portals.",
-    fullDesc: "Provides the highest degree of consumer trust in web security. Extended Validation proves legal corporate existence through Sectigo's rigorous verification standards, unlocking enterprise buyers and corporate procurement departments.",
-    specs: {
-      "Validation Level": "Full Legal Corporate Identity Verification",
-      "Encryption": "Industry Standard 256-Bit Strong Encryption",
-      "Warranty": "$1,000,000 Underwritten Warranty Protection",
-      "Support": "VIP Concierge Dedicated Validation Agent",
-      "Bonus Included": "TechVerse SSL Shield Developer Suite ($99 Value)"
-    },
-    features: [
-      "Verified corporate identity displayed on certificate",
-      "Maximum $1,000,000 relying party warranty",
-      "Priority CA validation review queue",
-      "White-Glove assisted CSR and DNS validation setup",
-      "TechVerse SSL Shield Developer Suite license included"
-    ]
   }
 ];
 
-// Generate index.html
 function generateHTML() {
   const jsonProducts = JSON.stringify(products);
   return `<!DOCTYPE html>
@@ -385,12 +384,10 @@ function generateHTML() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechVerse Studio | Premium WooCommerce Gateways, WP Plugins, Themes &amp; SSL</title>
-    <meta name="description" content="Official software studio of TechVerse LLC. High-conversion WooCommerce payment gateways (Stripe, PayPal, PayFlow), WordPress performance plugins, SaaS themes, and enterprise SSL security.">
+    <meta name="description" content="Official software studio of TechVerse LLC. High-conversion WooCommerce payment gateways (Paddle Billing, Coda Payments, Stripe, PayPal), WordPress performance plugins, SaaS themes, and enterprise SSL security.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- PayPal JavaScript SDK (Live Integration) -->
     <script src="https://www.paypal.com/sdk/js?client-id=BAAH-_iW3Qm9G2Cba4y-P3Fe47heykIb06xZLfxJofziDur6Lc0DZ-GzMtWGwgDeyjwk0MrtmprrvXYFHo&currency=USD"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
@@ -424,7 +421,6 @@ function generateHTML() {
     <!-- Header Navigation -->
     <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-950/90 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- 3D Logo (Selected Logo 2: 3D Chrome TS Monogram & Shield) -->
             <a href="index.html" class="flex items-center space-x-3.5 group">
                 <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_16px_rgba(56,189,248,0.6)] transition-transform duration-300 group-hover:scale-110">
                 <div>
@@ -433,7 +429,6 @@ function generateHTML() {
                 </div>
             </a>
 
-            <!-- Nav Links -->
             <nav class="hidden lg:flex items-center space-x-7 text-sm font-bold text-slate-300">
                 <a href="#store" onclick="filterCategory('all')" class="hover:text-cyan-400 transition-colors">All Store</a>
                 <a href="#store" onclick="filterCategory('gateways')" class="hover:text-cyan-400 transition-colors">WooCommerce Gateways</a>
@@ -443,9 +438,7 @@ function generateHTML() {
                 <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
             </nav>
 
-            <!-- Actions (Cart Button + Direct Checkout) -->
             <div class="flex items-center space-x-3">
-                <!-- Cart Trigger Button with Live Counter Badge -->
                 <button onclick="toggleCartDrawer()" class="relative px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white text-xs sm:text-sm font-bold transition-all flex items-center space-x-2">
                     <i class="fa-solid fa-cart-shopping text-cyan-400 text-sm"></i>
                     <span class="hidden sm:inline">Cart</span>
@@ -460,42 +453,38 @@ function generateHTML() {
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="flex-grow">
         <!-- Hero Section -->
         <section class="relative pt-16 pb-20 overflow-hidden gradient-radial">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-blue-950/90 border border-blue-800/80 text-cyan-300 text-xs font-bold mb-6 backdrop-blur shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                    <span>Digital Software Studio &bull; Trusted by 1,400+ E-Commerce Stores Globally</span>
+                    <span>Official Software Studio &bull; Trusted by 1,400+ E-Commerce Stores Globally</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white max-w-5xl mx-auto leading-tight sm:leading-none">
-                    Premium <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">WordPress Plugins</span>, Themes &amp; Cloud Security Tools
+                    Official <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400">WooCommerce Gateways</span> &amp; Cloud Security Plugins
                 </h1>
 
                 <p class="mt-6 text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Build faster, collect payments securely, and protect your digital store. High-performance WooCommerce gateways, one-click security enforcers, and developer-grade SSL tools engineered by TechVerse LLC.
+                    Build faster, collect payments securely worldwide, and protect your digital store. Featuring our flagship Official Paddle Billing Gateway, Coda Payments Gateway, Stripe, PayPal, and security tools engineered by TechVerse LLC.
                 </p>
 
-                <!-- Value Proposition Highlights -->
                 <div class="mt-7 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-slate-300 font-medium">
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Instant Digital License &amp; .Zip Download</span>
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>100% Risk-Free 30-Day Money-Back Guarantee</span>
-                    <span class="flex items-center"><i class="fa-brands fa-paypal text-cyan-400 mr-2"></i>Instant Digital Order Fulfillment</span>
+                    <span class="flex items-center"><i class="fa-brands fa-paypal text-cyan-400 mr-2"></i>Instant Digital Fulfillment</span>
                     <span class="flex items-center"><i class="fa-solid fa-circle-check text-cyan-400 mr-2"></i>Zero Physical Shipping Fees ($0.00)</span>
                 </div>
 
-                <!-- Live Search Bar -->
                 <div class="mt-10 max-w-2xl mx-auto relative">
                     <div class="relative flex items-center">
                         <i class="fa-solid fa-magnifying-glass absolute left-4 text-slate-400 text-sm"></i>
-                        <input type="text" id="liveSearchInput" onkeyup="handleLiveSearch()" placeholder="Search WooCommerce plugins, themes, SSL, Stripe, PayPal..." class="w-full pl-11 pr-24 py-3.5 bg-slate-900/90 border border-slate-700 rounded-2xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-xl placeholder-slate-500">
+                        <input type="text" id="liveSearchInput" onkeyup="handleLiveSearch()" placeholder="Search Paddle, Coda Payments, Stripe, PayPal, SSL..." class="w-full pl-11 pr-24 py-3.5 bg-slate-900/90 border border-slate-700 rounded-2xl text-white text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 shadow-xl placeholder-slate-500">
                         <button onclick="clearSearch()" id="clearSearchBtn" class="hidden absolute right-3 px-3 py-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white text-xs font-bold">Clear</button>
                     </div>
                 </div>
 
-                <!-- Studio Stats Bar -->
                 <div class="mt-12 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-left">
                     <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
                         <span class="text-xs text-slate-400">Plugin Portfolio</span>
@@ -521,11 +510,10 @@ function generateHTML() {
             </div>
         </section>
 
-        <!-- STORE CATALOG SECTION (Interactive Filtering & Clickable Cards) -->
+        <!-- STORE CATALOG SECTION -->
         <section id="store" class="py-16 bg-slate-950 border-t border-slate-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Category Filter Tabs -->
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-800">
                     <div>
                         <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Software Studio Catalog</h2>
@@ -537,7 +525,7 @@ function generateHTML() {
                             All Products (12)
                         </button>
                         <button onclick="filterCategory('gateways')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800">
-                            WooCommerce Gateways (6)
+                            WooCommerce Gateways (7)
                         </button>
                         <button onclick="filterCategory('security')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800">
                             WP Security (2)
@@ -546,17 +534,13 @@ function generateHTML() {
                             Themes &amp; UI Kits (2)
                         </button>
                         <button onclick="filterCategory('ssl')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold transition-all bg-slate-900 text-slate-300 hover:text-white border border-slate-800">
-                            SSL Certificates (2)
+                            SSL Certificates (1)
                         </button>
                     </div>
                 </div>
 
-                <!-- Product Grid (Populated dynamically & click-enabled) -->
-                <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Cards will be rendered by JS -->
-                </div>
+                <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
-                <!-- Empty Search State -->
                 <div id="noProductsFound" class="hidden py-16 text-center">
                     <div class="w-16 h-16 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-2xl text-slate-500 mx-auto mb-4">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -592,7 +576,6 @@ function generateHTML() {
     <!-- SLIDE-OVER SHOPPING CART DRAWER -->
     <div id="cartDrawerBackdrop" onclick="toggleCartDrawer()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity"></div>
     <div id="cartDrawer" class="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-slate-900 border-l border-slate-800 shadow-2xl flex flex-col transform translate-x-full">
-        <!-- Cart Header -->
         <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-950/50">
             <div class="flex items-center space-x-3">
                 <i class="fa-solid fa-bag-shopping text-cyan-400 text-lg"></i>
@@ -606,12 +589,8 @@ function generateHTML() {
             </button>
         </div>
 
-        <!-- Cart Items List Container -->
-        <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-5 space-y-4">
-            <!-- Dynamic Cart Items -->
-        </div>
+        <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-5 space-y-4"></div>
 
-        <!-- Empty Cart Notice -->
         <div id="cartEmptyState" class="hidden flex-grow flex flex-col items-center justify-center p-8 text-center">
             <div class="w-16 h-16 rounded-2xl bg-slate-800/80 text-slate-500 flex items-center justify-center text-3xl mb-3">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -623,7 +602,6 @@ function generateHTML() {
             </button>
         </div>
 
-        <!-- Cart Footer -->
         <div id="cartFooter" class="p-5 border-t border-slate-800 bg-slate-950/80 space-y-3">
             <div class="flex justify-between text-xs text-slate-400">
                 <span>Shipping &amp; Digital Fulfillment:</span>
@@ -644,7 +622,7 @@ function generateHTML() {
         </div>
     </div>
 
-    <!-- PRODUCT DETAIL MODAL (Comprehensive Specs & Live Action) -->
+    <!-- PRODUCT DETAIL MODAL -->
     <div id="productModalBackdrop" onclick="closeProductModal()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity"></div>
     <div id="productDetailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -652,7 +630,6 @@ function generateHTML() {
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Modal Header -->
             <div class="flex items-start space-x-4 mb-6">
                 <div id="modalProductIconBox" class="w-16 h-16 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-3xl font-bold border border-indigo-500/40 shrink-0">
                     <i id="modalProductIcon" class="fa-brands fa-stripe-s"></i>
@@ -670,7 +647,6 @@ function generateHTML() {
                 </div>
             </div>
 
-            <!-- Price & Action Bar -->
             <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <span class="text-[10px] text-slate-500 uppercase font-bold">Lifetime Digital License</span>
@@ -693,29 +669,21 @@ function generateHTML() {
                 </div>
             </div>
 
-            <!-- Description -->
             <div class="mb-6">
                 <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Overview</h4>
                 <p id="modalDetailFullDesc" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
             </div>
 
-            <!-- Feature Bullets -->
             <div class="mb-6">
                 <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Key Highlights</h4>
-                <ul id="modalDetailFeatures" class="space-y-2 text-xs text-slate-300">
-                    <!-- Dynamic Features -->
-                </ul>
+                <ul id="modalDetailFeatures" class="space-y-2 text-xs text-slate-300"></ul>
             </div>
 
-            <!-- Technical Specifications Table -->
             <div class="mb-6">
                 <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Technical Compatibility</h4>
-                <div id="modalDetailSpecs" class="bg-slate-950 rounded-2xl border border-slate-800 p-4 divide-y divide-slate-800 text-xs">
-                    <!-- Dynamic Specs -->
-                </div>
+                <div id="modalDetailSpecs" class="bg-slate-950 rounded-2xl border border-slate-800 p-4 divide-y divide-slate-800 text-xs"></div>
             </div>
 
-            <!-- Live Demo Box -->
             <div class="p-4 rounded-2xl bg-blue-950/40 border border-blue-900/60 flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <i class="fa-solid fa-circle-play text-cyan-400 text-xl"></i>
@@ -731,7 +699,7 @@ function generateHTML() {
         </div>
     </div>
 
-    <!-- COMPREHENSIVE CHECKOUT MODAL (PayPal Express & Card Option) -->
+    <!-- COMPREHENSIVE CHECKOUT MODAL -->
     <div id="checkoutModalBackdrop" onclick="closeCheckoutModal()" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden transition-opacity"></div>
     <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
         <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -739,7 +707,6 @@ function generateHTML() {
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
-            <!-- Brand header -->
             <div class="flex items-center space-x-3 mb-5">
                 <img src="assets/logo-3d.svg" alt="3D Logo" class="w-9 h-9 object-contain">
                 <div>
@@ -748,7 +715,6 @@ function generateHTML() {
                 </div>
             </div>
 
-            <!-- Order Summary Card -->
             <div class="p-4 bg-slate-950 rounded-2xl border border-slate-800 mb-5">
                 <div class="flex justify-between items-start mb-2">
                     <div>
@@ -764,14 +730,12 @@ function generateHTML() {
                 </div>
             </div>
 
-            <!-- Coupon Code Section -->
             <div class="mb-5 flex space-x-2">
                 <input type="text" id="couponInput" placeholder="Discount code (e.g. TECHVERSE20)" class="flex-grow px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-xs uppercase focus:outline-none focus:ring-2 focus:ring-cyan-500">
                 <button onclick="applyCoupon()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700">Apply</button>
             </div>
             <div id="couponNotice" class="hidden mb-4 p-2.5 rounded-xl bg-cyan-950/80 border border-cyan-800 text-cyan-300 text-xs"></div>
 
-            <!-- Customer Details Form -->
             <div class="space-y-3 mb-5">
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Customer Full Name *</label>
@@ -784,7 +748,6 @@ function generateHTML() {
                 </div>
             </div>
 
-            <!-- Payment Method Tabs -->
             <div class="mb-5">
                 <div class="flex border-b border-slate-800 mb-4">
                     <button onclick="switchPaymentTab('paypal')" id="tabBtnPaypal" class="flex-1 pb-2.5 text-xs font-black text-cyan-400 border-b-2 border-cyan-400 flex items-center justify-center space-x-2">
@@ -795,7 +758,6 @@ function generateHTML() {
                     </button>
                 </div>
 
-                <!-- Tab A: PayPal Container -->
                 <div id="paymentTabPaypal" class="min-h-[140px]">
                     <div id="paypal-button-container"></div>
                     <button onclick="simulateOrderSuccess('PayPal Express')" class="w-full mt-2 py-2.5 bg-slate-800 hover:bg-slate-700 rounded-xl text-slate-300 font-bold text-xs border border-slate-700 flex items-center justify-center space-x-1.5">
@@ -804,7 +766,6 @@ function generateHTML() {
                     </button>
                 </div>
 
-                <!-- Tab B: Card Form -->
                 <div id="paymentTabCard" class="hidden space-y-3">
                     <div>
                         <label class="block text-[11px] text-slate-400 mb-1">Card Number</label>
@@ -830,7 +791,6 @@ function generateHTML() {
                 </div>
             </div>
 
-            <!-- Instant Order Fulfillment Box (Revealed upon approval) -->
             <div id="orderSuccessScreen" class="hidden p-5 rounded-2xl bg-emerald-950/90 border border-emerald-800 text-center animate-fade-in">
                 <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mx-auto mb-2">
                     <i class="fa-solid fa-check"></i>
@@ -847,9 +807,7 @@ function generateHTML() {
                     </div>
                 </div>
 
-                <div class="mt-4 space-y-2" id="successDownloadLinksContainer">
-                    <!-- Dynamic Download buttons -->
-                </div>
+                <div class="mt-4 space-y-2" id="successDownloadLinksContainer"></div>
 
                 <p class="text-[10px] text-slate-400 mt-3">An invoice and backup copy have been dispatched to your delivery email.</p>
             </div>
@@ -878,10 +836,10 @@ function generateHTML() {
                 <div>
                     <h4 class="text-white font-semibold mb-3 text-sm">Plugins &amp; Software</h4>
                     <ul class="space-y-2 text-xs">
+                        <li><a href="#store" onclick="openProductModal('paddle-official')" class="hover:text-cyan-400">TechVerse Official Paddle Gateway</a></li>
+                        <li><a href="#store" onclick="openProductModal('coda-official')" class="hover:text-cyan-400">TechVerse Official Coda Gateway</a></li>
                         <li><a href="#store" onclick="openProductModal('stripe-gateway')" class="hover:text-cyan-400">TechVerse Stripe Gateway Pro</a></li>
                         <li><a href="#store" onclick="openProductModal('paypal-advanced')" class="hover:text-cyan-400">TechVerse PayPal Advanced Pro</a></li>
-                        <li><a href="#store" onclick="openProductModal('payflow-gateway')" class="hover:text-cyan-400">TechVerse PayFlow Gateway</a></li>
-                        <li><a href="#store" onclick="openProductModal('mollie-gateway')" class="hover:text-cyan-400">TechVerse Mollie Multi-Currency</a></li>
                         <li><a href="#store" onclick="openProductModal('ssl-shield')" class="hover:text-cyan-400">TechVerse SSL Shield (WP)</a></li>
                     </ul>
                 </div>
@@ -923,11 +881,9 @@ function generateHTML() {
         </div>
     </footer>
 
-    <!-- INTERACTIVE STORE APPLICATION JAVASCRIPT -->
     <script>
         const storeProducts = ${jsonProducts};
 
-        // Cart state stored in memory & localStorage
         let cart = [];
         try {
             const saved = localStorage.getItem('techverse_cart');
@@ -937,9 +893,8 @@ function generateHTML() {
         let activeCategory = 'all';
         let searchQuery = '';
         let discountMultiplier = 1.0;
-        let checkoutItems = []; // items being checked out
+        let checkoutItems = [];
 
-        // Render products grid
         function renderProducts() {
             const grid = document.getElementById('productsGrid');
             const noFound = document.getElementById('noProductsFound');
@@ -1018,7 +973,6 @@ function generateHTML() {
             });
         }
 
-        // Category Filter
         function filterCategory(cat) {
             activeCategory = cat;
             document.querySelectorAll('.cat-pill').forEach(btn => {
@@ -1031,7 +985,6 @@ function generateHTML() {
             renderProducts();
         }
 
-        // Search handler
         function handleLiveSearch() {
             const input = document.getElementById('liveSearchInput');
             const clearBtn = document.getElementById('clearSearchBtn');
@@ -1052,7 +1005,6 @@ function generateHTML() {
             filterCategory('all');
         }
 
-        // CART MANAGEMENT
         function saveCart() {
             try {
                 localStorage.setItem('techverse_cart', JSON.stringify(cart));
@@ -1157,7 +1109,6 @@ function generateHTML() {
 
         function toggleCartDrawer() {
             const drawer = document.getElementById('cartDrawer');
-            const backdrop = document.getElementById('cartDrawerBackdrop');
             if (drawer.classList.contains('translate-x-full')) {
                 openCartDrawer();
             } else {
@@ -1180,7 +1131,6 @@ function generateHTML() {
             drawer.classList.add('translate-x-full');
         }
 
-        // PRODUCT DETAIL MODAL
         function openProductModal(productId) {
             const p = storeProducts.find(x => x.id === productId);
             if (!p) return;
@@ -1193,11 +1143,9 @@ function generateHTML() {
             document.getElementById('modalDetailOriginalPrice').innerText = '$' + p.originalPrice;
             document.getElementById('modalDetailFullDesc').innerText = p.fullDesc;
 
-            // Icon
             const iconElem = document.getElementById('modalProductIcon');
             iconElem.className = p.icon;
 
-            // Features
             const featContainer = document.getElementById('modalDetailFeatures');
             featContainer.innerHTML = p.features.map(f => \`
                 <li class="flex items-start">
@@ -1206,7 +1154,6 @@ function generateHTML() {
                 </li>
             \`).join('');
 
-            // Specs
             const specsContainer = document.getElementById('modalDetailSpecs');
             specsContainer.innerHTML = Object.entries(p.specs).map(([key, val]) => \`
                 <div class="py-2 flex justify-between">
@@ -1215,7 +1162,6 @@ function generateHTML() {
                 </div>
             \`).join('');
 
-            // Buttons
             document.getElementById('modalAddToCartBtn').onclick = () => {
                 addToCart(p.id);
                 closeProductModal();
@@ -1238,7 +1184,6 @@ function generateHTML() {
             alert("Sandbox Demo Environment: TechVerse Studio live sandbox is active on staging. All features operate with real WooCommerce HPOS database triggers.");
         }
 
-        // CHECKOUT ENGINE
         function buyNowSingle(productId) {
             const p = storeProducts.find(x => x.id === productId);
             if (!p) return;
@@ -1263,7 +1208,7 @@ function generateHTML() {
             if (cart.length > 0) {
                 openCartCheckout();
             } else {
-                buyNowSingle('stripe-gateway');
+                buyNowSingle('paddle-official');
             }
         }
 
@@ -1301,12 +1246,12 @@ function generateHTML() {
             const code = document.getElementById('couponInput').value.trim().toUpperCase();
             const notice = document.getElementById('couponNotice');
             if (code === 'TECHVERSE20' || code === 'WELCOME20') {
-                discountMultiplier = 0.80; // 20% off
+                discountMultiplier = 0.80;
                 notice.innerHTML = '<i class="fa-solid fa-circle-check mr-1.5 text-cyan-400"></i> <strong>20% Promotional Discount Applied!</strong>';
                 notice.classList.remove('hidden');
                 updateCheckoutTotals();
             } else if (code === 'SAVE10') {
-                discountMultiplier = 0.90; // 10% off
+                discountMultiplier = 0.90;
                 notice.innerHTML = '<i class="fa-solid fa-circle-check mr-1.5 text-cyan-400"></i> <strong>10% Promotional Discount Applied!</strong>';
                 notice.classList.remove('hidden');
                 updateCheckoutTotals();
@@ -1366,7 +1311,7 @@ function generateHTML() {
                         }
                     }).render('#paypal-button-container');
                 } catch (e) {
-                    container.innerHTML = '<div class="text-xs text-slate-400 p-2">PayPal Smart Buttons Initialized</div>';
+                    container.innerHTML = '<div class="text-xs text-slate-400 p-2">PayPal Smart Buttons Ready</div>';
                 }
             } else {
                 container.innerHTML = '<div class="text-xs text-slate-400 p-2">PayPal Gateway Ready</div>';
@@ -1433,4 +1378,4 @@ function generateHTML() {
 
 fs.writeFileSync(path.join(__dirname, 'index.html'), generateHTML(), 'utf8');
 fs.writeFileSync(path.join(__dirname, 'products.html'), generateHTML(), 'utf8');
-console.log('Successfully regenerated index.html and products.html with 100% white-label TechVerse LLC branding!');
+console.log('Successfully regenerated index.html and products.html with Official Paddle and Coda Gateways!');
