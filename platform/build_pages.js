@@ -4,6 +4,7 @@ const path = require('path');
 const products = [
   {
     id: "paddle-official",
+    image: "paddle-official.svg",
     name: "TechVerse Official Paddle Billing Gateway",
     category: "gateways",
     categoryLabel: "WooCommerce Gateway",
@@ -35,6 +36,7 @@ const products = [
   },
   {
     id: "coda-official",
+    image: "coda-official.svg",
     name: "TechVerse Official Coda Payments Gateway",
     category: "gateways",
     categoryLabel: "WooCommerce Gateway",
@@ -66,6 +68,7 @@ const products = [
   },
   {
     id: "stripe-gateway",
+    image: "stripe-gateway.svg",
     name: "TechVerse Stripe Gateway Pro",
     category: "gateways",
     categoryLabel: "WooCommerce Gateway",
@@ -97,6 +100,7 @@ const products = [
   },
   {
     id: "paypal-advanced",
+    image: "paypal-advanced.svg",
     name: "TechVerse PayPal Advanced Pro",
     category: "gateways",
     categoryLabel: "WooCommerce Gateway",
@@ -128,6 +132,7 @@ const products = [
   },
   {
     id: "mollie-gateway",
+    image: "mollie-gateway.svg",
     name: "TechVerse Mollie Multi-Currency Gateway",
     category: "gateways",
     categoryLabel: "European Multi-Pay",
@@ -159,6 +164,7 @@ const products = [
   },
   {
     id: "worldpay-gateway",
+    image: "worldpay-gateway.svg",
     name: "TechVerse Worldpay Enterprise Gateway",
     category: "gateways",
     categoryLabel: "Enterprise Bank",
@@ -190,6 +196,7 @@ const products = [
   },
   {
     id: "gateways-bundle",
+    image: "gateways-bundle.svg",
     name: "The Ultimate Gateways Master Suite",
     category: "gateways",
     categoryLabel: "Developer Bundle",
@@ -221,6 +228,7 @@ const products = [
   },
   {
     id: "ssl-shield",
+    image: "ssl-shield.svg",
     name: "TechVerse SSL Shield & HTTPS Enforcer",
     category: "security",
     categoryLabel: "WordPress Security",
@@ -252,6 +260,7 @@ const products = [
   },
   {
     id: "expiry-watchdog",
+    image: "expiry-watchdog.svg",
     name: "24/7 Expiry Watchdog Cloud Service",
     category: "security",
     categoryLabel: "Cloud Microservice",
@@ -283,6 +292,7 @@ const products = [
   },
   {
     id: "saas-prime-theme",
+    image: "saas-prime-theme.svg",
     name: "TechVerse SaaS Prime Theme",
     category: "themes",
     categoryLabel: "SaaS Launch Theme",
@@ -314,6 +324,7 @@ const products = [
   },
   {
     id: "checkout-pro-kit",
+    image: "checkout-pro-kit.svg",
     name: "TechVerse Checkout Pro UI Kit",
     category: "themes",
     categoryLabel: "WooCommerce Checkout",
@@ -345,6 +356,7 @@ const products = [
   },
   {
     id: "sectigo-wildcard-ssl",
+    image: "sectigo-wildcard-ssl.svg",
     name: "Sectigo Wildcard SSL (*.domain)",
     category: "ssl",
     categoryLabel: "Wildcard Protection",
@@ -629,6 +641,11 @@ function generateHTML() {
             <button onclick="closeProductModal()" class="absolute top-5 right-5 w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center">
                 <i class="fa-solid fa-xmark"></i>
             </button>
+
+            <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-slate-800 bg-slate-950 shadow-md">
+                <img id="modalProductBanner" src="assets/products/paddle-official.svg" alt="Product Banner" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            </div>
 
             <div class="flex items-start space-x-4 mb-6">
                 <div id="modalProductIconBox" class="w-16 h-16 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-3xl font-bold border border-indigo-500/40 shrink-0">
@@ -921,7 +938,7 @@ function generateHTML() {
 
             filtered.forEach(p => {
                 const card = document.createElement('div');
-                card.className = "product-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-xl cursor-pointer group";
+                card.className = "product-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-xl cursor-pointer group";
                 card.onclick = (e) => {
                     if (e.target.closest('button')) return;
                     openProductModal(p.id);
@@ -929,25 +946,27 @@ function generateHTML() {
 
                 card.innerHTML = \`
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-\${p.iconColor}-600/20 text-\${p.iconColor}-400 flex items-center justify-center text-2xl font-bold border border-\${p.iconColor}-500/40 group-hover:scale-105 transition-transform">
-                                <i class="\${p.icon}"></i>
+                        <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-cyan-500/60 transition-all shadow-inner">
+                            <img src="assets/products/\${p.image}" alt="\${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-700/80 text-cyan-400 text-[10px] font-black uppercase tracking-wider">\${p.badge}</span>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs mb-1.5">
+                            <span class="text-[11px] font-bold text-cyan-400 uppercase tracking-wider">\${p.categoryLabel}</span>
+                            <div class="flex items-center text-amber-400">
+                                <i class="fa-solid fa-star text-[11px]"></i>
+                                <span class="ml-1 font-bold text-white text-xs">\${p.rating}</span>
+                                <span class="ml-1 text-slate-500 text-[10px]">(\${p.reviews})</span>
                             </div>
-                            <span class="px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-cyan-400 text-[10px] font-black uppercase tracking-wider">\${p.badge}</span>
                         </div>
-                        <div class="flex items-center text-amber-400 text-xs mb-1">
-                            <i class="fa-solid fa-star"></i>
-                            <span class="ml-1 font-bold text-white text-xs">\${p.rating}</span>
-                            <span class="ml-1 text-slate-500 text-[10px]">(\${p.reviews})</span>
-                            <span class="ml-2 text-[10px] text-slate-400 uppercase font-bold">&bull; \${p.categoryLabel}</span>
-                        </div>
-                        <h3 class="text-lg font-black text-white group-hover:text-cyan-400 transition-colors">\${p.name}</h3>
+
+                        <h3 class="text-base sm:text-lg font-black text-white group-hover:text-cyan-400 transition-colors line-clamp-1">\${p.name}</h3>
                         <p class="text-xs text-slate-400 mt-2 leading-relaxed line-clamp-2">\${p.shortDesc}</p>
                         
                         <div class="mt-4 space-y-1.5 text-xs text-slate-300">
                             \${p.features.slice(0, 3).map(f => \`<div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2 shrink-0"></i><span class="truncate">\${f}</span></div>\`).join('')}
                         </div>
-                    </div>
+                    </div>\`
 
                     <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
                         <div>
@@ -1135,6 +1154,11 @@ function generateHTML() {
             const p = storeProducts.find(x => x.id === productId);
             if (!p) return;
 
+            const modalBanner = document.getElementById('modalProductBanner');
+            if (modalBanner && p.image) {
+                modalBanner.src = 'assets/products/' + p.image;
+                modalBanner.alt = p.name;
+            }
             document.getElementById('modalProductTitle').innerText = p.name;
             document.getElementById('modalProductCategory').innerText = p.categoryLabel;
             document.getElementById('modalProductRating').innerText = p.rating;

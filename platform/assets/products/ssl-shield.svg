@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021a24" />
+      <stop offset="100%" stop-color="#01080d" />
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+    </pattern>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(0,0,0,0.6)" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="340" fill="url(#bgGrad)" />
+  <rect width="600" height="340" fill="url(#glowGrad)" />
+  <rect width="600" height="340" fill="url(#grid)" />
+
+  
+  <g transform="translate(150, 45)" filter="url(#shadow)">
+    <!-- 3D Glowing Shield -->
+    <path d="M 150 15 L 260 55 L 260 145 C 260 200, 150 240, 150 240 C 150 240, 40 200, 40 145 L 40 55 Z" fill="rgba(6, 30, 45, 0.9)" stroke="#22d3ee" stroke-width="2"/>
+    <path d="M 150 30 L 245 65 L 245 140 C 245 188, 150 222, 150 222 C 150 222, 55 188, 55 140 L 55 65 Z" fill="linear-gradient(180deg, rgba(6, 182, 212, 0.25) 0%, rgba(2, 6, 23, 0.8) 100%)"/>
+    
+    <!-- Padlock Graphic -->
+    <rect x="130" y="115" width="40" height="32" rx="6" fill="#22d3ee"/>
+    <path d="M 137 115 L 137 98 C 137 90, 163 90, 163 98 L 163 115" fill="none" stroke="#22d3ee" stroke-width="4"/>
+    <circle cx="150" cy="128" r="4" fill="#083344"/>
+    <rect x="148" y="128" width="4" height="9" fill="#083344"/>
+
+    <text x="150" y="175" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" text-anchor="middle">HTTPS ENFORCER</text>
+    <text x="150" y="192" fill="#67e8f9" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">HSTS &bull; Mixed Content Fixed</text>
+  </g>
+
+  <g transform="translate(300, 305)" text-anchor="middle">
+    <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse SSL Shield &amp; HTTPS Enforcer</text>
+    <text x="0" y="18" fill="#67e8f9" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">WordPress Plugin &bull; Automatic 301 Redirects &bull; Zero Config</text>
+  </g>
+
+
+  <!-- Brand watermark -->
+  <g transform="translate(30, 30)">
+    <rect width="28" height="28" rx="7" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="14" y="19" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" text-anchor="middle">TS</text>
+    <text x="36" y="19" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" letter-spacing="1">TECHVERSE STUDIO</text>
+  </g>
+</svg>
