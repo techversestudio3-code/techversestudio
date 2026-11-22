@@ -6,7 +6,7 @@ if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
 }
 
-function baseSvg(bgGradStart, bgGradEnd, glowColor, contentXml) {
+function baseSvg(bgGradStart, bgGradEnd, glowColor, contentXml, extraDefs = '') {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
@@ -24,6 +24,7 @@ function baseSvg(bgGradStart, bgGradEnd, glowColor, contentXml) {
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(0,0,0,0.6)" />
     </filter>
+    ${extraDefs}
   </defs>
 
   <!-- Background -->
@@ -54,15 +55,15 @@ const paddleSvg = baseSvg('#060d1f', '#020612', '#0ea5e9', `
     <circle cx="25" cy="21" r="5" fill="#ef4444" opacity="0.8"/>
     <circle cx="42" cy="21" r="5" fill="#f59e0b" opacity="0.8"/>
     <circle cx="59" cy="21" r="5" fill="#10b981" opacity="0.8"/>
-    <text x="160" y="26" fill="#e2e8f0" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" text-anchor="middle">Paddle Billing v2 &bull; Secure Checkout</text>
+    <text x="160" y="26" fill="#e2e8f0" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" text-anchor="middle">Paddle Billing v2 &#8226; Secure Checkout</text>
 
     <!-- Floating 3D Credit Card Mockup -->
     <g transform="translate(35, 60)">
-      <rect width="160" height="95" rx="12" fill="linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #1e1b4b 100%)" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
+      <rect width="160" height="95" rx="12" fill="url(#paddleCardGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="1" />
       <circle cx="130" cy="30" r="14" fill="#f59e0b" opacity="0.8"/>
       <circle cx="145" cy="30" r="14" fill="#ef4444" opacity="0.8"/>
       <rect x="20" y="24" width="28" height="20" rx="4" fill="#fbbf24" opacity="0.9"/>
-      <text x="20" y="70" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="9" letter-spacing="2">&bull;&bull;&bull;&bull; 4242</text>
+      <text x="20" y="70" fill="rgba(255,255,255,0.9)" font-family="monospace" font-size="9" letter-spacing="2">&#8226;&#8226;&#8226;&#8226; 4242</text>
       <text x="20" y="84" fill="#bae6fd" font-family="sans-serif" font-weight="700" font-size="8">PADDLE BUYER</text>
     </g>
 
@@ -84,8 +85,14 @@ const paddleSvg = baseSvg('#060d1f', '#020612', '#0ea5e9', `
   <!-- Title & Floating Badges -->
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18" letter-spacing="-0.5">TechVerse Official Paddle Billing Gateway</text>
-    <text x="0" y="18" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">WooCommerce HPOS Certified &bull; Automatic VAT/GST &bull; Overlay &amp; Inline</text>
+    <text x="0" y="18" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">WooCommerce HPOS Certified &#8226; Automatic VAT/GST &#8226; Overlay &amp; Inline</text>
   </g>
+`, `
+    <linearGradient id="paddleCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
 `);
 
 // 2. Coda Payments Official Banner
@@ -97,7 +104,7 @@ const codaSvg = baseSvg('#021a13', '#010d09', '#10b981', `
     <circle cx="25" cy="21" r="5" fill="#ef4444" opacity="0.8"/>
     <circle cx="42" cy="21" r="5" fill="#f59e0b" opacity="0.8"/>
     <circle cx="59" cy="21" r="5" fill="#10b981" opacity="0.8"/>
-    <text x="170" y="26" fill="#a7f3d0" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" text-anchor="middle">Coda Payments (Codapay) &bull; Global Multi-Pay</text>
+    <text x="170" y="26" fill="#a7f3d0" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" text-anchor="middle">Coda Payments (Codapay) &#8226; Global Multi-Pay</text>
 
     <!-- Payment Channels Grid -->
     <g transform="translate(25, 60)">
@@ -141,12 +148,12 @@ const codaSvg = baseSvg('#021a13', '#010d09', '#10b981', `
 
     <!-- Bottom Badge -->
     <rect x="25" y="165" width="290" height="26" rx="8" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(52, 211, 153, 0.3)" stroke-width="1"/>
-    <text x="170" y="182" fill="#a7f3d0" font-family="sans-serif" font-weight="700" font-size="10" text-anchor="middle">&#9889; 300+ Alternative Local Payment Rails &bull; 60+ Countries</text>
+    <text x="170" y="182" fill="#a7f3d0" font-family="sans-serif" font-weight="700" font-size="10" text-anchor="middle">&#9889; 300+ Alternative Local Payment Rails &#8226; 60+ Countries</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18" letter-spacing="-0.5">TechVerse Official Coda Payments Gateway</text>
-    <text x="0" y="18" fill="#34d399" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Telco Airtime &bull; E-Wallets &bull; Server-to-Server HMAC Webhooks</text>
+    <text x="0" y="18" fill="#34d399" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Telco Airtime &#8226; E-Wallets &#8226; Server-to-Server HMAC Webhooks</text>
   </g>
 `);
 
@@ -155,7 +162,7 @@ const stripeSvg = baseSvg('#0b0a24', '#040312', '#6366f1', `
   <g transform="translate(140, 55)" filter="url(#shadow)">
     <rect width="320" height="210" rx="18" fill="rgba(15, 14, 46, 0.9)" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1.5" />
     <rect width="320" height="42" rx="18" fill="rgba(99, 102, 241, 0.2)" />
-    <text x="160" y="26" fill="#c7d2fe" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">Stripe Elements &bull; High Conversion Checkout</text>
+    <text x="160" y="26" fill="#c7d2fe" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">Stripe Elements &#8226; High Conversion Checkout</text>
 
     <!-- Apple Pay & Google Pay Pills -->
     <g transform="translate(35, 60)">
@@ -169,19 +176,24 @@ const stripeSvg = baseSvg('#0b0a24', '#040312', '#6366f1', `
     <!-- In-line Card Element Mockup -->
     <g transform="translate(35, 106)">
       <rect width="250" height="42" rx="8" fill="rgba(2, 6, 23, 0.8)" stroke="#4f46e5" stroke-width="1.5"/>
-      <text x="15" y="26" fill="#e0e7ff" font-family="monospace" font-size="11">4242 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 4242</text>
+      <text x="15" y="26" fill="#e0e7ff" font-family="monospace" font-size="11">4242 &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; 4242</text>
       <text x="195" y="26" fill="#818cf8" font-family="monospace" font-size="10">12/28</text>
       <text x="235" y="26" fill="#818cf8" font-family="monospace" font-size="10">CVC</text>
     </g>
 
-    <rect x="35" y="162" width="250" height="32" rx="8" fill="linear-gradient(90deg, #4f46e5, #06b6d4)"/>
-    <text x="160" y="182" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">Pay $79.00 USD &bull; SCA 3DS2 Protected</text>
+    <rect x="35" y="162" width="250" height="32" rx="8" fill="url(#stripeBtnGrad)"/>
+    <text x="160" y="182" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">Pay $79.00 USD &#8226; SCA 3DS2 Protected</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse Stripe Gateway Pro</text>
-    <text x="0" y="18" fill="#a5b4fc" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Apple Pay &bull; Google Pay &bull; Inline Elements &bull; SCA 3DS2 Ready</text>
+    <text x="0" y="18" fill="#a5b4fc" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Apple Pay &#8226; Google Pay &#8226; Inline Elements &#8226; SCA 3DS2 Ready</text>
   </g>
+`, `
+    <linearGradient id="stripeBtnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
 `);
 
 // 4. PayPal Advanced Pro
@@ -189,7 +201,7 @@ const paypalSvg = baseSvg('#03122b', '#010612', '#0284c7', `
   <g transform="translate(140, 55)" filter="url(#shadow)">
     <rect width="320" height="210" rx="18" fill="rgba(8, 25, 55, 0.9)" stroke="rgba(14, 165, 233, 0.4)" stroke-width="1.5" />
     <rect width="320" height="42" rx="18" fill="rgba(14, 165, 233, 0.2)" />
-    <text x="160" y="26" fill="#bae6fd" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">PayPal Smart Buttons &bull; Official Integration</text>
+    <text x="160" y="26" fill="#bae6fd" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">PayPal Smart Buttons &#8226; Official Integration</text>
 
     <!-- Smart Buttons Mockup -->
     <g transform="translate(45, 60)">
@@ -203,12 +215,12 @@ const paypalSvg = baseSvg('#03122b', '#010612', '#0284c7', `
       <text x="115" y="112" fill="#38bdf8" font-family="sans-serif" font-weight="700" font-size="10" text-anchor="middle">&#9889; Pay in 4 Interest-Free Installments</text>
     </g>
 
-    <text x="160" y="188" fill="#7dd3fc" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">&#10003; Real-time IPN Webhook &bull; Venmo Mobile Ready</text>
+    <text x="160" y="188" fill="#7dd3fc" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">&#10003; Real-time IPN Webhook &#8226; Venmo Mobile Ready</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse PayPal Advanced Pro</text>
-    <text x="0" y="18" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Smart Buttons &bull; Pay Later &bull; Venmo &bull; Zero Redirection</text>
+    <text x="0" y="18" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Smart Buttons &#8226; Pay Later &#8226; Venmo &#8226; Zero Redirection</text>
   </g>
 `);
 
@@ -217,7 +229,7 @@ const mollieSvg = baseSvg('#1c1103', '#080501', '#f59e0b', `
   <g transform="translate(140, 55)" filter="url(#shadow)">
     <rect width="320" height="210" rx="18" fill="rgba(35, 22, 5, 0.9)" stroke="rgba(245, 158, 11, 0.4)" stroke-width="1.5" />
     <rect width="320" height="42" rx="18" fill="rgba(245, 158, 11, 0.15)" />
-    <text x="160" y="26" fill="#fde68a" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">Mollie European Payments &bull; Multi-Currency</text>
+    <text x="160" y="26" fill="#fde68a" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">Mollie European Payments &#8226; Multi-Currency</text>
 
     <g transform="translate(35, 60)">
       <rect width="118" height="34" rx="8" fill="#ec4899" opacity="0.9"/>
@@ -234,12 +246,12 @@ const mollieSvg = baseSvg('#1c1103', '#080501', '#f59e0b', `
     </g>
 
     <rect x="35" y="155" width="250" height="30" rx="8" fill="rgba(245, 158, 11, 0.2)" stroke="rgba(245, 158, 11, 0.3)" stroke-width="1"/>
-    <text x="160" y="174" fill="#fef3c7" font-family="sans-serif" font-weight="700" font-size="10" text-anchor="middle">20+ Local European Methods &bull; EUR Multi-Currency</text>
+    <text x="160" y="174" fill="#fef3c7" font-family="sans-serif" font-weight="700" font-size="10" text-anchor="middle">20+ Local European Methods &#8226; EUR Multi-Currency</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse Mollie Multi-Currency Gateway</text>
-    <text x="0" y="18" fill="#fcd34d" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">iDEAL &bull; Bancontact &bull; SEPA &bull; European Local Currencies</text>
+    <text x="0" y="18" fill="#fcd34d" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">iDEAL &#8226; Bancontact &#8226; SEPA &#8226; European Local Currencies</text>
   </g>
 `);
 
@@ -248,7 +260,7 @@ const worldpaySvg = baseSvg('#1a0408', '#080103', '#ef4444', `
   <g transform="translate(140, 55)" filter="url(#shadow)">
     <rect width="320" height="210" rx="18" fill="rgba(35, 8, 14, 0.9)" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1.5" />
     <rect width="320" height="42" rx="18" fill="rgba(239, 68, 68, 0.15)" />
-    <text x="160" y="26" fill="#fecaca" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">FIS Worldpay &bull; Enterprise Corporate Gateway</text>
+    <text x="160" y="26" fill="#fecaca" font-family="sans-serif" font-weight="800" font-size="11" text-anchor="middle">FIS Worldpay &#8226; Enterprise Corporate Gateway</text>
 
     <g transform="translate(35, 60)">
       <rect width="250" height="85" rx="10" fill="rgba(15, 23, 42, 0.8)" stroke="#ef4444" stroke-width="1"/>
@@ -257,14 +269,19 @@ const worldpaySvg = baseSvg('#1a0408', '#080103', '#ef4444', `
       <text x="125" y="68" fill="#38bdf8" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">&#128274; Tokenized PCI-DSS Card Vaulting</text>
     </g>
 
-    <rect x="35" y="160" width="250" height="28" rx="8" fill="linear-gradient(90deg, #dc2626, #991b1b)"/>
-    <text x="160" y="178" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="10" text-anchor="middle">Direct XML Integration &bull; High Volume SLA</text>
+    <rect x="35" y="160" width="250" height="28" rx="8" fill="url(#worldpayBtnGrad)"/>
+    <text x="160" y="178" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="10" text-anchor="middle">Direct XML Integration &#8226; High Volume SLA</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse Worldpay Enterprise Gateway</text>
-    <text x="0" y="18" fill="#f87171" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Corporate Merchant Accounts &bull; Multi-Currency &bull; Vaulting</text>
+    <text x="0" y="18" fill="#f87171" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Corporate Merchant Accounts &#8226; Multi-Currency &#8226; Vaulting</text>
   </g>
+`, `
+    <linearGradient id="worldpayBtnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
 `);
 
 // 7. Gateways Bundle
@@ -284,15 +301,20 @@ const bundleSvg = baseSvg('#140b2e', '#050212', '#a855f7', `
       <rect x="210" width="60" height="30" rx="6" fill="#f59e0b"/><text x="240" y="19" fill="#fff" font-family="sans-serif" font-weight="800" font-size="8" text-anchor="middle">PAYPAL</text>
     </g>
 
-    <text x="160" y="135" fill="#e9d5ff" font-family="sans-serif" font-weight="700" font-size="11" text-anchor="middle">5 Enterprise Gateway Plugins &bull; Unlimited Stores</text>
-    <rect x="40" y="152" width="240" height="26" rx="8" fill="linear-gradient(90deg, #9333ea, #06b6d4)"/>
-    <text x="160" y="169" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="10" text-anchor="middle">Developer License &bull; Save $226 Deal</text>
+    <text x="160" y="135" fill="#e9d5ff" font-family="sans-serif" font-weight="700" font-size="11" text-anchor="middle">5 Enterprise Gateway Plugins &#8226; Unlimited Stores</text>
+    <rect x="40" y="152" width="240" height="26" rx="8" fill="url(#bundleBtnGrad)"/>
+    <text x="160" y="169" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="10" text-anchor="middle">Developer License &#8226; Save $226 Deal</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">The Ultimate Gateways Master Suite</text>
-    <text x="0" y="18" fill="#d8b4fe" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Paddle &bull; Coda &bull; Stripe &bull; PayPal &bull; Worldpay All-In-One</text>
+    <text x="0" y="18" fill="#d8b4fe" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Paddle &#8226; Coda &#8226; Stripe &#8226; PayPal &#8226; Worldpay All-In-One</text>
   </g>
+`, `
+    <linearGradient id="bundleBtnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
 `);
 
 // 8. SSL Shield
@@ -300,7 +322,7 @@ const sslShieldSvg = baseSvg('#021a24', '#01080d', '#06b6d4', `
   <g transform="translate(150, 45)" filter="url(#shadow)">
     <!-- 3D Glowing Shield -->
     <path d="M 150 15 L 260 55 L 260 145 C 260 200, 150 240, 150 240 C 150 240, 40 200, 40 145 L 40 55 Z" fill="rgba(6, 30, 45, 0.9)" stroke="#22d3ee" stroke-width="2"/>
-    <path d="M 150 30 L 245 65 L 245 140 C 245 188, 150 222, 150 222 C 150 222, 55 188, 55 140 L 55 65 Z" fill="linear-gradient(180deg, rgba(6, 182, 212, 0.25) 0%, rgba(2, 6, 23, 0.8) 100%)"/>
+    <path d="M 150 30 L 245 65 L 245 140 C 245 188, 150 222, 150 222 C 150 222, 55 188, 55 140 L 55 65 Z" fill="url(#sslPathGrad)"/>
     
     <!-- Padlock Graphic -->
     <rect x="130" y="115" width="40" height="32" rx="6" fill="#22d3ee"/>
@@ -309,13 +331,18 @@ const sslShieldSvg = baseSvg('#021a24', '#01080d', '#06b6d4', `
     <rect x="148" y="128" width="4" height="9" fill="#083344"/>
 
     <text x="150" y="175" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" text-anchor="middle">HTTPS ENFORCER</text>
-    <text x="150" y="192" fill="#67e8f9" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">HSTS &bull; Mixed Content Fixed</text>
+    <text x="150" y="192" fill="#67e8f9" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">HSTS &#8226; Mixed Content Fixed</text>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse SSL Shield &amp; HTTPS Enforcer</text>
-    <text x="0" y="18" fill="#67e8f9" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">WordPress Plugin &bull; Automatic 301 Redirects &bull; Zero Config</text>
+    <text x="0" y="18" fill="#67e8f9" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">WordPress Plugin &#8226; Automatic 301 Redirects &#8226; Zero Config</text>
   </g>
+`, `
+    <linearGradient id="sslPathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0.8" />
+    </linearGradient>
 `);
 
 // 9. Expiry Watchdog
@@ -337,7 +364,7 @@ const watchdogSvg = baseSvg('#051329', '#01050d', '#3b82f6', `
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">24/7 Expiry Watchdog Cloud Service</text>
-    <text x="0" y="18" fill="#93c5fd" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Telegram, Slack &amp; Email Alerts &bull; Multi-Edge Monitoring</text>
+    <text x="0" y="18" fill="#93c5fd" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Telegram, Slack &amp; Email Alerts &#8226; Multi-Edge Monitoring</text>
   </g>
 `);
 
@@ -355,7 +382,7 @@ const saasThemeSvg = baseSvg('#060e1f', '#02050d', '#0ea5e9', `
 
     <!-- UI layout preview inside window -->
     <g transform="translate(20, 45)">
-      <rect width="300" height="60" rx="8" fill="linear-gradient(90deg, rgba(14, 165, 233, 0.2), rgba(99, 102, 241, 0.2))" stroke="#334155" stroke-width="1"/>
+      <rect width="300" height="60" rx="8" fill="url(#saasBannerGrad)" stroke="#334155" stroke-width="1"/>
       <text x="20" y="28" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12">Scale Your Digital SaaS</text>
       <text x="20" y="44" fill="#94a3b8" font-family="sans-serif" font-size="8">Ultra-fast Tailwind CSS &amp; Alpine.js templates</text>
       
@@ -375,8 +402,13 @@ const saasThemeSvg = baseSvg('#060e1f', '#02050d', '#0ea5e9', `
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse SaaS Prime Theme</text>
-    <text x="0" y="18" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Tailwind CSS &bull; Alpine.js &bull; 99+ PageSpeed &bull; Figma Source</text>
+    <text x="0" y="18" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Tailwind CSS &#8226; Alpine.js &#8226; 99+ PageSpeed &#8226; Figma Source</text>
   </g>
+`, `
+    <linearGradient id="saasBannerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.2" />
+    </linearGradient>
 `);
 
 // 11. Checkout Pro Kit
@@ -404,15 +436,20 @@ const checkoutProSvg = baseSvg('#0f0826', '#04020d', '#8b5cf6', `
       <text x="10" y="126" fill="#94a3b8" font-family="sans-serif" font-size="7">Add priority VIP license support</text>
 
       <!-- Button -->
-      <rect y="145" width="200" height="32" rx="8" fill="linear-gradient(90deg, #9333ea, #6366f1)"/>
+      <rect y="145" width="200" height="32" rx="8" fill="url(#checkoutBtnGrad)"/>
       <text x="100" y="165" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="10" text-anchor="middle">Complete Order ($49.00)</text>
     </g>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse Checkout Pro UI Kit</text>
-    <text x="0" y="18" fill="#c084fc" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">1-Step Funnel &bull; Address Autocomplete &bull; +34% Conversion Boost</text>
+    <text x="0" y="18" fill="#c084fc" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">1-Step Funnel &#8226; Address Autocomplete &#8226; +34% Conversion Boost</text>
   </g>
+`, `
+    <linearGradient id="checkoutBtnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
 `);
 
 // 12. Sectigo Wildcard SSL
@@ -423,7 +460,7 @@ const wildcardSvg = baseSvg('#1c1703', '#080601', '#eab308', `
     <rect x="8" y="8" width="304" height="189" rx="10" fill="none" stroke="rgba(234, 179, 8, 0.3)" stroke-width="1" stroke-dasharray="6,4"/>
 
     <!-- Gold Seal -->
-    <circle cx="160" cy="65" r="28" fill="linear-gradient(135deg, #fef08a, #ca8a04)" stroke="#713f12" stroke-width="2"/>
+    <circle cx="160" cy="65" r="28" fill="url(#goldSealGrad)" stroke="#713f12" stroke-width="2"/>
     <text x="160" y="72" fill="#713f12" font-family="sans-serif" font-weight="900" font-size="20" text-anchor="middle">&#128274;</text>
 
     <text x="160" y="115" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="14" text-anchor="middle">SECTIGO WILDCARD SSL</text>
@@ -432,15 +469,20 @@ const wildcardSvg = baseSvg('#1c1703', '#080601', '#eab308', `
     <!-- Highlights -->
     <g transform="translate(30, 145)">
       <rect width="260" height="34" rx="6" fill="rgba(234, 179, 8, 0.15)" stroke="rgba(234, 179, 8, 0.3)" stroke-width="1"/>
-      <text x="130" y="18" fill="#fef08a" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">Unlimited Subdomains &bull; $500,000 Warranty</text>
-      <text x="130" y="28" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">2048/4096-bit RSA &bull; 99.9% Browser Recognition</text>
+      <text x="130" y="18" fill="#fef08a" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">Unlimited Subdomains &#8226; $500,000 Warranty</text>
+      <text x="130" y="28" fill="#94a3b8" font-family="sans-serif" font-size="8" text-anchor="middle">2048/4096-bit RSA &#8226; 99.9% Browser Recognition</text>
     </g>
   </g>
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">Sectigo Wildcard SSL Certificate</text>
-    <text x="0" y="18" fill="#fde047" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Secures Root &amp; Unlimited Subdomains &bull; Automated Issuance</text>
+    <text x="0" y="18" fill="#fde047" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Secures Root &amp; Unlimited Subdomains &#8226; Automated Issuance</text>
   </g>
+`, `
+    <linearGradient id="goldSealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
 `);
 
 // Write all 12 SVG banners
@@ -455,7 +497,7 @@ const banners = [
   { file: 'ssl-shield.svg', content: sslShieldSvg },
   { file: 'expiry-watchdog.svg', content: watchdogSvg },
   { file: 'saas-prime-theme.svg', content: saasThemeSvg },
-  { file: 'checkout-pro-kit.svg', content: checkoutProKit = checkoutProSvg },
+  { file: 'checkout-pro-kit.svg', content: checkoutProSvg },
   { file: 'sectigo-wildcard-ssl.svg', content: wildcardSvg }
 ];
 

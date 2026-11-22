@@ -1,31 +1,121 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
-    <filter id="chromeBevel" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#2563eb" flood-opacity="0.4" />
-      <feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#020617" flood-opacity="0.85" />
+    <!-- Multi-layered 3D Lighting & Shadows -->
+    <filter id="neonShieldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00f0ff" flood-opacity="0.6" />
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#1d4ed8" flood-opacity="0.8" />
+      <feDropShadow dx="0" dy="40" stdDeviation="40" flood-color="#020617" flood-opacity="0.95" />
     </filter>
-    <linearGradient id="chromeMetal" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc" />
-      <stop offset="25%" stop-color="#94a3b8" />
-      <stop offset="50%" stop-color="#ffffff" />
-      <stop offset="75%" stop-color="#475569" />
+
+    <filter id="letter3DBevel" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity="0.7" />
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#38bdf8" flood-opacity="0.5" />
+    </filter>
+
+    <!-- Metallic Platinum-Chrome Gradients -->
+    <linearGradient id="chromeBevel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="20%" stop-color="#e2e8f0" />
+      <stop offset="45%" stop-color="#94a3b8" />
+      <stop offset="55%" stop-color="#ffffff" />
+      <stop offset="80%" stop-color="#475569" />
       <stop offset="100%" stop-color="#cbd5e1" />
     </linearGradient>
-    <linearGradient id="electricBlue" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1d4ed8" />
+
+    <linearGradient id="chromeBevelDark" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <!-- Electric Cyan-Blue Cyber Gradients -->
+    <linearGradient id="cyberBlueGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
       <stop offset="50%" stop-color="#3b82f6" />
-      <stop offset="100%" stop-color="#60a5fa" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+
+    <linearGradient id="shieldRimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="35%" stop-color="#ffffff" />
+      <stop offset="65%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+
+    <linearGradient id="shieldCoreGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#060a17" />
+      <stop offset="100%" stop-color="#02040a" />
     </linearGradient>
   </defs>
-  <g filter="url(#chromeBevel)">
-    <!-- 3D Heavy Outer Shield -->
-    <path d="M250,50 L420,110 C420,280 340,380 250,450 C160,380 80,280 80,110 Z" fill="#090d16" stroke="url(#chromeMetal)" stroke-width="12" />
-    <!-- Inner Rim with Specular Lighting -->
-    <path d="M250,80 L390,130 C390,260 325,350 250,410 C175,350 110,260 110,130 Z" fill="url(#electricBlue)" opacity="0.9" />
-    <!-- 3D Chrome Monogram T & S -->
-    <!-- Letter T -->
-    <path d="M170,160 L330,160 L330,200 L275,200 L275,340 L225,340 L225,200 L170,200 Z" fill="url(#chromeMetal)" stroke="#ffffff" stroke-width="2" />
-    <!-- Interlocking S Curve -->
-    <path d="M280,220 C320,220 340,240 340,265 C340,300 300,310 270,320 C240,330 230,340 230,355 C230,375 250,385 280,385 C310,385 330,375 340,360" fill="none" stroke="url(#chromeMetal)" stroke-width="20" stroke-linecap="round" />
+
+  <!-- 3D Heavy Outer Shield with Intense Cyan Backlight -->
+  <g filter="url(#neonShieldGlow)">
+    <!-- Outer Metallic Shield Frame -->
+    <path d="M 250,32 L 445,95 C 445,295 350,408 250,472 C 150,408 55,295 55,95 Z" 
+          fill="#070c18" stroke="url(#shieldRimGrad)" stroke-width="14" stroke-linejoin="round" />
+    
+    <!-- Inner High-Tech Beveled Cyber Rim -->
+    <path d="M 250,56 L 420,112 C 420,280 335,382 250,442 C 165,382 80,280 80,112 Z" 
+          fill="url(#shieldCoreGrad)" stroke="url(#cyberBlueGlow)" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Interior Cyber Grid Accent -->
+    <path d="M 250,60 L 250,440 M 110,180 L 390,180 M 130,270 L 370,270 M 165,350 L 335,350" 
+          stroke="rgba(56, 189, 248, 0.08)" stroke-width="2" />
   </g>
+
+  <!-- MASSIVE, BOLD, 3D CHROME "TS" MONOGRAM (Dominant & Highly Visible) -->
+  <g filter="url(#letter3DBevel)">
+    <!-- 3D Depth Extrusion Shadow for T & S (Simulating Solid 3D Platinum Metal) -->
+    <g transform="translate(0, 10)" opacity="0.45">
+      <!-- Letter T Shadow -->
+      <path d="M 125,122 L 375,122 L 375,182 L 286,182 L 286,400 L 214,400 L 214,182 L 125,182 Z" fill="#000000" />
+      <!-- Letter S Shadow -->
+      <path d="M 365,195 C 320,175 220,185 185,235 C 160,270 190,305 250,322 C 320,340 335,365 325,395 C 310,430 240,435 180,410 L 165,455 C 235,485 355,475 380,415 C 395,375 375,335 310,312 C 245,290 230,275 240,250 C 250,225 315,220 355,240 Z" fill="#000000" />
+    </g>
+
+    <!-- INTERTWINED 3D "T" & "S" SCULPTED EMBLEM -->
+    
+    <!-- 1. Letter S (Back/Under Interlocking Curves) -->
+    <!-- S Upper Arch -->
+    <path d="M 365,192 C 320,170 220,180 185,230 C 160,265 190,300 250,318 L 260,292 C 215,278 198,258 212,238 C 228,214 300,208 348,226 Z" 
+          fill="url(#chromeBevel)" stroke="#ffffff" stroke-width="2.5" />
+    
+    <!-- S Lower Loop & Tail -->
+    <path d="M 250,318 C 320,336 345,362 335,398 C 320,432 245,438 185,412 L 168,454 C 242,486 360,476 385,416 C 400,372 370,332 305,310 Z" 
+          fill="url(#chromeBevelDark)" stroke="#ffffff" stroke-width="2.5" />
+
+    <!-- 2. Giant Bold Letter T (Commanding & Centered) -->
+    <!-- T Top Horizontal Bar -->
+    <path d="M 120,118 L 380,118 L 380,180 L 288,180 L 288,180 L 212,180 L 120,180 Z" 
+          fill="url(#chromeBevel)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" />
+    
+    <!-- T Top Bar Facet Bevel Highlight (3D Chiseled Effect) -->
+    <polygon points="120,118 380,118 360,138 140,138" fill="#ffffff" opacity="0.8" />
+    <polygon points="120,180 380,180 360,162 140,162" fill="#475569" opacity="0.6" />
+
+    <!-- T Vertical Stem -->
+    <path d="M 212,180 L 288,180 L 288,400 L 212,400 Z" 
+          fill="url(#chromeBevel)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" />
+    
+    <!-- T Vertical Stem Facet (Left Bright, Right Shadow) -->
+    <polygon points="212,180 250,180 250,400 212,400" fill="#ffffff" opacity="0.45" />
+    <polygon points="250,180 288,180 288,400 250,400" fill="#334155" opacity="0.4" />
+
+    <!-- 3. S Front Bridge (Over T Center for 3D Interlocking Effect) -->
+    <path d="M 228,290 C 245,282 258,284 278,294 L 286,270 C 265,260 242,260 220,270 Z" 
+          fill="#ffffff" stroke="#38bdf8" stroke-width="2" />
+    <path d="M 195,304 C 235,316 270,326 312,342 L 324,316 C 285,302 248,292 208,280 Z" 
+          fill="url(#chromeBevel)" stroke="#ffffff" stroke-width="2.5" />
+
+    <!-- Precision Laser Cyan Core Accent Gem in Center of T -->
+    <polygon points="250,132 262,148 250,164 238,148" fill="#00f0ff" stroke="#ffffff" stroke-width="1.5" />
+    <circle cx="250" cy="148" r="4" fill="#ffffff" />
+  </g>
+
+  <!-- Glowing Corner Power Nodes -->
+  <circle cx="250" cy="32" r="5" fill="#00f0ff" />
+  <circle cx="445" cy="95" r="4" fill="#38bdf8" />
+  <circle cx="55" cy="95" r="4" fill="#38bdf8" />
+  <circle cx="250" cy="472" r="5" fill="#00f0ff" />
 </svg>

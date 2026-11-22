@@ -15,6 +15,7 @@
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
       <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(0,0,0,0.6)" />
     </filter>
+    
   </defs>
 
   <!-- Background -->
@@ -40,7 +41,7 @@
 
   <g transform="translate(300, 305)" text-anchor="middle">
     <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">24/7 Expiry Watchdog Cloud Service</text>
-    <text x="0" y="18" fill="#93c5fd" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Telegram, Slack &amp; Email Alerts &bull; Multi-Edge Monitoring</text>
+    <text x="0" y="18" fill="#93c5fd" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">Telegram, Slack &amp; Email Alerts &#8226; Multi-Edge Monitoring</text>
   </g>
 
 
