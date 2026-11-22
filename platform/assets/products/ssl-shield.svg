@@ -1,59 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#021a24" />
-      <stop offset="100%" stop-color="#01080d" />
+    <linearGradient id="bg_ssl_shield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#041624" />
+      <stop offset="100%" stop-color="#020910" />
     </linearGradient>
-    <radialGradient id="glowGrad" cx="50%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    <radialGradient id="glow_ssl_shield" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.38" />
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
     </radialGradient>
-    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+    <pattern id="grid_ssl_shield" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
     </pattern>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(0,0,0,0.6)" />
+    <filter id="shadow_ssl_shield" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(0,0,0,0.65)" />
     </filter>
-    
-    <linearGradient id="sslPathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#020617" stop-opacity="0.8" />
-    </linearGradient>
-
   </defs>
 
-  <!-- Background -->
-  <rect width="600" height="340" fill="url(#bgGrad)" />
-  <rect width="600" height="340" fill="url(#glowGrad)" />
-  <rect width="600" height="340" fill="url(#grid)" />
+  <!-- Background Base -->
+  <rect width="600" height="340" fill="url(#bg_ssl_shield)" />
+  <rect width="600" height="340" fill="url(#glow_ssl_shield)" />
+  <rect width="600" height="340" fill="url(#grid_ssl_shield)" />
+
+  <!-- Corner Watermark -->
+  <g transform="translate(30, 26)">
+    <rect width="26" height="26" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="13" y="17" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="11" text-anchor="middle">TS</text>
+    <text x="34" y="17" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10" letter-spacing="1">TECHVERSE STUDIO</text>
+  </g>
+
+  <!-- Top Certified Badge -->
+  <g transform="translate(430, 24)">
+    <rect width="140" height="24" rx="12" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" />
+    <circle cx="16" cy="12" r="4" fill="#10b981" />
+    <text x="78" y="16" fill="#e2e8f0" font-family="sans-serif" font-weight="800" font-size="9" text-anchor="middle">OFFICIAL EXTENSION</text>
+  </g>
 
   
-  <g transform="translate(150, 45)" filter="url(#shadow)">
-    <!-- 3D Glowing Shield -->
-    <path d="M 150 15 L 260 55 L 260 145 C 260 200, 150 240, 150 240 C 150 240, 40 200, 40 145 L 40 55 Z" fill="rgba(6, 30, 45, 0.9)" stroke="#22d3ee" stroke-width="2"/>
-    <path d="M 150 30 L 245 65 L 245 140 C 245 188, 150 222, 150 222 C 150 222, 55 188, 55 140 L 55 65 Z" fill="url(#sslPathGrad)"/>
-    
-    <!-- Padlock Graphic -->
-    <rect x="130" y="115" width="40" height="32" rx="6" fill="#22d3ee"/>
-    <path d="M 137 115 L 137 98 C 137 90, 163 90, 163 98 L 163 115" fill="none" stroke="#22d3ee" stroke-width="4"/>
-    <circle cx="150" cy="128" r="4" fill="#083344"/>
-    <rect x="148" y="128" width="4" height="9" fill="#083344"/>
+    <g transform="translate(60, 62)" filter="url(#shadow_ssl_shield)">
+      <rect width="480" height="200" rx="20" fill="rgba(8, 26, 44, 0.9)" stroke="rgba(14, 165, 233, 0.4)" stroke-width="1.5" />
+      
+      <g transform="translate(30, 24)">
+        <rect width="140" height="26" rx="8" fill="#0073aa" />
+        <g transform="translate(10, 4) scale(0.75)" fill="#ffffff"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/></g>
+        <text x="82" y="17" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10" text-anchor="middle">WordPress</text>
 
-    <text x="150" y="175" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" text-anchor="middle">HTTPS ENFORCER</text>
-    <text x="150" y="192" fill="#67e8f9" font-family="sans-serif" font-weight="700" font-size="9" text-anchor="middle">HSTS &#8226; Mixed Content Fixed</text>
-  </g>
+        <text x="156" y="18" fill="#94a3b8" font-family="sans-serif" font-weight="900" font-size="16">&#43;</text>
 
-  <g transform="translate(300, 305)" text-anchor="middle">
-    <text x="0" y="0" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18">TechVerse SSL Shield &amp; HTTPS Enforcer</text>
-    <text x="0" y="18" fill="#67e8f9" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11">WordPress Plugin &#8226; Automatic 301 Redirects &#8226; Zero Config</text>
-  </g>
+        <rect x="170" y="0" width="140" height="26" rx="8" fill="rgba(14, 165, 233, 0.15)" stroke="rgba(14, 165, 233, 0.3)" stroke-width="1" />
+        <text x="240" y="17" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10" text-anchor="middle">AUTO FORCE HTTPS</text>
+      </g>
 
+      <!-- Center: Official Cloudflare & Let's Encrypt Logos -->
+      <g transform="translate(80, 72)">
+        <g transform="translate(0, 0)">
+          <g transform="translate(0, 4) scale(2.2)" fill="#f38020"><path d="M16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-8.6592-.1123a.1559.1559 0 0 1-.1333-.0713c-.0283-.042-.0351-.0986-.021-.1553.0278-.084.1123-.1484.2036-.1562l8.7359-.1123c1.0351-.0489 2.1601-.8868 2.5537-1.9136l.499-1.3013c.0215-.0561.0293-.1128.0147-.168-.5625-2.5463-2.835-4.4453-5.5499-4.4453-2.5039 0-4.6284 1.6177-5.3876 3.8614-.4927-.3658-1.1187-.5625-1.794-.499-1.2026.119-2.1665 1.083-2.2861 2.2856-.0283.31-.0069.6128.0635.894C1.5683 13.171 0 14.7754 0 16.752c0 .1748.0142.3515.0352.5273.0141.083.0844.1475.1689.1475h15.9814c.0909 0 .1758-.0645.2032-.1553l.12-.4268zm2.7568-5.5634c-.0771 0-.1611 0-.2383.0112-.0566 0-.1054.0415-.127.0976l-.3378 1.1744c-.1475.5068-.0918.9707.1543 1.3164.2256.3164.6055.498 1.0625.5195l1.8437.1133c.0557 0 .1055.0263.1329.0703.0283.043.0351.1074.0214.1562-.0283.084-.1132.1485-.204.1553l-1.921.1123c-1.041.0488-2.1582.8867-2.5527 1.914l-.1406.3585c-.0283.0713.0215.1416.0986.1416h6.5977c.0771 0 .1474-.0489.169-.126.1122-.4082.1757-.837.1757-1.2803 0-2.6025-2.125-4.727-4.7344-4.727"/></g>
+          <text x="65" y="38" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="22">Cloudflare</text>
+        </g>
 
-  <!-- Brand watermark -->
-  <g transform="translate(30, 30)">
-    <rect width="28" height="28" rx="7" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-    <text x="14" y="19" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" text-anchor="middle">TS</text>
-    <text x="36" y="19" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" letter-spacing="1">TECHVERSE STUDIO</text>
-  </g>
+        <line x1="195" y1="5" x2="195" y2="55" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+
+        <g transform="translate(215, 0)">
+          <g transform="translate(0, 4) scale(2.2)" fill="#003a70"><path d="M11.9914 0a.8829.8829 0 00-.8718.817v3.0209A.8829.8829 0 0012 4.7207a.8829.8829 0 00.8803-.8803V.817a.8829.8829 0 00-.889-.817zm7.7048 3.1089a.8804.8804 0 00-.5214.1742l-2.374 1.9482a.8804.8804 0 00.5592 1.5622.8794.8794 0 00.5592-.2001l2.3714-1.9506a.8804.8804 0 00-.5944-1.534zm-15.3763.0133a.8829.8829 0 00-.611 1.5206l2.37 1.9506a.876.876 0 00.5606.2001v-.002a.8804.8804 0 00.5597-1.5602L4.8277 3.2831a.8829.8829 0 00-.5078-.161zm7.6598 3.2275a5.0456 5.0456 0 00-5.0262 5.0455v1.4876H5.787a.9672.9672 0 00-.9647.9643v9.1887a.9672.9672 0 00.9647.9643H18.213a.9672.9672 0 00.9643-.9643v-9.1907a.9672.9672 0 00-.9643-.9623h-1.1684v-1.4876a5.0456 5.0456 0 00-5.0649-5.0455zm.0127 2.8933a2.1522 2.1522 0 012.1593 2.1522v1.4876H9.8473v-1.4876a2.1522 2.1522 0 012.145-2.1522zm7.3812.5033a.8829.8829 0 10.0705 1.7632h3.0267a.8829.8829 0 000-1.7609H19.444a.8829.8829 0 00-.0705-.0023zm-17.8444.0023a.8829.8829 0 000 1.7609h2.9983a.8829.8829 0 000-1.7609zm10.4596 6.7746a1.2792 1.2792 0 01.641 2.3926v1.2453a.6298.6298 0 01-1.2595 0v-1.2453a1.2792 1.2792 0 01.6185-2.3926z"/></g>
+          <text x="65" y="38" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20">Let's Encrypt</text>
+        </g>
+      </g>
+
+      <g transform="translate(30, 155)">
+        <rect width="420" height="28" rx="8" fill="rgba(14, 165, 233, 0.15)" stroke="rgba(14, 165, 233, 0.25)" stroke-width="1"/>
+        <text x="210" y="18" fill="#bae6fd" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" text-anchor="middle">
+          Automatic Mixed-Content Fixer &#8226; HSTS Preload &#8226; Zero Configuration
+        </text>
+      </g>
+    </g>
+
+    <text x="300" y="295" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="16" text-anchor="middle">
+      TechVerse SSL Shield (WP Edition)
+    </text>
+    <text x="300" y="315" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11" text-anchor="middle">
+      Official Cloudflare &amp; Let's Encrypt Automated Security Middleware
+    </text>
+  
 </svg>

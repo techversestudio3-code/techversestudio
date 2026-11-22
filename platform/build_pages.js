@@ -402,7 +402,7 @@ function renderProductCardHTML(p) {
          onclick="if (!event.target.closest('button')) openProductModal('${p.id}')">
         <div>
             <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-cyan-500/60 transition-all shadow-inner">
-                <img src="assets/products/${pngImage}?v=20261122" 
+                <img src="assets/products/${pngImage}?v=20261122_v2" 
                      alt="${p.name}" 
                      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
                      loading="eager" 
@@ -710,7 +710,7 @@ ${preRenderedCards}
 
             <!-- Product Banner Cover Image -->
             <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-slate-800 bg-slate-950 shadow-md">
-                <img id="modalProductBanner" src="assets/products/paddle-official.png?v=20261122" alt="Product Banner" class="w-full h-full object-cover object-center" onerror="this.onerror=null; this.src='assets/products/paddle-official.svg';">
+                <img id="modalProductBanner" src="assets/products/paddle-official.png?v=20261122_v2" alt="Product Banner" class="w-full h-full object-cover object-center" onerror="this.onerror=null; this.src='assets/products/paddle-official.svg';">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
             </div>
 
@@ -1205,7 +1205,7 @@ ${preRenderedCards}
             const modalBanner = document.getElementById('modalProductBanner');
             if (modalBanner && p.image) {
                 const pngName = p.image.replace('.svg', '.png');
-                modalBanner.src = 'assets/products/' + pngName + '?v=20261122';
+                modalBanner.src = 'assets/products/' + pngName + '?v=20261122_v2';
                 modalBanner.alt = p.name;
                 modalBanner.onerror = function() {
                     this.onerror = null;
