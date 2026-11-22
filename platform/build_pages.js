@@ -393,6 +393,8 @@ function renderProductCardHTML(p) {
     `<div class="flex items-center"><i class="fa-solid fa-check text-cyan-400 mr-2 shrink-0"></i><span class="truncate">${f}</span></div>`
   ).join('');
 
+  const pngImage = p.image.replace('.svg', '.png');
+
   return `
     <div class="product-card rounded-3xl p-5 sm:p-6 flex flex-col justify-between shadow-xl cursor-pointer group" 
          data-id="${p.id}" 
@@ -400,7 +402,13 @@ function renderProductCardHTML(p) {
          onclick="if (!event.target.closest('button')) openProductModal('${p.id}')">
         <div>
             <div class="relative w-full h-44 rounded-2xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-cyan-500/60 transition-all shadow-inner">
-                <img src="assets/products/${p.image}" alt="${p.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" loading="eager" width="600" height="340">
+                <img src="assets/products/${pngImage}?v=20261122" 
+                     alt="${p.name}" 
+                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                     loading="eager" 
+                     width="600" 
+                     height="340"
+                     onerror="this.onerror=null; this.src='assets/products/${p.image}';">
                 <span class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/85 backdrop-blur-md border border-slate-700/80 text-cyan-400 text-[10px] font-black uppercase tracking-wider">${p.badge}</span>
             </div>
 
@@ -489,36 +497,36 @@ function generateHTML() {
     <!-- Header Navigation -->
     <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-950/90 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center space-x-3.5 group">
-                <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow-[0_0_20px_rgba(56,189,248,0.7)] transition-transform duration-300 group-hover:scale-105 shrink-0">
-                <div class="flex flex-col justify-center">
-                    <div class="flex items-center whitespace-nowrap leading-none">
-                        <span class="text-2xl sm:text-[26px] font-black tracking-tight text-white inline-block">TechVerse</span>
-                        <span class="ml-1.5 text-2xl sm:text-[26px] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 inline-block">Studio</span>
+            <a href="index.html" class="flex items-center space-x-3 group mr-8 lg:mr-10 shrink-0">
+                <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_15px_rgba(56,189,248,0.6)] transition-transform duration-300 group-hover:scale-105 shrink-0">
+                <div class="flex flex-col justify-center select-none">
+                    <div class="flex items-baseline">
+                        <span class="text-xl sm:text-2xl font-black tracking-tight text-white inline-block">TechVerse</span>
+                        <span class="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 border border-cyan-500/30 px-1.5 py-0.5 rounded ml-1.5 shadow-sm inline-block">Studio</span>
                     </div>
-                    <span class="block text-[7.5px] sm:text-[8px] font-extrabold text-slate-400 uppercase tracking-tighter leading-none mt-1.5 whitespace-nowrap" style="max-width: 118px; letter-spacing: -0.35px;">
-                        Plugins, Themes &amp; SaaS Tools
+                    <span class="text-[7.5px] font-extrabold text-slate-400 uppercase tracking-tight mt-1 block truncate" style="max-width: 108px; letter-spacing: -0.2px;">
+                        Plugins, Themes &amp; Tools
                     </span>
                 </div>
             </a>
 
-            <nav class="hidden lg:flex items-center space-x-7 text-sm font-bold text-slate-300">
+            <nav class="hidden lg:flex items-center space-x-5 xl:space-x-7 text-sm font-bold text-slate-300">
                 <a href="#store" onclick="filterCategory('all')" class="hover:text-cyan-400 transition-colors">All Store</a>
-                <a href="#store" onclick="filterCategory('gateways')" class="hover:text-cyan-400 transition-colors">WooCommerce Gateways</a>
+                <a href="#store" onclick="filterCategory('gateways')" class="hover:text-cyan-400 transition-colors">Gateways</a>
                 <a href="#store" onclick="filterCategory('security')" class="hover:text-cyan-400 transition-colors">WP Security</a>
                 <a href="#store" onclick="filterCategory('themes')" class="hover:text-cyan-400 transition-colors">SaaS Themes</a>
                 <a href="#store" onclick="filterCategory('ssl')" class="hover:text-cyan-400 transition-colors">SSL &amp; Security</a>
                 <a href="contact.html" class="hover:text-cyan-400 transition-colors">Contact</a>
             </nav>
 
-            <div class="flex items-center space-x-3">
-                <button onclick="toggleCartDrawer()" class="relative px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white text-xs sm:text-sm font-bold transition-all flex items-center space-x-2">
+            <div class="flex items-center space-x-3 shrink-0">
+                <button onclick="toggleCartDrawer()" class="relative px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white text-xs sm:text-sm font-bold transition-all flex items-center space-x-2">
                     <i class="fa-solid fa-cart-shopping text-cyan-400 text-sm"></i>
                     <span class="hidden sm:inline">Cart</span>
                     <span id="cartCountBadge" class="px-2 py-0.5 rounded-full bg-cyan-500 text-slate-950 font-black text-[11px]">0</span>
                 </button>
 
-                <button onclick="openFastCheckout()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-black transition-all shadow-lg shadow-blue-500/25 flex items-center space-x-1.5">
+                <button onclick="openFastCheckout()" class="px-4 sm:px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white text-xs sm:text-sm font-black transition-all shadow-lg shadow-blue-500/25 flex items-center space-x-1.5">
                     <i class="fa-brands fa-paypal"></i>
                     <span class="hidden sm:inline">Express</span> <span>Checkout</span>
                 </button>
@@ -702,7 +710,7 @@ ${preRenderedCards}
 
             <!-- Product Banner Cover Image -->
             <div class="relative w-full h-52 sm:h-64 rounded-2xl overflow-hidden mb-6 border border-slate-800 bg-slate-950 shadow-md">
-                <img id="modalProductBanner" src="assets/products/paddle-official.svg" alt="Product Banner" class="w-full h-full object-cover object-center">
+                <img id="modalProductBanner" src="assets/products/paddle-official.png?v=20261122" alt="Product Banner" class="w-full h-full object-cover object-center" onerror="this.onerror=null; this.src='assets/products/paddle-official.svg';">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
             </div>
 
@@ -903,14 +911,14 @@ ${preRenderedCards}
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
-                        <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-11 h-11 object-contain drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]">
-                        <div class="flex flex-col justify-center">
-                            <div class="flex items-center leading-none">
+                        <img src="assets/logo-3d.svg" alt="TechVerse Studio 3D Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_12px_rgba(56,189,248,0.5)]">
+                        <div class="flex flex-col justify-center select-none">
+                            <div class="flex items-baseline">
                                 <span class="text-lg font-black text-white">TechVerse</span>
-                                <span class="ml-1 text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Studio</span>
+                                <span class="text-[9px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 border border-cyan-500/30 px-1.5 py-0.5 rounded ml-1.5">Studio</span>
                             </div>
-                            <span class="text-[7.5px] font-extrabold text-slate-400 uppercase tracking-tighter mt-1" style="max-width: 95px; letter-spacing: -0.35px;">
-                                Plugins, Themes &amp; SaaS Tools
+                            <span class="text-[7.5px] font-extrabold text-slate-400 uppercase tracking-tight mt-1 block truncate" style="max-width: 100px; letter-spacing: -0.2px;">
+                                Plugins, Themes &amp; Tools
                             </span>
                         </div>
                     </div>
@@ -1196,8 +1204,13 @@ ${preRenderedCards}
 
             const modalBanner = document.getElementById('modalProductBanner');
             if (modalBanner && p.image) {
-                modalBanner.src = 'assets/products/' + p.image;
+                const pngName = p.image.replace('.svg', '.png');
+                modalBanner.src = 'assets/products/' + pngName + '?v=20261122';
                 modalBanner.alt = p.name;
+                modalBanner.onerror = function() {
+                    this.onerror = null;
+                    this.src = 'assets/products/' + p.image;
+                };
             }
 
             document.getElementById('modalProductTitle').innerText = p.name;
