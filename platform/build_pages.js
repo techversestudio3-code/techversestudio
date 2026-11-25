@@ -370,7 +370,7 @@ const products = [
     iconColor: "cyan",
     zipUrl: "downloads/techverse-ssl-shield.zip",
     shortDesc: "Secures your root domain and unlimited subdomains with a single 256-bit encrypted certificate and $500,000 warranty.",
-    fullDesc: "Issue one certificate to protect your entire ecosystem: your root domain and unlimited subdomains (*.yourdomain.com, api.yourdomain.com, app.yourdomain.com, store.yourdomain.com). Backed by Sectigo's global Certificate Authority infrastructure.",
+    fullDesc: "Issue one certificate to protect your entire ecosystem: your root domain and unlimited subdomains (*.yourbrand.com, api.yourbrand.com, app.yourbrand.com, store.yourbrand.com). Backed by Sectigo's global Certificate Authority infrastructure.",
     specs: {
       "Encryption": "2048/4096-bit RSA Keys, SHA-256 Signature",
       "Subdomains": "Unlimited Subdomains Covered",
@@ -827,7 +827,7 @@ ${preRenderedCards}
                 </div>
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1">Delivery Email Address *</label>
-                    <input type="email" id="buyerEmail" required placeholder="john@example.com" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                    <input type="email" id="buyerEmail" required placeholder="john@company.com" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500">
                     <span class="text-[10px] text-slate-500 mt-1 block">Your authentic software license key and .ZIP download link will be dispatched here.</span>
                 </div>
             </div>
@@ -1410,7 +1410,7 @@ ${preRenderedCards}
 
         function simulateOrderSuccess(method) {
             const emailInput = document.getElementById('buyerEmail');
-            let email = (emailInput && emailInput.value.trim()) ? emailInput.value.trim() : "customer@example.com";
+            let email = (emailInput && emailInput.value.trim()) ? emailInput.value.trim() : "buyer@techversestudio.com";
 
             const panelPaypal = document.getElementById('paymentTabPaypal');
             const panelCard = document.getElementById('paymentTabCard');
