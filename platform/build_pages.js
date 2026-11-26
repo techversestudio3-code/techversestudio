@@ -953,7 +953,7 @@ ${preRenderedCards}
                 <div>
                     <h4 class="text-white font-semibold mb-4 text-sm">Corporate Identification</h4>
                     <p class="text-slate-200 font-bold">TechVerse LLC (DBA TechVerse Studio)</p>
-                    <p class="mt-1 text-slate-400 text-xs">6346 Cresterrace Dr, Pasadena, TX 77505, USA</p>
+                    <p class="mt-1 text-slate-400 text-xs">3260 Gorham Ave, St Louis Park, MN 55426, USA</p>
                     <p class="mt-2 text-slate-300">Support: <!--email_off--><a href="mailto:support@techversestudio.com" class="text-cyan-400">support@techversestudio.com</a><!--/email_off--></p>
                     <p class="text-slate-300">Helpline: <span class="text-slate-400">+1 (832) 555-0198</span></p>
                 </div>
